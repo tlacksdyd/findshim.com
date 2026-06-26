@@ -60,4 +60,4 @@ Copy the owner fills in later is marked, not hard-coded:
 - **Privacy** — `privacy/index.html` is pre-filled from the app's
   `PRIVACY_POLICY.md`; if the app's policy changes, update this page to match.
 
-Contact email used across the site: `chanyong251001@gmail.com`.
+Contact email used across the site: `cyshim0715@gmail.com`.
