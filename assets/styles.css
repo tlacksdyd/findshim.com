@@ -734,6 +734,42 @@ section {
   letter-spacing: -0.02em;
 }
 
+/* Contact details list */
+.contact-details {
+  display: grid;
+  gap: 14px;
+  margin: 24px 0;
+}
+
+.contact-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  align-items: center;
+  gap: 16px;
+}
+
+.contact-row .cr-label {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.contact-row .cr-value {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+@media (max-width: 520px) {
+  .contact-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 880px) {
   .hero-inner {
