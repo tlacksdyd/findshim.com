@@ -287,6 +287,14 @@ a {
   flex-direction: column;
 }
 
+/* real screenshot fills the phone screen */
+.phone-shot {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .phone-notch {
   position: absolute;
   top: 12px;
@@ -661,6 +669,24 @@ section {
 
 .prose a:hover {
   text-decoration: underline;
+}
+
+/* Stacked per-language blocks on legal/support pages */
+.lang-block + .lang-block {
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 1px solid var(--line);
+}
+
+.lang-block > h2:first-child {
+  margin-top: 0;
+}
+
+.lang-block .policy-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 6px;
 }
 
 /* Placeholder block authors can replace */
