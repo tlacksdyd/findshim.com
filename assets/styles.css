@@ -287,11 +287,11 @@ a {
   flex-direction: column;
 }
 
-/* real screenshot fills the phone screen */
+/* real screenshot fits fully inside the phone screen (no cropping) */
 .phone-shot {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
