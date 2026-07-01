@@ -268,7 +268,6 @@ a {
 .phone {
   position: relative;
   width: 280px;
-  aspect-ratio: 9 / 19.5;
   background: var(--ink);
   border-radius: 44px;
   padding: 12px;
@@ -279,7 +278,9 @@ a {
 .phone-screen {
   position: relative;
   width: 100%;
-  height: 100%;
+  /* match the screenshot's exact ratio (1179x2556) so it fills with
+     no cropping and no letterbox bars */
+  aspect-ratio: 1179 / 2556;
   border-radius: 33px;
   overflow: hidden;
   background: linear-gradient(160deg, #eaf2ff 0%, #f7f9fc 60%, #ffffff 100%);
