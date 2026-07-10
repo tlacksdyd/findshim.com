@@ -39,14 +39,3 @@ Static HTML/CSS — no build step. Deployed via **GitHub Pages**.
 python -m http.server 8000   # then open http://localhost:8000
 ```
 
-## Custom domain (findshim.com)
-
-DNS records to add at your registrar:
-
-| Type  | Host  | Value                |
-|-------|-------|----------------------|
-| A     | @     | 185.199.108.153      |
-| A     | @     | 185.199.109.153      |
-| A     | @     | 185.199.110.153      |
-| A     | @     | 185.199.111.153      |
-| CNAME | www   | tlacksdyd.github.io  |
