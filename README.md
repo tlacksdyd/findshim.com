@@ -25,9 +25,8 @@ Static HTML/CSS — no build step. Deployed via **GitHub Pages**.
 
 ## Editing copy
 
-- **Store links:** in `index.html`, replace the two `href="#"`
-  (`data-placeholder="app-store-url"` / `data-placeholder="play-store-url"`)
-  with your real store URLs once the app is published.
+- **Store links:** live in `index.html` only, as two pairs of `.store-btn`
+  anchors (hero + CTA). Keep all four in sync if a store URL ever changes.
 - **Support page:** fill in each `<div class="placeholder">` block in
   `support/index.html`.
 - **Privacy page:** `privacy/index.html` is pre-filled from the app's

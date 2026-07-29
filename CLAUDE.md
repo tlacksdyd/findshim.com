@@ -51,10 +51,6 @@ python -m http.server 8000   # http://localhost:8000
 
 Copy the owner fills in later is marked, not hard-coded:
 
-- **Store links** — in `index.html`, the App Store / Play Store anchors use
-  `href="#"` with `data-placeholder="app-store-url"` / `"play-store-url"`.
-  Replace the `href` when the app ships; keep both occurrences (hero + CTA) in
-  sync.
 - **Support copy** — `support/index.html` uses `<div class="placeholder">`
   blocks (FAQ answers, troubleshooting) for the owner to paste real text.
 - **Privacy** — `privacy/index.html` is pre-filled from the app's
