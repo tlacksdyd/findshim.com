@@ -1,38 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact — KORE</title>
-  <meta name="description" content="Get in touch with the team behind KORE — reach us by email or phone." />
+  <title>문의하기 — KORE</title>
+  <meta name="description" content="KORE 팀에 연락하기 — 이메일과 연락처, 제휴·오류 제보 안내입니다." />
   <link rel="canonical" href="https://findshim.com/contact/" />
-  <link rel="alternate" hreflang="en" href="https://findshim.com/contact/" />
-  <link rel="alternate" hreflang="ko" href="https://findshim.com/ko/contact/" />
+  <link rel="alternate" hreflang="ko" href="https://findshim.com/contact/" />
+  <link rel="alternate" hreflang="en" href="https://findshim.com/en/contact/" />
   <link rel="alternate" hreflang="x-default" href="https://findshim.com/contact/" />
-  <meta name="theme-color" content="#2b6ef6" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="문의하기 — KORE" />
+  <meta property="og:description" content="KORE를 만들고 운영하는 사람의 연락처." />
+  <meta property="og:url" content="https://findshim.com/contact/" />
+  <meta property="og:image" content="https://findshim.com/assets/og-image.png" />
+  <meta name="theme-color" content="#FF385C" />
   <link rel="icon" type="image/png" href="../assets/favicon.png" />
   <link rel="apple-touch-icon" href="../assets/app-icon.png" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <link rel="stylesheet" href="../assets/styles.css" />
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="../assets/site.js" defer></script>
 </head>
 <body>
   <!-- ===================== Header ===================== -->
   <header class="site-header">
     <div class="container">
-      <a class="brand" href="../" aria-label="KORE home">
+      <a class="brand" href="../" aria-label="KORE 홈">
         <img src="../assets/favicon.png" alt="" />
         <span>KORE</span>
       </a>
-      <nav class="nav" aria-label="Primary">
-        <a class="nav-link" href="../#features">Features</a>
-        <a class="nav-link" href="../privacy/">Privacy</a>
-        <a class="nav-link" href="../support/">Support</a>
-        <div class="lang-switch" role="group" aria-label="Language">
-          <a class="ls-opt is-active" href="./" aria-current="true">EN</a>
-          <a class="ls-opt" href="../ko/contact/" lang="ko" hreflang="ko">한국어</a>
+      <nav class="nav" aria-label="주요 메뉴">
+        <a class="nav-link" href="../#map">지도</a>
+        <a class="nav-link" href="../privacy/">개인정보</a>
+        <a class="nav-link" href="../support/">고객지원</a>
+        <div class="lang-switch" role="group" aria-label="언어 선택">
+          <a class="ls-opt is-active" href="./" aria-current="true">한국어</a>
+          <a class="ls-opt" href="../en/contact/" lang="en" hreflang="en">EN</a>
         </div>
-        <a class="btn-pill" href="../#top">Download</a>
+        <a class="btn-pill" href="../#download">다운로드</a>
       </nav>
     </div>
   </header>
@@ -40,47 +47,52 @@
   <main>
     <section class="page-hero">
       <div class="container">
-        <h1>Contact</h1>
-        <p class="meta">Have a question or feedback? We'd love to hear from you.</p>
+        <h1>문의하기</h1>
+        <p class="meta">궁금한 점이나 하고 싶은 이야기가 있다면 편하게 연락 주세요.</p>
       </div>
     </section>
 
     <article class="prose">
-      <!-- ============ Email (real, ready to go) ============ -->
       <div class="contact-card">
         <div>
-          <div class="ct-label">Email</div>
+          <div class="ct-label">이메일</div>
           <div class="ct-value">cyshim0715@gmail.com</div>
         </div>
-        <a class="btn-pill" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=cyshim0715@gmail.com&amp;su=KORE%20inquiry" target="_blank" rel="noopener" style="color: #fff;">Email us</a>
+        <a class="btn-pill" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=cyshim0715@gmail.com&amp;su=KORE%20%EB%AC%B8%EC%9D%98" target="_blank" rel="noopener">메일 보내기</a>
       </div>
 
-      <h2>Contact details</h2>
-      <p>
-        These are the details for the person responsible for KORE.
-      </p>
+      <h2>연락처</h2>
+      <p>KORE를 만들고 운영하는 사람의 연락처입니다.</p>
 
-      <!-- PLACEHOLDERS: fill in the owner's real details. -->
+      <!-- Keep in sync with ../en/contact/index.html -->
       <div class="contact-details">
         <div class="contact-row">
-          <div class="cr-label">Name</div>
-          <div class="cr-value" data-placeholder="owner-name">Chanyong Shim</div>
+          <div class="cr-label">이름</div>
+          <div class="cr-value">심찬용</div>
         </div>
         <div class="contact-row">
-          <div class="cr-label">Phone</div>
-          <div class="cr-value" data-placeholder="owner-phone">+82 10-9306-6864</div>
+          <div class="cr-label">전화</div>
+          <div class="cr-value">010-9306-6864</div>
         </div>
         <div class="contact-row">
-          <div class="cr-label">Email</div>
+          <div class="cr-label">이메일</div>
           <div class="cr-value"><a href="mailto:cyshim0715@gmail.com">cyshim0715@gmail.com</a></div>
         </div>
         <div class="contact-row">
-          <div class="cr-label">Location</div>
-          <div class="cr-value" data-placeholder="owner-location">291, Daehak-ro, Yuseong-gu, Daejeon, Republic of Korea</div>
+          <div class="cr-label">주소</div>
+          <div class="cr-value">대전광역시 유성구 대학로 291</div>
         </div>
       </div>
 
-      <p style="margin-top:40px;"><a href="../">← Back to home</a></p>
+      <h2>이런 연락을 기다립니다</h2>
+      <ul>
+        <li><strong>오류 제보</strong> — 앱이 멈추거나 이상하게 동작한다면 기기와 화면을 함께 알려주세요.</li>
+        <li><strong>화장실 정보 수정</strong> — 급하지 않은 수정은 앱의 <a href="../support/">수정 제안</a>이 더 빠릅니다.</li>
+        <li><strong>제휴 · 데이터 제공</strong> — 매장이나 시설의 화장실을 지도에 올리고 싶은 경우.</li>
+        <li><strong>개인정보 관련 요청</strong> — 열람·정정·삭제 요청은 <a href="../privacy/">개인정보처리방침</a>을 참고해 주세요.</li>
+      </ul>
+
+      <p><a class="back-link" href="../">← 홈으로 돌아가기</a></p>
     </article>
   </main>
 
@@ -89,7 +101,7 @@
     <div class="container">
       <div class="footer-bottom" style="border:0;margin:0;padding:0;">
         <span>© 2026 KORE. All rights reserved.</span>
-        <span><a href="../privacy/">Privacy</a> · findshim.com</span>
+        <span><a href="../privacy/">개인정보처리방침</a> · findshim.com</span>
       </div>
     </div>
   </footer>

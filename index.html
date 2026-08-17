@@ -1,22 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KORE — Find a public restroom anywhere in Korea</title>
-  <meta name="description" content="KORE helps tourists find public restrooms across Korea on a clean map — in your own language. Free to download for iOS and Android." />
+  <title>KORE — 전국 화장실 지도</title>
+  <meta name="description" content="급할 때 가장 가까운 화장실을 3초 만에. 전국 공중화장실·도서관·카페 6만여 곳을 한 지도에 모은 무료 앱 KORE. 청결도, 도보 경로, 후기까지 9개 언어로." />
 
   <!-- Open Graph / social -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="KORE — Find a public restroom anywhere in Korea" />
-  <meta property="og:description" content="Public restrooms across Korea on a clean map, in your language. Free on iOS and Android." />
+  <meta property="og:site_name" content="KORE" />
+  <meta property="og:title" content="KORE — 전국 화장실 지도" />
+  <meta property="og:description" content="급할 때 가장 가까운 화장실을 3초 만에. 전국 6만여 곳을 한 지도에. iOS·안드로이드 무료." />
   <meta property="og:url" content="https://findshim.com/" />
-  <meta property="og:image" content="https://findshim.com/assets/app-icon.png" />
-  <meta name="theme-color" content="#2b6ef6" />
+  <meta property="og:image" content="https://findshim.com/assets/og-image.png" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#FF385C" />
 
   <link rel="canonical" href="https://findshim.com/" />
-  <link rel="alternate" hreflang="en" href="https://findshim.com/" />
-  <link rel="alternate" hreflang="ko" href="https://findshim.com/ko/" />
+  <link rel="alternate" hreflang="ko" href="https://findshim.com/" />
+  <link rel="alternate" hreflang="en" href="https://findshim.com/en/" />
   <link rel="alternate" hreflang="x-default" href="https://findshim.com/" />
   <link rel="icon" type="image/png" href="assets/favicon.png" />
   <link rel="apple-touch-icon" href="assets/app-icon.png" />
@@ -25,25 +29,27 @@
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <link rel="stylesheet" href="assets/styles.css" />
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="assets/site.js" defer></script>
 </head>
 <body>
   <!-- ===================== Header ===================== -->
   <header class="site-header">
     <div class="container">
-      <a class="brand" href="./" aria-label="KORE home">
+      <a class="brand" href="./" aria-label="KORE 홈">
         <img src="assets/favicon.png" alt="" />
         <span>KORE</span>
       </a>
-      <nav class="nav" aria-label="Primary">
-        <a class="nav-link" href="#features">Features</a>
-        <a class="nav-link" href="#how">How it works</a>
-        <a class="nav-link" href="support/">Support</a>
-        <a class="nav-link" href="contact/">Contact</a>
-        <div class="lang-switch" role="group" aria-label="Language">
-          <a class="ls-opt is-active" href="./" aria-current="true">EN</a>
-          <a class="ls-opt" href="ko/" lang="ko" hreflang="ko">한국어</a>
+      <nav class="nav" aria-label="주요 메뉴">
+        <a class="nav-link" href="#map">지도</a>
+        <a class="nav-link" href="#tabs">기능</a>
+        <a class="nav-link" href="#community">함께 만들기</a>
+        <a class="nav-link" href="support/">고객지원</a>
+        <div class="lang-switch" role="group" aria-label="언어 선택">
+          <a class="ls-opt is-active" href="./" aria-current="true">한국어</a>
+          <a class="ls-opt" href="en/" lang="en" hreflang="en">EN</a>
         </div>
-        <a class="btn-pill" href="#top">Download</a>
+        <a class="btn-pill" href="#download">다운로드</a>
       </nav>
     </div>
   </header>
@@ -53,120 +59,532 @@
     <section class="hero" id="top">
       <div class="container hero-inner">
         <div class="hero-copy">
-          <span class="eyebrow">🇰🇷 For travelers in Korea</span>
-          <h1>Find a restroom,<br /><span class="accent">anywhere in Korea.</span></h1>
+          <span class="eyebrow">🚻 전국 6만여 곳 · 9개 언어 · 무료</span>
+          <h1>급할 때,<br /><span class="accent">가장 가까운 화장실.</span></h1>
           <p class="lead">
-            Thousands of public restrooms on one clean map — in your own
-            language. No more frantic searching when you need it most.
+            공중화장실부터 도서관, 카페까지. 전국 화장실을 한 지도에 모았습니다.
+            앱을 켜면 가장 가까운 세 곳이 먼저 보여요.
           </p>
 
           <!-- Store buttons: live App Store / Google Play links. Keep these in
                sync with the pair in the CTA section further down the page. -->
           <div class="store-buttons" id="download">
-            <a class="store-btn" href="https://apps.apple.com/kr/app/kore-korearestroom/id6774883751" aria-label="Download on the App Store">
+            <a class="store-btn" href="https://apps.apple.com/kr/app/kore-korearestroom/id6774883751" aria-label="App Store에서 다운로드">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.36 1c.09 1.06-.34 2.1-1 2.86-.69.78-1.81 1.38-2.9 1.3-.11-1.02.39-2.08 1.02-2.78C14.21 1.57 15.39.99 16.36 1zM20.5 17.2c-.55 1.27-.82 1.83-1.53 2.95-.99 1.56-2.39 3.5-4.12 3.51-1.54.02-1.93-1-4.02-.99-2.09.01-2.52 1.01-4.06.99-1.73-.01-3.05-1.76-4.04-3.32C-.07 16.6-.36 11.5 1.34 8.8c1.2-1.93 3.1-3.06 4.88-3.06 1.82 0 2.96 1 4.46 1 1.46 0 2.35-1 4.45-1 1.59 0 3.27.86 4.47 2.35-3.93 2.16-3.29 7.77.9 9.11z"/></svg>
-              <span class="store-text"><small>Download on the</small><strong>App Store</strong></span>
+              <span class="store-text"><small>다운로드</small><strong>App Store</strong></span>
             </a>
-            <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.touristtoiletmap.app" aria-label="Get it on Google Play">
+            <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.touristtoiletmap.app" aria-label="Google Play에서 받기">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 1.8c-.3.3-.5.8-.5 1.4v17.6c0 .6.2 1.1.5 1.4l.1.1L13.4 12v-.2L3.7 1.7l-.1.1zM17 15.3l-3.3-3.3v-.2L17 8.5l.1.1 3.9 2.2c1.1.6 1.1 1.7 0 2.3L17 15.3zM16.4 16 13 12.6 3.6 22c.4.4 1 .4 1.7.1L16.4 16zM5.3 1.9 16.4 8 13 11.4 3.6 2c.5-.4 1.2-.5 1.7-.1z"/></svg>
-              <span class="store-text"><small>Get it on</small><strong>Google Play</strong></span>
+              <span class="store-text"><small>지금 받기</small><strong>Google Play</strong></span>
             </a>
           </div>
-          <p class="store-note">Free to download · iOS &amp; Android </p>
+          <p class="store-note">무료 · iOS &amp; 안드로이드 · 가입 없이 바로 사용</p>
         </div>
 
-        <!-- Real app screenshot inside a CSS phone frame.
-             Drop your screenshot at assets/app-screenshot.png (a tall
-             phone-shaped PNG/JPG works best). To swap it, just replace
-             that file or change the src below. -->
+        <!-- The app's 홈 tab, drawn in CSS. Deliberately not a screenshot: the
+             app ships most of its work as OTA updates, and a captured PNG goes
+             stale silently while this does not. -->
         <div class="hero-visual">
-          <div class="phone">
-            <div class="phone-screen">
-              <img class="phone-shot" src="assets/app-screenshot.png"
-                   alt="KORE app showing nearby public restrooms on a map of Korea" />
+          <div class="device" role="img" aria-label="KORE 앱 홈 화면 — 내 기여, 가장 가까운 화장실 Top 3, 가까운 깨끗한 화장실 Top 3">
+            <div class="screen fade-bottom">
+              <div class="screen-scroll">
+                <div class="m-masthead">
+                  <img src="assets/favicon.png" alt="" />
+                  <div>
+                    <div class="m-word">KORE</div>
+                    <div class="m-tagline">함께 만들어가는 한국 화장실 앱</div>
+                  </div>
+                </div>
+
+                <div class="m-card">
+                  <div class="m-card-head">
+                    <span class="m-dot coral">＋</span>
+                    <div><div class="m-title">내 기여</div></div>
+                  </div>
+                  <div class="m-tallies">
+                    <div class="m-tally"><b>12</b><span>제보</span></div>
+                    <div class="m-tally"><b>9</b><span>승인</span></div>
+                    <div class="m-tally"><b>3</b><span>검토 중</span></div>
+                  </div>
+                  <span class="m-btn">화장실 제보하기</span>
+                </div>
+
+                <div class="m-card">
+                  <div class="m-card-head">
+                    <span class="m-dot coral">📍</span>
+                    <div>
+                      <div class="m-title">가장 가까운 화장실 Top 3</div>
+                      <div class="m-sub">현재 위치에서 직선거리 기준</div>
+                    </div>
+                  </div>
+                  <div class="m-row">
+                    <span class="m-rank">1</span>
+                    <div class="m-row-main">
+                      <div class="m-row-name">유성구청 공중화장실</div>
+                      <div class="m-row-addr">대전 유성구 대학로 33</div>
+                    </div>
+                    <span class="m-pill">80m</span>
+                  </div>
+                  <div class="m-row">
+                    <span class="m-rank">2</span>
+                    <div class="m-row-main">
+                      <div class="m-row-name">갑천 근린공원</div>
+                      <div class="m-row-addr">대전 유성구 온천북로</div>
+                    </div>
+                    <span class="m-pill">210m</span>
+                  </div>
+                  <div class="m-row">
+                    <span class="m-rank">3</span>
+                    <div class="m-row-main">
+                      <div class="m-row-name">유성온천역 2번 출구</div>
+                      <div class="m-row-addr">대전 유성구 계룡로</div>
+                    </div>
+                    <span class="m-pill">340m</span>
+                  </div>
+                </div>
+
+                <div class="m-card">
+                  <div class="m-card-head">
+                    <span class="m-dot blue">✦</span>
+                    <div>
+                      <div class="m-title">가까운 깨끗한 화장실 Top 3</div>
+                      <div class="m-sub">청결도 2★ 이상 · 가까운 순</div>
+                    </div>
+                  </div>
+                  <div class="m-row">
+                    <span class="m-rank blue">1</span>
+                    <div class="m-row-main">
+                      <div class="m-row-name">스타벅스 유성점<span class="m-stars"><i></i><i></i><i></i></span></div>
+                      <div class="m-row-addr">대전 유성구 계룡로 106</div>
+                    </div>
+                    <span class="m-pill blue">120m</span>
+                  </div>
+                  <div class="m-row">
+                    <span class="m-rank blue">2</span>
+                    <div class="m-row-main">
+                      <div class="m-row-name">유성도서관<span class="m-stars"><i></i><i></i><i class="off"></i></span></div>
+                      <div class="m-row-addr">대전 유성구 문화원로</div>
+                    </div>
+                    <span class="m-pill blue">450m</span>
+                  </div>
+                  <div class="m-row">
+                    <span class="m-rank blue">3</span>
+                    <div class="m-row-main">
+                      <div class="m-row-name">한밭수목원 안내소<span class="m-stars"><i></i><i></i><i></i></span></div>
+                      <div class="m-row-addr">대전 서구 둔산대로</div>
+                    </div>
+                    <span class="m-pill blue">1.1km</span>
+                  </div>
+                  <div style="margin-top:9px"><span class="m-btn soft">지도에서 3곳 모두 보기</span></div>
+                </div>
+              </div>
+
+              <div class="m-tabbar">
+                <div class="m-tab on"><b>🏠</b>홈</div>
+                <div class="m-tab"><b>🗺️</b>지도</div>
+                <div class="m-tab"><b>🎮</b>게임</div>
+                <div class="m-tab"><b>📋</b>리포트</div>
+                <div class="m-tab"><b>⚙️</b>설정</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="float-card one">
+            <span class="fc-icon">📍</span>
+            <div>80m<small>가장 가까운 화장실</small></div>
+          </div>
+          <div class="float-card two">
+            <span class="fc-icon">🌏</span>
+            <div>9개 언어<small>켜자마자 내 언어로</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Stats ===================== -->
+    <section class="section-tight bg-soft">
+      <div class="container">
+        <div class="stats">
+          <div class="stat" data-reveal><b>61,000+</b><span>지도에 찍힌 화장실</span></div>
+          <div class="stat" data-reveal><b>9개</b><span>지원 언어</span></div>
+          <div class="stat" data-reveal><b>4종</b><span>데이터 출처</span></div>
+          <div class="stat" data-reveal><b>0원</b><span>구독도 결제도 없음</span></div>
+        </div>
+        <p class="stat-note">
+          공중화장실 52,182곳 · 도서관 3,479곳 · 카페 4,382곳 · 직접 확인한 화장실 1,200곳,
+          여기에 이용자가 제보한 화장실이 계속 더해집니다.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== Where the data comes from ===================== -->
+    <section class="section" id="data">
+      <div class="container">
+        <div class="section-head center" data-reveal>
+          <span class="kicker">데이터</span>
+          <h2>화장실 하나를 찾으려고<br />앱 네 개를 켤 필요는 없으니까</h2>
+          <p>
+            정부 공공데이터에 도서관, 카페, 직접 확인한 화장실까지 한 지도에 얹었습니다.
+            전부 앱에 담겨 있어서, 지도를 열면 검색 없이 바로 뜹니다.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card" data-reveal>
+            <div class="icon">🚻</div>
+            <h3>공중화장실 52,182곳</h3>
+            <p>행정안전부 전국공중화장실 표준데이터 전체. 개방시간, 비상벨, 기저귀 교환대까지 그대로 담았습니다.</p>
+            <span class="tagline">정부 공공데이터</span>
+          </article>
+          <article class="card" data-reveal>
+            <div class="icon">📚</div>
+            <h3>도서관 3,479곳</h3>
+            <p>전국도서관 표준데이터. 누구나 들어갈 수 있는 공공건물이라, 급할 때 가장 확실한 선택지입니다.</p>
+            <span class="tagline">정부 공공데이터</span>
+          </article>
+          <article class="card" data-reveal>
+            <div class="icon">☕</div>
+            <h3>카페 4,382곳</h3>
+            <p>스타벅스·투썸플레이스·할리스 매장. 영업시간과 매장 사진, 주차 정보까지 함께 보여줍니다.</p>
+            <span class="tagline">브랜드 공개 매장 정보</span>
+          </article>
+          <article class="card" data-reveal>
+            <div class="icon">🔎</div>
+            <h3>직접 확인한 1,200곳</h3>
+            <p>공개된 후기 글에서 찾아 하나씩 확인한 화장실. 층수, 비누, 휴지 유무처럼 표준데이터에 없는 정보가 붙습니다.</p>
+            <span class="tagline">수집 · 검증</span>
+          </article>
+        </div>
+
+        <div class="note-card" data-reveal style="margin-top:28px">
+          <strong>정부 데이터의 좌표도 손봤습니다</strong>
+          공공데이터의 위경도는 실제 주소와 100m 이상 어긋나는 경우가 적지 않습니다.
+          KORE는 주소와 좌표가 맞는지 전수 검사해 1,628곳의 위치를 바로잡았고,
+          그중 508곳은 좌표가 아예 없어 지도에 나오지도 않던 화장실이었습니다.
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== The map ===================== -->
+    <section class="section bg-soft" id="map">
+      <div class="container split">
+        <div data-reveal>
+          <span class="kicker">지도</span>
+          <h2>핀 색만 봐도<br />어떤 화장실인지 압니다</h2>
+          <p class="lead">
+            지도는 설명을 읽는 곳이 아니라 훑어보는 곳입니다. KORE의 핀은
+            색 하나로 종류와 청결도를 말합니다.
+          </p>
+          <ul class="bullets">
+            <li><b>깨끗한 화장실만 보기</b> — 한 번 누르면 파란 핀만 남습니다.</li>
+            <li><b>지역·주소·이름 검색</b> — "유성구", "제주"처럼 지역을 치면 그 지역 전체가 잡히고, 오타도 잡아냅니다.</li>
+            <li><b>내 위치 기준 거리</b> — 걸어갈 만한 곳인지 바로 판단할 수 있게 거리부터 보여줍니다.</li>
+          </ul>
+        </div>
+
+        <div class="split-visual" data-reveal>
+          <div class="device" role="img" aria-label="KORE 앱 지도 화면 — 색으로 구분되는 화장실 핀">
+            <div class="screen">
+              <div class="m-map"></div>
+              <div class="m-search">🔍 지역·주소·화장실 검색</div>
+              <div class="m-guide">ⓘ 마커 안내</div>
+
+              <span class="pin" style="top:31%;left:16%"></span>
+              <span class="pin near big" style="top:26%;left:44%"></span>
+              <span class="pin clean" style="top:34%;left:70%"></span>
+              <span class="pin" style="top:42%;left:28%"></span>
+              <span class="pin clean-deep" style="top:46%;left:58%"></span>
+              <span class="pin near big" style="top:52%;left:38%"></span>
+              <span class="pin clean-light" style="top:56%;left:78%"></span>
+              <span class="pin private" style="top:60%;left:20%"></span>
+              <span class="pin" style="top:63%;left:62%"></span>
+              <span class="m-me" style="top:47%;left:45%"></span>
+
+              <span class="m-fab add">＋</span>
+              <span class="m-fab locate">◎</span>
+
+              <div class="m-sheet">
+                <div class="m-grab"></div>
+                <div class="m-title">유성구청 공중화장실</div>
+                <div class="m-sub">24시간 개방 · 남녀 분리 · 기저귀 교환대</div>
+                <div class="m-chiprow">
+                  <span class="m-chip on">도보 경로</span>
+                  <span class="m-chip">TMAP</span>
+                  <span class="m-chip">카카오맵</span>
+                  <span class="m-chip">네이버</span>
+                </div>
+              </div>
+
+              <div class="m-tabbar">
+                <div class="m-tab"><b>🏠</b>홈</div>
+                <div class="m-tab on"><b>🗺️</b>지도</div>
+                <div class="m-tab"><b>🎮</b>게임</div>
+                <div class="m-tab"><b>📋</b>리포트</div>
+                <div class="m-tab"><b>⚙️</b>설정</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" style="margin-top:clamp(36px,5vw,60px)">
+        <div class="legend" data-reveal>
+          <div class="legend-item">
+            <span class="legend-pin" style="background:var(--pin-public)"></span>
+            <div class="legend-text"><b>빨간 핀</b><span>일반 화장실</span></div>
+          </div>
+          <div class="legend-item">
+            <span class="legend-pin" style="background:var(--pin-clean-2)"></span>
+            <div class="legend-text"><b>파란 핀</b><span>깨끗한 화장실 · 진할수록 더 깨끗</span></div>
+          </div>
+          <div class="legend-item">
+            <span class="legend-pin" style="background:var(--pin-near)"></span>
+            <div class="legend-text"><b>노란 핀</b><span>가장 가까운 화장실</span></div>
+          </div>
+          <div class="legend-item">
+            <span class="legend-pin" style="background:var(--pin-search)"></span>
+            <div class="legend-text"><b>초록 핀</b><span>검색된 화장실</span></div>
+          </div>
+          <div class="legend-item">
+            <span class="legend-pin" style="background:var(--pin-private)"></span>
+            <div class="legend-text"><b>청록 핀</b><span>나만 보기 화장실</span></div>
+          </div>
+          <div class="legend-item">
+            <span class="legend-pin" style="background:var(--pin-address)"></span>
+            <div class="legend-text"><b>보라 핀</b><span>검색한 주소</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Detail sheet & routing ===================== -->
+    <section class="section">
+      <div class="container split reverse">
+        <div data-reveal>
+          <span class="kicker">상세 정보</span>
+          <h2>가기 전에 알아야 할 것부터<br />맨 위에 놓았습니다</h2>
+          <p class="lead">
+            핀을 누르면 사진과 길 안내가 먼저 나오고, 그 아래로 "들어갈 수 있는가 →
+            어떤 곳인가" 순서로 정보가 이어집니다. 어떤 화장실이든 같은 순서로요.
+          </p>
+          <ul class="bullets">
+            <li><b>도보 경로</b>를 앱 안에서 바로 그려줍니다.</li>
+            <li>운전이 필요하면 <b>TMAP · 카카오맵 · 네이버지도</b>로 한 번에 넘겨줍니다.</li>
+            <li><b>개방시간, 도어락, 비상벨, 입구 CCTV, 기저귀 교환대, 비데, 층수</b> — 있는 정보만 보여주고, 없는 항목은 아예 표시하지 않습니다.</li>
+            <li><b>후기 탭</b>에서 다녀온 사람들의 이야기를 읽고, 직접 남길 수도 있습니다.</li>
+          </ul>
+        </div>
+
+        <div class="split-visual" data-reveal>
+          <div class="device" role="img" aria-label="KORE 앱 상세 정보 화면">
+            <div class="screen fade-bottom">
+              <div class="screen-scroll" style="padding-top:40px">
+                <div class="m-card">
+                  <div class="m-title" style="font-size:13px">유성구청 공중화장실</div>
+                  <div class="m-chiprow" style="margin-top:9px">
+                    <span class="m-chip on">정보</span>
+                    <span class="m-chip">후기 12</span>
+                  </div>
+                  <div style="height:62px;margin-top:10px;border-radius:11px;background:linear-gradient(120deg,#e6eaef,#f3f5f7);display:grid;place-items:center;font-size:20px">🖼️</div>
+                  <div style="margin-top:9px"><span class="m-btn">도보 경로</span></div>
+                  <div class="m-chiprow">
+                    <span class="m-chip">TMAP</span>
+                    <span class="m-chip">카카오맵</span>
+                    <span class="m-chip">네이버지도</span>
+                  </div>
+                </div>
+
+                <div class="m-card">
+                  <div class="m-sub" style="margin-bottom:6px">상세 정보</div>
+                  <div class="m-row" style="border-top:0"><div class="m-row-main"><div class="m-row-addr">운영 시간</div><div class="m-row-name">24시간</div></div></div>
+                  <div class="m-row"><div class="m-row-main"><div class="m-row-addr">청결도</div><div class="m-row-name">깨끗해요<span class="m-stars"><i></i><i></i><i class="off"></i></span></div></div></div>
+                  <div class="m-row"><div class="m-row-main"><div class="m-row-addr">안전시설</div><div class="m-row-name">비상벨 · 입구 CCTV</div></div></div>
+                  <div class="m-row"><div class="m-row-main"><div class="m-row-addr">기저귀 교환대</div><div class="m-row-name">남녀 화장실 모두</div></div></div>
+                  <div class="m-row"><div class="m-row-main"><div class="m-row-addr">주소</div><div class="m-row-name">대전 유성구 대학로 33</div></div></div>
+                </div>
+              </div>
+
+              <div class="m-tabbar">
+                <div class="m-tab"><b>🏠</b>홈</div>
+                <div class="m-tab on"><b>🗺️</b>지도</div>
+                <div class="m-tab"><b>🎮</b>게임</div>
+                <div class="m-tab"><b>📋</b>리포트</div>
+                <div class="m-tab"><b>⚙️</b>설정</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===================== Features ===================== -->
-    <section id="features" class="bg-soft">
+    <!-- ===================== Five tabs ===================== -->
+    <section class="section bg-soft" id="tabs">
       <div class="container">
-        <div class="section-head">
-          <h2>Everything you need, nothing you don't</h2>
-          <p>Built for travelers who just want to find a clean restroom, fast.</p>
+        <div class="section-head center" data-reveal>
+          <span class="kicker">앱 구성</span>
+          <h2>다섯 개의 탭, 그게 전부입니다</h2>
+          <p>필요한 곳으로 한 번에 갑니다. 지도 위에 떠 있던 버튼들은 전부 제자리를 찾아갔어요.</p>
         </div>
-        <div class="features">
-          <article class="feature">
-            <div class="icon">🗺️</div>
-            <h3>50K+ Restrooms</h3>
-            <p>Public restrooms from across Korea, plotted on one fast, easy-to-read map.</p>
+
+        <div class="tabs">
+          <div class="tab-card" data-reveal>
+            <div class="tab-glyph">🏠</div>
+            <h3>홈</h3>
+            <p>가장 가까운 화장실 Top 3, 가까운 깨끗한 화장실 Top 3, 그리고 내가 제보한 기록.</p>
+          </div>
+          <div class="tab-card" data-reveal>
+            <div class="tab-glyph">🗺️</div>
+            <h3>지도</h3>
+            <p>검색, 핀, 상세 정보, 제보와 수정. 탭을 다시 누르면 언제나 내 위치로 돌아옵니다.</p>
+          </div>
+          <div class="tab-card" data-reveal>
+            <div class="tab-glyph">🎮</div>
+            <h3>게임</h3>
+            <p>기다리는 시간을 위한 미니게임 네 종과 주간·올타임 랭킹.</p>
+          </div>
+          <div class="tab-card" data-reveal>
+            <div class="tab-glyph">📋</div>
+            <h3>리포트</h3>
+            <p>내가 제보한 화장실의 승인 상태, 보낸 문의와 그 답장이 모여 있습니다.</p>
+          </div>
+          <div class="tab-card" data-reveal>
+            <div class="tab-glyph">⚙️</div>
+            <h3>설정</h3>
+            <p>언어, 닉네임, 로그인·비밀번호 변경, 계정 삭제까지 한 화면에서.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Community ===================== -->
+    <section class="section" id="community">
+      <div class="container">
+        <div class="section-head center" data-reveal>
+          <span class="kicker">함께 만들기</span>
+          <h2>빠진 화장실은<br />누구나 채워 넣을 수 있습니다</h2>
+          <p>로그인 없이도 제보할 수 있습니다. 검토를 거쳐 지도에 올라가고, 승인된 제보는 기여자 랭킹에 쌓입니다.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step" data-reveal>
+            <div class="num"></div>
+            <h3>지도를 눌러 제보</h3>
+            <p>위치를 찍고 이름과 사진을 남기면 끝. 한국어로 쓰면 나머지 8개 언어로 자동 번역됩니다.</p>
+          </div>
+          <div class="step" data-reveal>
+            <div class="num"></div>
+            <h3>검토</h3>
+            <p>운영자가 하나씩 확인합니다. 결과는 리포트 탭에서 알려드려요.</p>
+          </div>
+          <div class="step" data-reveal>
+            <div class="num"></div>
+            <h3>모두의 지도에 반영</h3>
+            <p>승인되면 그 순간부터 모든 사용자의 지도에 나타납니다.</p>
+          </div>
+        </div>
+
+        <div class="grid grid-2" style="margin-top:clamp(28px,4vw,48px)">
+          <article class="card" data-reveal>
+            <div class="icon">🏆</div>
+            <h3>기여자 랭킹</h3>
+            <p>승인된 제보 수로 매겨지는 공개 랭킹. 닉네임을 정하지 않으면 익명으로 올라갑니다.</p>
           </article>
-          <article class="feature">
-            <div class="icon">🌏</div>
-            <h3>Your language</h3>
-            <p>Use KORE in 9 languages — English, 日本語, 中文, Tiếng Việt, ไทย and more.</p>
+          <article class="card" data-reveal>
+            <div class="icon">🔒</div>
+            <h3>나만 보기 마커</h3>
+            <p>단골 건물 화장실처럼 나만 알고 싶은 곳은 청록 핀으로 내 지도에만 저장할 수 있습니다. 계정이 필요한 유일한 기능이에요.</p>
           </article>
-          <article class="feature">
-            <div class="icon">📍</div>
-            <h3>Right where you are</h3>
-            <p>See restrooms near your location instantly, with distance at a glance.</p>
+          <article class="card" data-reveal>
+            <div class="icon">✍️</div>
+            <h3>후기</h3>
+            <p>다녀온 곳에 별점과 한마디를 남기면 9개 언어로 번역돼, 다른 나라 여행자에게도 그대로 전해집니다.</p>
           </article>
-          <article class="feature">
-            <div class="icon">🤝</div>
-            <h3>Community powered</h3>
-            <p>Add missing spots and helpful photos so the next traveler finds them too.</p>
-          </article>
-          <article class="feature">
-            <div class="icon">⚡</div>
-            <h3>Fast &amp; lightweight</h3>
-            <p>Smooth panning and quick search, even with thousands of points on screen.</p>
-          </article>
-          <article class="feature">
-            <div class="icon">🆓</div>
-            <h3>Free to use</h3>
-            <p>No subscription, no clutter. Download and start finding restrooms right away.</p>
+          <article class="card" data-reveal>
+            <div class="icon">💬</div>
+            <h3>문의하면 답이 옵니다</h3>
+            <p>앱에서 보낸 문의에 운영자가 직접 답장하고, 리포트 탭에서 확인할 수 있습니다.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ===================== How it works ===================== -->
-    <section id="how">
+    <!-- ===================== Games ===================== -->
+    <section class="section bg-soft" id="games">
       <div class="container">
-        <div class="section-head">
-          <h2>Find a restroom in three taps</h2>
-          <p>From "I need to go" to "found it" in seconds.</p>
+        <div class="section-head center" data-reveal>
+          <span class="kicker">게임</span>
+          <h2>줄 서서 기다리는 시간에</h2>
+          <p>설명서를 읽지 않아도 되는 게임 네 종. 매주 월요일에 갱신되는 주간 랭킹과 올타임 랭킹이 있습니다.</p>
         </div>
-        <div class="steps">
-          <div class="step">
-            <div class="num"></div>
-            <h3>Open the map</h3>
-            <p>KORE centers on your location and loads nearby restrooms automatically.</p>
-          </div>
-          <div class="step">
-            <div class="num"></div>
-            <h3>Pick a pin</h3>
-            <p>Tap any marker to see distance, details, and traveler photos.</p>
-          </div>
-          <div class="step">
-            <div class="num"></div>
-            <h3>Go</h3>
-            <p>Head straight there — no signup, no language barrier, no stress.</p>
-          </div>
+
+        <div class="games">
+          <article class="game" data-reveal>
+            <div class="game-art" style="background:#12131a">
+              <div class="mini">
+                <div class="row-tiles"><span class="tile" style="background:#4cc9f0"></span><span class="tile" style="background:#4cc9f0"></span><span class="tile" style="background:#4cc9f0"></span><span class="tile" style="background:#4cc9f0"></span></div>
+                <div class="row-tiles"><span class="tile" style="background:transparent"></span><span class="tile" style="background:#f72585"></span><span class="tile" style="background:#f72585"></span><span class="tile" style="background:#ffd400"></span></div>
+                <div class="row-tiles"><span class="tile" style="background:#7209b7"></span><span class="tile" style="background:#f72585"></span><span class="tile" style="background:#4361ee"></span><span class="tile" style="background:#ffd400"></span></div>
+              </div>
+            </div>
+            <div class="game-body">
+              <h3>테트리스</h3>
+              <p>블록을 쌓아 줄을 지우세요</p>
+            </div>
+          </article>
+
+          <article class="game" data-reveal>
+            <div class="game-art" style="background:#faf8ef">
+              <div class="mini">
+                <div class="row-tiles"><span class="tile" style="background:#eee4da"></span><span class="tile" style="background:#ede0c8"></span></div>
+                <div class="row-tiles"><span class="tile" style="background:#f2b179"></span><span class="tile" style="background:#f67c5f"></span></div>
+              </div>
+            </div>
+            <div class="game-body">
+              <h3>2048</h3>
+              <p>같은 숫자를 밀어서 합치세요</p>
+            </div>
+          </article>
+
+          <article class="game" data-reveal>
+            <div class="game-art" style="background:#0f2417">
+              <div class="mini">
+                <div class="row-tiles"><span class="tile" style="background:#3ddc84"></span><span class="tile" style="background:#3ddc84"></span><span class="tile" style="background:#3ddc84"></span><span class="tile" style="background:transparent"></span></div>
+                <div class="row-tiles"><span class="tile" style="background:transparent"></span><span class="tile" style="background:transparent"></span><span class="tile" style="background:#3ddc84"></span><span class="tile" style="background:#ff385c;border-radius:999px"></span></div>
+              </div>
+            </div>
+            <div class="game-body">
+              <h3>스네이크</h3>
+              <p>쓸어서 방향을 바꾸세요</p>
+            </div>
+          </article>
+
+          <article class="game" data-reveal>
+            <div class="game-art" style="background:#101828">
+              <div class="mini">
+                <div class="row-tiles"><span class="tile" style="background:#ff8fa3;height:9px"></span><span class="tile" style="background:#ffd400;height:9px"></span><span class="tile" style="background:#5cb0ff;height:9px"></span><span class="tile" style="background:#3ddc84;height:9px"></span></div>
+                <div class="row-tiles" style="justify-content:center"><span class="tile" style="background:#fff;width:7px;height:7px;border-radius:999px"></span></div>
+                <div class="row-tiles" style="justify-content:center"><span class="tile" style="background:#fff;width:34px;height:6px"></span></div>
+              </div>
+            </div>
+            <div class="game-body">
+              <h3>벽돌깨기</h3>
+              <p>공을 튕겨 벽돌을 깨세요</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- ===================== Languages ===================== -->
-    <section class="bg-soft">
+    <section class="section">
       <div class="container">
-        <div class="section-head">
-          <h2>Made for travelers from everywhere</h2>
-          <p>KORE speaks your language the moment you open it.</p>
+        <div class="section-head center" data-reveal>
+          <span class="kicker">9개 언어</span>
+          <h2>한국에 온 친구에게도<br />그대로 추천하세요</h2>
+          <p>이름과 주소, 시설 정보, 후기까지 전부 번역해 담았습니다. 앱을 켜는 순간 각자의 언어로 보입니다.</p>
         </div>
-        <div class="lang-wrap">
+        <div class="lang-wrap" data-reveal>
+          <span class="lang-chip">한국어</span>
           <span class="lang-chip">English</span>
           <span class="lang-chip">日本語</span>
           <span class="lang-chip">简体中文</span>
@@ -175,25 +593,72 @@
           <span class="lang-chip">ไทย</span>
           <span class="lang-chip">Bahasa Melayu</span>
           <span class="lang-chip">Filipino</span>
-          <span class="lang-chip">한국어</span>
         </div>
       </div>
     </section>
 
+    <!-- ===================== FAQ ===================== -->
+    <section class="section bg-soft">
+      <div class="container" style="max-width:820px">
+        <div class="section-head center" data-reveal>
+          <span class="kicker">자주 묻는 질문</span>
+          <h2>궁금한 것들</h2>
+        </div>
+
+        <div class="faq" data-reveal>
+          <details class="faq-item">
+            <summary>정말 무료인가요?</summary>
+            <div class="faq-body"><p>네. 구독도, 앱 내 결제도 없습니다.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>회원가입을 해야 하나요?</summary>
+            <div class="faq-body">
+              <p>
+                지도를 보고 화장실을 찾는 데는 물론이고, 화장실 제보·후기 작성·게임 랭킹까지
+                로그인 없이 할 수 있습니다. 계정이 필요한 기능은 "나만 보기" 마커 하나뿐입니다.
+              </p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>위치 권한을 꼭 허용해야 하나요?</summary>
+            <div class="faq-body">
+              <p>
+                필수는 아닙니다. 다만 허용하면 지도가 지금 계신 곳에서 열리고 거리도 함께 표시됩니다.
+                위치는 앱이 켜져 있는 동안에만 사용하고, 백그라운드에서는 수집하지 않습니다.
+              </p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>화장실 정보가 실제와 달라요.</summary>
+            <div class="faq-body">
+              <p>
+                앱에서 해당 핀을 누르고 "수정 제안"을 보내주세요. 검토 후 반영되고, 결과는
+                리포트 탭에서 확인하실 수 있습니다.
+              </p>
+            </div>
+          </details>
+        </div>
+
+        <p style="text-align:center;margin-top:28px">
+          <a class="btn-pill btn-ghost" href="support/">고객지원에서 더 보기</a>
+        </p>
+      </div>
+    </section>
+
     <!-- ===================== CTA ===================== -->
-    <section>
+    <section class="section-tight">
       <div class="container">
-        <div class="cta">
-          <h2>Never get caught out in Korea again</h2>
-          <p>Download KORE and travel with one less thing to worry about.</p>
+        <div class="cta" data-reveal>
+          <h2>이제 급해도 당황하지 마세요</h2>
+          <p>받아두면 언젠가 반드시 씁니다. 설치하고 위치 권한만 허용하면 준비 끝입니다.</p>
           <div class="store-buttons">
-            <a class="store-btn" href="https://apps.apple.com/kr/app/kore-korearestroom/id6774883751" aria-label="Download on the App Store">
+            <a class="store-btn" href="https://apps.apple.com/kr/app/kore-korearestroom/id6774883751" aria-label="App Store에서 다운로드">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.36 1c.09 1.06-.34 2.1-1 2.86-.69.78-1.81 1.38-2.9 1.3-.11-1.02.39-2.08 1.02-2.78C14.21 1.57 15.39.99 16.36 1zM20.5 17.2c-.55 1.27-.82 1.83-1.53 2.95-.99 1.56-2.39 3.5-4.12 3.51-1.54.02-1.93-1-4.02-.99-2.09.01-2.52 1.01-4.06.99-1.73-.01-3.05-1.76-4.04-3.32C-.07 16.6-.36 11.5 1.34 8.8c1.2-1.93 3.1-3.06 4.88-3.06 1.82 0 2.96 1 4.46 1 1.46 0 2.35-1 4.45-1 1.59 0 3.27.86 4.47 2.35-3.93 2.16-3.29 7.77.9 9.11z"/></svg>
-              <span class="store-text"><small>Download on the</small><strong>App Store</strong></span>
+              <span class="store-text"><small>다운로드</small><strong>App Store</strong></span>
             </a>
-            <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.touristtoiletmap.app" aria-label="Get it on Google Play">
+            <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.touristtoiletmap.app" aria-label="Google Play에서 받기">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 1.8c-.3.3-.5.8-.5 1.4v17.6c0 .6.2 1.1.5 1.4l.1.1L13.4 12v-.2L3.7 1.7l-.1.1zM17 15.3l-3.3-3.3v-.2L17 8.5l.1.1 3.9 2.2c1.1.6 1.1 1.7 0 2.3L17 15.3zM16.4 16 13 12.6 3.6 22c.4.4 1 .4 1.7.1L16.4 16zM5.3 1.9 16.4 8 13 11.4 3.6 2c.5-.4 1.2-.5 1.7-.1z"/></svg>
-              <span class="store-text"><small>Get it on</small><strong>Google Play</strong></span>
+              <span class="store-text"><small>지금 받기</small><strong>Google Play</strong></span>
             </a>
           </div>
         </div>
@@ -206,29 +671,30 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a class="brand" href="./" aria-label="KORE home">
+          <a class="brand" href="./" aria-label="KORE 홈">
             <img src="assets/favicon.png" alt="" />
             <span>KORE</span>
           </a>
-          <p>Find public restrooms anywhere in Korea — in your language.</p>
+          <p>전국 화장실을 지도 한 장에. 급할 때, 가장 가까운 곳으로.</p>
         </div>
         <div class="footer-cols">
           <div class="footer-col">
-            <h4>Product</h4>
-            <a href="#features">Features</a>
-            <a href="#how">How it works</a>
-            <a href="#top">Download</a>
+            <h4>제품</h4>
+            <a href="#map">지도</a>
+            <a href="#tabs">기능</a>
+            <a href="#community">함께 만들기</a>
+            <a href="#download">다운로드</a>
           </div>
           <div class="footer-col">
-            <h4>Company</h4>
-            <a href="support/">Support</a>
-            <a href="privacy/">Privacy Policy</a>
-            <a href="contact/">Contact</a>
+            <h4>지원</h4>
+            <a href="support/">고객지원</a>
+            <a href="privacy/">개인정보처리방침</a>
+            <a href="contact/">문의하기</a>
           </div>
           <div class="footer-col">
-            <h4>Language</h4>
-            <a href="./">English</a>
-            <a href="ko/" lang="ko" hreflang="ko">한국어</a>
+            <h4>언어</h4>
+            <a href="./">한국어</a>
+            <a href="en/" lang="en" hreflang="en">English</a>
           </div>
         </div>
       </div>

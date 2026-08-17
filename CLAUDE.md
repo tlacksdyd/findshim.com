@@ -13,8 +13,8 @@ needs to stay in sync with the app.
 
 ## No build step
 
-Plain HTML + a single shared stylesheet. There is no bundler, framework, or
-package manager — open the files directly. Preview locally with:
+Plain HTML + a single shared stylesheet + one small script. There is no bundler,
+framework, or package manager — open the files directly. Preview locally with:
 
 ```bash
 python -m http.server 8000   # http://localhost:8000
@@ -44,27 +44,43 @@ python -m http.server 8000   # http://localhost:8000
   `assets/styles.css`, driven by CSS custom properties under `:root` (palette,
   type, layout tokens). The header/footer markup is duplicated across pages by
   hand (no includes) — change all pages together when editing shared chrome.
-- **Toss-inspired** visual language: bold type, heavy whitespace, the
-  `--brand` blue. The hero phone mockup is pure CSS (`.phone`), not an image.
-- **Two locales, mirrored trees.** English lives at the root (`/`, `/privacy/`,
-  `/support/`, `/contact/`); Korean mirrors it under `/ko/` with the same
-  design and file layout. The Korean copy is written for Korean readers, not
-  translated line-for-line — keep it that way when editing. Korean pages are
-  one level deeper, so their asset/stylesheet paths use `../../assets/…`.
-- **Language switch.** Every page's header carries a `.lang-switch` pill (EN /
-  한국어) — two plain links, no JS. Each link must point at *that page's* own
-  counterpart (e.g. `/support/` ↔ `/ko/support/`), and the current locale gets
-  `class="ls-opt is-active"` plus `aria-current`. Pages also declare
-  `<link rel="alternate" hreflang>` for both locales. When adding a page, add
-  it in both trees, wire the switch both ways, and list it in `sitemap.xml`.
+- **Design language:** bold type, heavy whitespace, and the app's coral
+  `--brand: #ff385c` (the `:root` block also mirrors the app's map-pin palette
+  from `mapHtml.ts` as `--pin-*`). The hero device mockup is pure CSS
+  (`.device` / `.screen` / the `.m-*` classes), not a screenshot — the app
+  ships most changes over OTA, so a captured PNG goes stale silently while
+  this does not.
+- **One optional script.** `assets/site.js` is the only JS: a header hairline
+  on scroll and an `IntersectionObserver` reveal for `[data-reveal]` elements.
+  It is pure progressive enhancement — the `js` class that arms the reveal is
+  set by a one-liner in each page's `<head>`, so a page whose script fails to
+  load shows all its content instead of none. Keep that property.
+- **Korean is the default locale and lives at the root** (`/`, `/privacy/`,
+  `/support/`, `/contact/`); English mirrors it under `/en/` with the same
+  design and file layout. The two copies are written for their own readers, not
+  translated line-for-line — keep it that way when editing. English pages are
+  one level deeper, so their asset/stylesheet paths use `../assets/…` (and
+  `../../assets/…` for `/en/<page>/`).
+- **`/ko/` is a legacy forwarder tree.** The old Korean URLs still exist as
+  tiny `noindex, follow` pages that `location.replace()` to their new root
+  counterpart. Don't delete them (old links and store listings point there) and
+  don't add new pages under `/ko/`.
+- **Language switch.** Every real page's header carries a `.lang-switch` pill
+  (한국어 / EN) — two plain links, no JS. Each link must point at *that page's*
+  own counterpart (e.g. `/support/` ↔ `/en/support/`), and the current locale
+  gets `class="ls-opt is-active"` plus `aria-current`. Pages also declare
+  `<link rel="alternate" hreflang>` for `ko`, `en`, and `x-default` (Korean).
+  When adding a page, add it in both trees, wire the switch both ways, and list
+  it in `sitemap.xml`.
+- **Social cards** are per-locale: `assets/og-image.png` for Korean pages,
+  `assets/og-image-en.png` for `/en/`.
 
-## Editable placeholders (intentional, leave discoverable)
+## Copy that must stay in sync
 
-Copy the owner fills in later is marked, not hard-coded:
-
-- **Support copy** — `support/index.html` uses `<div class="placeholder">`
-  blocks (FAQ answers, troubleshooting) for the owner to paste real text.
-- **Privacy** — `privacy/index.html` is pre-filled from the app's
-  `PRIVACY_POLICY.md`; if the app's policy changes, update this page to match.
+- **Store links** live in `index.html` and `en/index.html` only, as two pairs
+  of `.store-btn` anchors (hero + CTA). Keep all four in sync per page if a
+  store URL changes.
+- **Privacy** — `privacy/index.html` (and its `/en/` twin) is derived from the
+  app's `PRIVACY_POLICY.md`; if the app's policy changes, update both pages.
 
 Contact email used across the site: `cyshim0715@gmail.com`.

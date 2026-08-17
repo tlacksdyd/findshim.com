@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KORE — Find a restroom anywhere in Korea</title>
+  <meta name="description" content="60,000+ public restrooms, libraries and cafés across Korea on one map — in 9 languages. Cleanliness ratings, walking routes and reviews. Free on iOS and Android." />
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="KORE" />
+  <meta property="og:title" content="KORE — Find a restroom anywhere in Korea" />
+  <meta property="og:description" content="60,000+ restrooms across Korea on one map, in your language. Free on iOS and Android." />
+  <meta property="og:url" content="https://findshim.com/en/" />
+  <meta property="og:image" content="https://findshim.com/assets/og-image-en.png" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="ko_KR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#FF385C" />
+
+  <link rel="canonical" href="https://findshim.com/en/" />
+  <link rel="alternate" hreflang="ko" href="https://findshim.com/" />
+  <link rel="alternate" hreflang="en" href="https://findshim.com/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://findshim.com/" />
+  <link rel="icon" type="image/png" href="../assets/favicon.png" />
+  <link rel="apple-touch-icon" href="../assets/app-icon.png" />
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="../assets/site.js" defer></script>
+</head>
+<body>
+  <!-- ===================== Header ===================== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="./" aria-label="KORE home">
+        <img src="../assets/favicon.png" alt="" />
+        <span>KORE</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a class="nav-link" href="#map">The map</a>
+        <a class="nav-link" href="#tabs">Features</a>
+        <a class="nav-link" href="#community">Community</a>
+        <a class="nav-link" href="support/">Support</a>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <a class="ls-opt" href="../" lang="ko" hreflang="ko">한국어</a>
+          <a class="ls-opt is-active" href="./" aria-current="true">EN</a>
+        </div>
+        <a class="btn-pill" href="#download">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== Hero ===================== -->
+    <section class="hero" id="top">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow">🚻 60,000+ places · 9 languages · Free</span>
+          <h1>Find a restroom,<br /><span class="accent">anywhere in Korea.</span></h1>
+          <p class="lead">
+            Public restrooms, libraries and cafés — all on one map, in your own
+            language. Open the app and the three nearest ones are already there.
+          </p>
+
+          <!-- Store buttons: live App Store / Google Play links. Keep these in
+               sync with the pair in the CTA section further down the page. -->
+          <div class="store-buttons" id="download">
+            <a class="store-btn" href="https://apps.apple.com/kr/app/kore-korearestroom/id6774883751" aria-label="Download on the App Store">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.36 1c.09 1.06-.34 2.1-1 2.86-.69.78-1.81 1.38-2.9 1.3-.11-1.02.39-2.08 1.02-2.78C14.21 1.57 15.39.99 16.36 1zM20.5 17.2c-.55 1.27-.82 1.83-1.53 2.95-.99 1.56-2.39 3.5-4.12 3.51-1.54.02-1.93-1-4.02-.99-2.09.01-2.52 1.01-4.06.99-1.73-.01-3.05-1.76-4.04-3.32C-.07 16.6-.36 11.5 1.34 8.8c1.2-1.93 3.1-3.06 4.88-3.06 1.82 0 2.96 1 4.46 1 1.46 0 2.35-1 4.45-1 1.59 0 3.27.86 4.47 2.35-3.93 2.16-3.29 7.77.9 9.11z"/></svg>
+              <span class="store-text"><small>Download on the</small><strong>App Store</strong></span>
+            </a>
+            <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.touristtoiletmap.app" aria-label="Get it on Google Play">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 1.8c-.3.3-.5.8-.5 1.4v17.6c0 .6.2 1.1.5 1.4l.1.1L13.4 12v-.2L3.7 1.7l-.1.1zM17 15.3l-3.3-3.3v-.2L17 8.5l.1.1 3.9 2.2c1.1.6 1.1 1.7 0 2.3L17 15.3zM16.4 16 13 12.6 3.6 22c.4.4 1 .4 1.7.1L16.4 16zM5.3 1.9 16.4 8 13 11.4 3.6 2c.5-.4 1.2-.5 1.7-.1z"/></svg>
+              <span class="store-text"><small>Get it on</small><strong>Google Play</strong></span>
+            </a>
+          </div>
+          <p class="store-note">Free · iOS &amp; Android · No sign-up needed</p>
+        </div>
+
+        <!-- The app's Home tab, drawn in CSS rather than captured: the app ships
+             most of its work as OTA updates, and a screenshot goes stale
+             silently while this does not. -->
+        <div class="hero-visual">
+          <div class="device" role="img" aria-label="KORE app home screen — my contributions, three nearest restrooms, three nearest clean restrooms">
+            <div class="screen fade-bottom">
+              <div class="screen-scroll">
+                <div class="m-masthead">
+                  <img src="../assets/favicon.png" alt="" />
+                  <div>
+                    <div class="m-word">KORE</div>
+                    <div class="m-tagline">Korea's restroom map, built together</div>
+                  </div>
+                </div>
+
+                <div class="m-card">
+                  <div class="m-card-head">
+                    <span class="m-dot coral">＋</span>
+                    <div><div class="m-title">My contributions</div></div>
+                  </div>
+                  <div class="m-tallies">
+                    <div class="m-tally"><b>12</b><span>Added</span></div>
+                    <div class="m-tally"><b>9</b><span>Approved</span></div>
+                    <div class="m-tally"><b>3</b><span>In review</span></div>
+                  </div>
+                  <span class="m-btn">Add a restroom</span>
+                </div>
+
+                <div class="m-card">
+                  <div class="m-card-head">
+                    <span class="m-dot coral">📍</span>
+                    <div>
+                      <div class="m-title">Nearest restrooms · Top 3</div>
+                      <div class="m-sub">Straight-line distance from you</div>
+                    </div>
+                  </div>
+                  <div class="m-row">
+                    <span class="m-rank">1</span>
+                    <div class="m-row-main">
+                      <div class="m-row-name">Yuseong-gu Office</div>
+                      <div class="m-row-addr">33 Daehak-ro, Yuseong-gu</div>
+                    </div>
+                    <span class="m-pill">80m</span>
+                  </div>
+                  <div class="m-row">
+                    <span class="m-rank">2</span>
+                    <div class="m-row-main">
+                      <div class="m-row-name">Gapcheon Park</div>
+                      <div class="m-row-addr">Oncheonbuk-ro, Yuseong-gu</div>
+                    </div>
+                    <span class="m-pill">210m</span>
+                  </div>
+                  <div class="m-row">
+                    <span class="m-rank">3</span>
+                    <div class="m-row-main">
+                      <div class="m-row-name">Yuseong Spa Stn. Exit 2</div>
+                      <div class="m-row-addr">Gyeryong-ro, Yuseong-gu</div>
+                    </div>
+                    <span class="m-pill">340m</span>
+                  </div>
+                </div>
+
+                <div class="m-card">
+                  <div class="m-card-head">
+                    <span class="m-dot blue">✦</span>
+                    <div>
+                      <div class="m-title">Clean restrooms nearby · Top 3</div>
+                      <div class="m-sub">Rated 2★ and up · nearest first</div>
+                    </div>
+                  </div>
+                  <div class="m-row">
+                    <span class="m-rank blue">1</span>
+                    <div class="m-row-main">
+                      <div class="m-row-name">Starbucks Yuseong<span class="m-stars"><i></i><i></i><i></i></span></div>
+                      <div class="m-row-addr">106 Gyeryong-ro, Yuseong-gu</div>
+                    </div>
+                    <span class="m-pill blue">120m</span>
+                  </div>
+                  <div class="m-row">
+                    <span class="m-rank blue">2</span>
+                    <div class="m-row-main">
+                      <div class="m-row-name">Yuseong Library<span class="m-stars"><i></i><i></i><i class="off"></i></span></div>
+                      <div class="m-row-addr">Munhwawon-ro, Yuseong-gu</div>
+                    </div>
+                    <span class="m-pill blue">450m</span>
+                  </div>
+                  <div class="m-row">
+                    <span class="m-rank blue">3</span>
+                    <div class="m-row-main">
+                      <div class="m-row-name">Hanbat Arboretum<span class="m-stars"><i></i><i></i><i></i></span></div>
+                      <div class="m-row-addr">Dunsan-daero, Seo-gu</div>
+                    </div>
+                    <span class="m-pill blue">1.1km</span>
+                  </div>
+                  <div style="margin-top:9px"><span class="m-btn soft">Show all three on the map</span></div>
+                </div>
+              </div>
+
+              <div class="m-tabbar">
+                <div class="m-tab on"><b>🏠</b>Home</div>
+                <div class="m-tab"><b>🗺️</b>Map</div>
+                <div class="m-tab"><b>🎮</b>Games</div>
+                <div class="m-tab"><b>📋</b>Report</div>
+                <div class="m-tab"><b>⚙️</b>Settings</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="float-card one">
+            <span class="fc-icon">📍</span>
+            <div>80m<small>to the nearest restroom</small></div>
+          </div>
+          <div class="float-card two">
+            <span class="fc-icon">🌏</span>
+            <div>9 languages<small>from the moment you open it</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Stats ===================== -->
+    <section class="section-tight bg-soft">
+      <div class="container">
+        <div class="stats">
+          <div class="stat" data-reveal><b>61,000+</b><span>restrooms on the map</span></div>
+          <div class="stat" data-reveal><b>9</b><span>languages</span></div>
+          <div class="stat" data-reveal><b>4</b><span>data sources</span></div>
+          <div class="stat" data-reveal><b>₩0</b><span>no subscription, no IAP</span></div>
+        </div>
+        <p class="stat-note">
+          52,182 public restrooms · 3,479 libraries · 4,382 cafés · 1,200 individually verified
+          restrooms — plus everything travellers keep adding.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== Where the data comes from ===================== -->
+    <section class="section" id="data">
+      <div class="container">
+        <div class="section-head center" data-reveal>
+          <span class="kicker">The data</span>
+          <h2>Finding one restroom<br />shouldn't take four apps</h2>
+          <p>
+            Korea's official open data, plus libraries, cafés and restrooms we verified one by
+            one. It all ships inside the app, so the map is full the moment it opens.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card" data-reveal>
+            <div class="icon">🚻</div>
+            <h3>52,182 public restrooms</h3>
+            <p>The government's entire national public-restroom dataset — opening hours, emergency bells, baby changing tables and all.</p>
+            <span class="tagline">Korean open data</span>
+          </article>
+          <article class="card" data-reveal>
+            <div class="icon">📚</div>
+            <h3>3,479 libraries</h3>
+            <p>Every public library in Korea. Staffed public buildings anyone may walk into — the safest bet when you're in a hurry.</p>
+            <span class="tagline">Korean open data</span>
+          </article>
+          <article class="card" data-reveal>
+            <div class="icon">☕</div>
+            <h3>4,382 cafés</h3>
+            <p>Starbucks, A Twosome Place and Hollys stores, with opening hours, store photos and parking notes.</p>
+            <span class="tagline">Published store data</span>
+          </article>
+          <article class="card" data-reveal>
+            <div class="icon">🔎</div>
+            <h3>1,200 verified finds</h3>
+            <p>Restrooms found in public posts and checked one at a time — floor, soap and paper, the things official data never records.</p>
+            <span class="tagline">Collected · verified</span>
+          </article>
+        </div>
+
+        <div class="note-card" data-reveal style="margin-top:28px">
+          <strong>We fixed the coordinates too</strong>
+          Official latitude/longitude pairs are often more than 100m from the address they
+          belong to. KORE audits every row against its own address and has corrected 1,628
+          locations — 508 of which had no coordinate at all and never appeared on a map before.
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== The map ===================== -->
+    <section class="section bg-soft" id="map">
+      <div class="container split">
+        <div data-reveal>
+          <span class="kicker">The map</span>
+          <h2>The colour of a pin<br />tells you what it is</h2>
+          <p class="lead">
+            A map is for scanning, not for reading. In KORE one colour carries both the kind of
+            restroom and how clean it is.
+          </p>
+          <ul class="bullets">
+            <li><b>Clean only</b> — one tap and nothing but the blue pins is left.</li>
+            <li><b>Search by region, address or name</b> — type "Yuseong-gu" or "Jeju" and the whole district is framed, typos included.</li>
+            <li><b>Distance first</b> — every result leads with how far it is, because that is the decision you're making.</li>
+          </ul>
+        </div>
+
+        <div class="split-visual" data-reveal>
+          <div class="device" role="img" aria-label="KORE app map screen — restroom pins colour-coded by kind">
+            <div class="screen">
+              <div class="m-map"></div>
+              <div class="m-search">🔍 Search region, address or name</div>
+              <div class="m-guide">ⓘ Marker guide</div>
+
+              <span class="pin" style="top:31%;left:16%"></span>
+              <span class="pin near big" style="top:26%;left:44%"></span>
+              <span class="pin clean" style="top:34%;left:70%"></span>
+              <span class="pin" style="top:42%;left:28%"></span>
+              <span class="pin clean-deep" style="top:46%;left:58%"></span>
+              <span class="pin near big" style="top:52%;left:38%"></span>
+              <span class="pin clean-light" style="top:56%;left:78%"></span>
+              <span class="pin private" style="top:60%;left:20%"></span>
+              <span class="pin" style="top:63%;left:62%"></span>
+              <span class="m-me" style="top:47%;left:45%"></span>
+
+              <span class="m-fab add">＋</span>
+              <span class="m-fab locate">◎</span>
+
+              <div class="m-sheet">
+                <div class="m-grab"></div>
+                <div class="m-title">Yuseong-gu Office restroom</div>
+                <div class="m-sub">Open 24h · Separate men's/women's · Changing table</div>
+                <div class="m-chiprow">
+                  <span class="m-chip on">Walk</span>
+                  <span class="m-chip">TMAP</span>
+                  <span class="m-chip">KakaoMap</span>
+                  <span class="m-chip">Naver</span>
+                </div>
+              </div>
+
+              <div class="m-tabbar">
+                <div class="m-tab"><b>🏠</b>Home</div>
+                <div class="m-tab on"><b>🗺️</b>Map</div>
+                <div class="m-tab"><b>🎮</b>Games</div>
+                <div class="m-tab"><b>📋</b>Report</div>
+                <div class="m-tab"><b>⚙️</b>Settings</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" style="margin-top:clamp(36px,5vw,60px)">
+        <div class="legend" data-reveal>
+          <div class="legend-item">
+            <span class="legend-pin" style="background:var(--pin-public)"></span>
+            <div class="legend-text"><b>Red pin</b><span>Ordinary restroom</span></div>
+          </div>
+          <div class="legend-item">
+            <span class="legend-pin" style="background:var(--pin-clean-2)"></span>
+            <div class="legend-text"><b>Blue pin</b><span>Clean restroom · deeper = cleaner</span></div>
+          </div>
+          <div class="legend-item">
+            <span class="legend-pin" style="background:var(--pin-near)"></span>
+            <div class="legend-text"><b>Yellow pin</b><span>Nearest to you</span></div>
+          </div>
+          <div class="legend-item">
+            <span class="legend-pin" style="background:var(--pin-search)"></span>
+            <div class="legend-text"><b>Green pin</b><span>Search result</span></div>
+          </div>
+          <div class="legend-item">
+            <span class="legend-pin" style="background:var(--pin-private)"></span>
+            <div class="legend-text"><b>Teal pin</b><span>Your "only me" marker</span></div>
+          </div>
+          <div class="legend-item">
+            <span class="legend-pin" style="background:var(--pin-address)"></span>
+            <div class="legend-text"><b>Violet pin</b><span>Searched address</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Detail sheet & routing ===================== -->
+    <section class="section">
+      <div class="container split reverse">
+        <div data-reveal>
+          <span class="kicker">Details</span>
+          <h2>What you need before you go,<br />at the top of the sheet</h2>
+          <p class="lead">
+            Tap a pin and the photos and the way there come first. Below them, every layer reads
+            in the same order: can I get in → what is it like.
+          </p>
+          <ul class="bullets">
+            <li>A <b>walking route</b> drawn inside the app.</li>
+            <li>Driving instead? Hand it to <b>TMAP, KakaoMap or Naver Map</b> in one tap.</li>
+            <li><b>Hours, door code, emergency bell, entrance CCTV, changing table, bidet, floor</b> — only what is actually on record; blanks are left out rather than shown empty.</li>
+            <li>A <b>reviews tab</b> with what other visitors found, and room to add yours.</li>
+          </ul>
+        </div>
+
+        <div class="split-visual" data-reveal>
+          <div class="device" role="img" aria-label="KORE app restroom detail screen">
+            <div class="screen fade-bottom">
+              <div class="screen-scroll" style="padding-top:40px">
+                <div class="m-card">
+                  <div class="m-title" style="font-size:13px">Yuseong-gu Office restroom</div>
+                  <div class="m-chiprow" style="margin-top:9px">
+                    <span class="m-chip on">Info</span>
+                    <span class="m-chip">Reviews 12</span>
+                  </div>
+                  <div style="height:62px;margin-top:10px;border-radius:11px;background:linear-gradient(120deg,#e6eaef,#f3f5f7);display:grid;place-items:center;font-size:20px">🖼️</div>
+                  <div style="margin-top:9px"><span class="m-btn">Walking route</span></div>
+                  <div class="m-chiprow">
+                    <span class="m-chip">TMAP</span>
+                    <span class="m-chip">KakaoMap</span>
+                    <span class="m-chip">Naver Map</span>
+                  </div>
+                </div>
+
+                <div class="m-card">
+                  <div class="m-sub" style="margin-bottom:6px">Details</div>
+                  <div class="m-row" style="border-top:0"><div class="m-row-main"><div class="m-row-addr">Hours</div><div class="m-row-name">Open 24 hours</div></div></div>
+                  <div class="m-row"><div class="m-row-main"><div class="m-row-addr">Cleanliness</div><div class="m-row-name">Clean<span class="m-stars"><i></i><i></i><i class="off"></i></span></div></div></div>
+                  <div class="m-row"><div class="m-row-main"><div class="m-row-addr">Safety</div><div class="m-row-name">Emergency bell · CCTV</div></div></div>
+                  <div class="m-row"><div class="m-row-main"><div class="m-row-addr">Changing table</div><div class="m-row-name">Both restrooms</div></div></div>
+                  <div class="m-row"><div class="m-row-main"><div class="m-row-addr">Address</div><div class="m-row-name">33 Daehak-ro, Yuseong-gu</div></div></div>
+                </div>
+              </div>
+
+              <div class="m-tabbar">
+                <div class="m-tab"><b>🏠</b>Home</div>
+                <div class="m-tab on"><b>🗺️</b>Map</div>
+                <div class="m-tab"><b>🎮</b>Games</div>
+                <div class="m-tab"><b>📋</b>Report</div>
+                <div class="m-tab"><b>⚙️</b>Settings</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Five tabs ===================== -->
+    <section class="section bg-soft" id="tabs">
+      <div class="container">
+        <div class="section-head center" data-reveal>
+          <span class="kicker">Inside the app</span>
+          <h2>Five tabs, and that's the whole app</h2>
+          <p>One tap to anywhere. The buttons that used to float over the map all found a home.</p>
+        </div>
+
+        <div class="tabs">
+          <div class="tab-card" data-reveal>
+            <div class="tab-glyph">🏠</div>
+            <h3>Home</h3>
+            <p>The three nearest restrooms, the three nearest clean ones, and everything you've added.</p>
+          </div>
+          <div class="tab-card" data-reveal>
+            <div class="tab-glyph">🗺️</div>
+            <h3>Map</h3>
+            <p>Search, pins, details, adding and editing. Tap the tab again and it always comes back to you.</p>
+          </div>
+          <div class="tab-card" data-reveal>
+            <div class="tab-glyph">🎮</div>
+            <h3>Games</h3>
+            <p>Four minigames for the time you spend waiting, with weekly and all-time boards.</p>
+          </div>
+          <div class="tab-card" data-reveal>
+            <div class="tab-glyph">📋</div>
+            <h3>Report</h3>
+            <p>The status of everything you proposed, plus the messages you sent and the replies.</p>
+          </div>
+          <div class="tab-card" data-reveal>
+            <div class="tab-glyph">⚙️</div>
+            <h3>Settings</h3>
+            <p>Language, nickname, sign-in and password, account deletion — one screen.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Community ===================== -->
+    <section class="section" id="community">
+      <div class="container">
+        <div class="section-head center" data-reveal>
+          <span class="kicker">Built together</span>
+          <h2>A missing restroom is<br />something anyone can fix</h2>
+          <p>You can contribute without an account. Submissions are reviewed, published, and counted on the contributor board.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step" data-reveal>
+            <div class="num"></div>
+            <h3>Tap the map to add</h3>
+            <p>Drop a point, add a name and a photo. Write it in any language — it is translated into the other eight.</p>
+          </div>
+          <div class="step" data-reveal>
+            <div class="num"></div>
+            <h3>It gets reviewed</h3>
+            <p>A human checks each one. The decision comes back to you in the Report tab.</p>
+          </div>
+          <div class="step" data-reveal>
+            <div class="num"></div>
+            <h3>Everyone gets it</h3>
+            <p>Once approved, it is on every user's map from that moment.</p>
+          </div>
+        </div>
+
+        <div class="grid grid-2" style="margin-top:clamp(28px,4vw,48px)">
+          <article class="card" data-reveal>
+            <div class="icon">🏆</div>
+            <h3>Contributor board</h3>
+            <p>A public ranking by approved submissions. Pick a nickname, or be listed anonymously.</p>
+          </article>
+          <article class="card" data-reveal>
+            <div class="icon">🔒</div>
+            <h3>"Only me" markers</h3>
+            <p>The restroom in your regular building, saved as a teal pin on your map alone. The one feature that needs an account.</p>
+          </article>
+          <article class="card" data-reveal>
+            <div class="icon">✍️</div>
+            <h3>Reviews</h3>
+            <p>Rate a place and say a word about it in your own language — the next traveller reads it in theirs.</p>
+          </article>
+          <article class="card" data-reveal>
+            <div class="icon">💬</div>
+            <h3>Messages get answered</h3>
+            <p>Write from inside the app and the reply lands in your Report tab. No account required.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Games ===================== -->
+    <section class="section bg-soft" id="games">
+      <div class="container">
+        <div class="section-head center" data-reveal>
+          <span class="kicker">Games</span>
+          <h2>For the time you spend in the queue</h2>
+          <p>Four games nobody needs to read instructions for, with a weekly board that turns over every Monday and an all-time one.</p>
+        </div>
+
+        <div class="games">
+          <article class="game" data-reveal>
+            <div class="game-art" style="background:#12131a">
+              <div class="mini">
+                <div class="row-tiles"><span class="tile" style="background:#4cc9f0"></span><span class="tile" style="background:#4cc9f0"></span><span class="tile" style="background:#4cc9f0"></span><span class="tile" style="background:#4cc9f0"></span></div>
+                <div class="row-tiles"><span class="tile" style="background:transparent"></span><span class="tile" style="background:#f72585"></span><span class="tile" style="background:#f72585"></span><span class="tile" style="background:#ffd400"></span></div>
+                <div class="row-tiles"><span class="tile" style="background:#7209b7"></span><span class="tile" style="background:#f72585"></span><span class="tile" style="background:#4361ee"></span><span class="tile" style="background:#ffd400"></span></div>
+              </div>
+            </div>
+            <div class="game-body">
+              <h3>Tetris</h3>
+              <p>Stack the blocks, clear the lines</p>
+            </div>
+          </article>
+
+          <article class="game" data-reveal>
+            <div class="game-art" style="background:#faf8ef">
+              <div class="mini">
+                <div class="row-tiles"><span class="tile" style="background:#eee4da"></span><span class="tile" style="background:#ede0c8"></span></div>
+                <div class="row-tiles"><span class="tile" style="background:#f2b179"></span><span class="tile" style="background:#f67c5f"></span></div>
+              </div>
+            </div>
+            <div class="game-body">
+              <h3>2048</h3>
+              <p>Swipe matching numbers together</p>
+            </div>
+          </article>
+
+          <article class="game" data-reveal>
+            <div class="game-art" style="background:#0f2417">
+              <div class="mini">
+                <div class="row-tiles"><span class="tile" style="background:#3ddc84"></span><span class="tile" style="background:#3ddc84"></span><span class="tile" style="background:#3ddc84"></span><span class="tile" style="background:transparent"></span></div>
+                <div class="row-tiles"><span class="tile" style="background:transparent"></span><span class="tile" style="background:transparent"></span><span class="tile" style="background:#3ddc84"></span><span class="tile" style="background:#ff385c;border-radius:999px"></span></div>
+              </div>
+            </div>
+            <div class="game-body">
+              <h3>Snake</h3>
+              <p>Swipe to change direction</p>
+            </div>
+          </article>
+
+          <article class="game" data-reveal>
+            <div class="game-art" style="background:#101828">
+              <div class="mini">
+                <div class="row-tiles"><span class="tile" style="background:#ff8fa3;height:9px"></span><span class="tile" style="background:#ffd400;height:9px"></span><span class="tile" style="background:#5cb0ff;height:9px"></span><span class="tile" style="background:#3ddc84;height:9px"></span></div>
+                <div class="row-tiles" style="justify-content:center"><span class="tile" style="background:#fff;width:7px;height:7px;border-radius:999px"></span></div>
+                <div class="row-tiles" style="justify-content:center"><span class="tile" style="background:#fff;width:34px;height:6px"></span></div>
+              </div>
+            </div>
+            <div class="game-body">
+              <h3>Breakout</h3>
+              <p>Bounce the ball, break the bricks</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Languages ===================== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head center" data-reveal>
+          <span class="kicker">9 languages</span>
+          <h2>Names and addresses too,<br />not just the buttons</h2>
+          <p>Restroom names, addresses, facility details and reviews are all translated. The app speaks your language from the moment it opens.</p>
+        </div>
+        <div class="lang-wrap" data-reveal>
+          <span class="lang-chip">한국어</span>
+          <span class="lang-chip">English</span>
+          <span class="lang-chip">日本語</span>
+          <span class="lang-chip">简体中文</span>
+          <span class="lang-chip">繁體中文</span>
+          <span class="lang-chip">Tiếng Việt</span>
+          <span class="lang-chip">ไทย</span>
+          <span class="lang-chip">Bahasa Melayu</span>
+          <span class="lang-chip">Filipino</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section class="section bg-soft">
+      <div class="container" style="max-width:820px">
+        <div class="section-head center" data-reveal>
+          <span class="kicker">FAQ</span>
+          <h2>Quick answers</h2>
+        </div>
+
+        <div class="faq" data-reveal>
+          <details class="faq-item">
+            <summary>Is it really free?</summary>
+            <div class="faq-body"><p>Yes. No subscription and no in-app purchases.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Do I need an account?</summary>
+            <div class="faq-body">
+              <p>
+                No. Browsing the map, adding restrooms, suggesting edits, writing reviews and
+                competing on the game boards all work without signing in. The only feature that
+                needs an account is the private "only me" marker.
+              </p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Do I have to allow location access?</summary>
+            <div class="faq-body">
+              <p>
+                It's optional. With it, the map opens where you are and shows distances. Location
+                is used only while the app is open — never in the background.
+              </p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Some information is wrong.</summary>
+            <div class="faq-body">
+              <p>
+                Tap the pin and send an edit suggestion. It is reviewed, applied, and the outcome
+                comes back to you in the Report tab.
+              </p>
+            </div>
+          </details>
+        </div>
+
+        <p style="text-align:center;margin-top:28px">
+          <a class="btn-pill btn-ghost" href="support/">More in Support</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== CTA ===================== -->
+    <section class="section-tight">
+      <div class="container">
+        <div class="cta" data-reveal>
+          <h2>Travel with one less thing to worry about</h2>
+          <p>Install it, allow location, and you're set. It's the app you'll be glad you already had.</p>
+          <div class="store-buttons">
+            <a class="store-btn" href="https://apps.apple.com/kr/app/kore-korearestroom/id6774883751" aria-label="Download on the App Store">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.36 1c.09 1.06-.34 2.1-1 2.86-.69.78-1.81 1.38-2.9 1.3-.11-1.02.39-2.08 1.02-2.78C14.21 1.57 15.39.99 16.36 1zM20.5 17.2c-.55 1.27-.82 1.83-1.53 2.95-.99 1.56-2.39 3.5-4.12 3.51-1.54.02-1.93-1-4.02-.99-2.09.01-2.52 1.01-4.06.99-1.73-.01-3.05-1.76-4.04-3.32C-.07 16.6-.36 11.5 1.34 8.8c1.2-1.93 3.1-3.06 4.88-3.06 1.82 0 2.96 1 4.46 1 1.46 0 2.35-1 4.45-1 1.59 0 3.27.86 4.47 2.35-3.93 2.16-3.29 7.77.9 9.11z"/></svg>
+              <span class="store-text"><small>Download on the</small><strong>App Store</strong></span>
+            </a>
+            <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.touristtoiletmap.app" aria-label="Get it on Google Play">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 1.8c-.3.3-.5.8-.5 1.4v17.6c0 .6.2 1.1.5 1.4l.1.1L13.4 12v-.2L3.7 1.7l-.1.1zM17 15.3l-3.3-3.3v-.2L17 8.5l.1.1 3.9 2.2c1.1.6 1.1 1.7 0 2.3L17 15.3zM16.4 16 13 12.6 3.6 22c.4.4 1 .4 1.7.1L16.4 16zM5.3 1.9 16.4 8 13 11.4 3.6 2c.5-.4 1.2-.5 1.7-.1z"/></svg>
+              <span class="store-text"><small>Get it on</small><strong>Google Play</strong></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== Footer ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="./" aria-label="KORE home">
+            <img src="../assets/favicon.png" alt="" />
+            <span>KORE</span>
+          </a>
+          <p>Every restroom in Korea on one map — in your language.</p>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="#map">The map</a>
+            <a href="#tabs">Features</a>
+            <a href="#community">Community</a>
+            <a href="#download">Download</a>
+          </div>
+          <div class="footer-col">
+            <h4>Support</h4>
+            <a href="support/">Support</a>
+            <a href="privacy/">Privacy Policy</a>
+            <a href="contact/">Contact</a>
+          </div>
+          <div class="footer-col">
+            <h4>Language</h4>
+            <a href="../" lang="ko" hreflang="ko">한국어</a>
+            <a href="./">English</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 KORE. All rights reserved.</span>
+        <span>findshim.com</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

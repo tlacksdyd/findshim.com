@@ -1,29 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Page not found — KORE</title>
+  <title>페이지를 찾을 수 없습니다 — KORE</title>
   <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#FF385C" />
+  <!-- GitHub Pages serves this from the domain root, so it is the one page that
+       uses absolute paths. -->
   <link rel="icon" type="image/png" href="/assets/favicon.png" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <link rel="stylesheet" href="/assets/styles.css" />
 </head>
 <body>
-  <main class="container" style="min-height:80vh;display:grid;place-items:center;text-align:center;">
+  <main class="container" style="min-height:82vh;display:grid;place-items:center;text-align:center;">
     <div>
-      <p class="eyebrow">404</p>
-      <h1 style="font-size:clamp(32px,5vw,52px);font-weight:800;letter-spacing:-0.03em;margin:0 0 16px;">
-        This page took a wrong turn.
+      <p class="kicker">404</p>
+      <h1 style="font-size:clamp(30px,5vw,52px);margin:0 0 16px;">
+        길을 잘못 들었습니다.
       </h1>
-      <p style="font-size:18px;color:var(--ink-soft);margin:0 0 32px;">
-        The page you're looking for doesn't exist. Let's get you back on the map.
+      <p style="font-size:18px;color:var(--ink-soft);margin:0 0 32px;font-weight:500;">
+        찾으시는 페이지가 없습니다. 지도로 다시 안내해 드릴게요.
       </p>
       <div class="store-buttons" style="justify-content:center;">
-        <a class="btn-pill" href="/">Back to home</a>
-        <a class="btn-pill" href="/ko/" lang="ko" hreflang="ko"
-           style="background:var(--bg-soft);color:var(--ink);">한국어 홈으로</a>
+        <a class="btn-pill" href="/">홈으로 가기</a>
+        <a class="btn-pill btn-ghost" href="/en/" lang="en" hreflang="en">English home</a>
       </div>
     </div>
   </main>
