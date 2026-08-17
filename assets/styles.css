@@ -64,7 +64,13 @@
 
 * { box-sizing: border-box; }
 
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+/* scroll-padding keeps the sticky header from covering whatever an in-page
+   link (#map, #tabs, #download …) just scrolled to. */
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+}
 
 body {
   margin: 0;
@@ -364,16 +370,16 @@ section { position: relative; }
 }
 
 /* --------------------------------------------------------------------------
-   Phone mockups — pure CSS, no screenshots.
-   The app ships as a five-tab shell (홈 · 지도 · 게임 · 리포트 · 설정) over a
-   floating glass tab bar; these two mocks reproduce 홈 and 지도 so the site
-   cannot go stale the way a captured PNG does.
+   Phone frames — real screenshots of the app in a CSS bezel.
+   The PNGs under assets/shots/ are captures of the app's own screens, built by
+   tools/screenshots/build.js: it reassembles each screen from ../app (the theme
+   tokens, the Ionicons font, the ko/en strings) and shoots it at 390x844 @2x.
+   Re-run that script when a screen changes; only the frame here is CSS.
    -------------------------------------------------------------------------- */
 
 .device {
   position: relative;
   width: min(320px, 78vw);
-  aspect-ratio: 9 / 19.2;
   padding: 11px;
   border-radius: 46px;
   background: linear-gradient(160deg, #2a3140, #0d1117 60%);
@@ -391,350 +397,15 @@ section { position: relative; }
   z-index: 3;
 }
 
-.screen {
-  position: relative;
-  height: 100%;
-  border-radius: 36px;
-  overflow: hidden;
-  background: var(--bg-soft);
-  display: flex;
-  flex-direction: column;
-  font-size: 11px;
-  line-height: 1.35;
-}
-
-.screen-scroll {
-  flex: 1;
-  overflow: hidden;
-  padding: 44px 13px 74px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-/* A screen taller than the frame is cut off by `overflow: hidden`, which without
-   this reads as a rendering fault rather than as a scrollable list. The gradient
-   sits under the tab bar (z-index 1 against its 2) so the content dissolves into
-   the field instead of ending mid-row. */
-.screen.fade-bottom::after {
-  content: "";
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  height: 96px;
-  background: linear-gradient(to bottom, rgba(247, 248, 250, 0) 0%, var(--bg-soft) 62%);
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* -- Home tab mock -- */
-
-.m-masthead {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 2px 2px 6px;
-}
-
-.m-masthead img { width: 30px; height: 30px; border-radius: 8px; }
-.m-word { font-size: 16px; font-weight: 800; letter-spacing: -0.04em; }
-.m-tagline { font-size: 9.5px; color: var(--muted); font-weight: 600; }
-
-.m-card {
-  background: #fff;
-  border-radius: 16px;
-  padding: 12px;
-  box-shadow: 0 1px 2px rgba(15, 24, 38, 0.05), 0 6px 18px rgba(15, 24, 38, 0.06);
-}
-
-.m-card-head {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  margin-bottom: 10px;
-}
-
-.m-dot {
-  width: 20px; height: 20px;
-  border-radius: 999px;
-  display: grid;
-  place-items: center;
-  font-size: 10px;
-  color: #fff;
-  flex: none;
-}
-
-.m-dot.coral { background: var(--brand); }
-.m-dot.blue { background: var(--pin-clean-2); }
-
-.m-title { font-size: 12px; font-weight: 800; letter-spacing: -0.03em; }
-.m-sub { font-size: 9px; color: var(--muted); font-weight: 600; }
-
-.m-tallies {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
-  margin-bottom: 10px;
-}
-
-.m-tally {
-  background: var(--bg-sunken);
-  border-radius: 10px;
-  padding: 8px 4px;
-  text-align: center;
-}
-
-.m-tally b { display: block; font-size: 15px; font-weight: 800; letter-spacing: -0.03em; }
-.m-tally span { font-size: 8.5px; color: var(--muted); font-weight: 600; }
-
-.m-btn {
+/* The shot is 390x844. aspect-ratio holds its box before the file has loaded,
+   so the frame never resizes under the reader mid-scroll. */
+.shot {
   display: block;
-  text-align: center;
-  border-radius: 11px;
-  padding: 9px;
-  font-size: 11px;
-  font-weight: 700;
-  background: var(--brand);
-  color: #fff;
+  width: 100%;
+  aspect-ratio: 390 / 844;
+  border-radius: 36px;
+  background: var(--bg-soft);
 }
-
-.m-btn.soft { background: rgba(31, 111, 230, 0.1); color: var(--pin-clean-2); }
-
-.m-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 7px 0;
-  border-top: 1px solid var(--line);
-}
-
-.m-rank {
-  width: 17px; height: 17px;
-  border-radius: 6px;
-  display: grid;
-  place-items: center;
-  font-size: 9px;
-  font-weight: 800;
-  color: #fff;
-  background: var(--brand);
-  flex: none;
-}
-
-.m-rank.blue { background: var(--pin-clean-2); }
-
-.m-row-main { min-width: 0; flex: 1; }
-.m-row-name { font-size: 11px; font-weight: 700; letter-spacing: -0.02em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.m-row-addr { font-size: 8.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-
-.m-pill {
-  flex: none;
-  padding: 3px 7px;
-  border-radius: 999px;
-  font-size: 9px;
-  font-weight: 800;
-  background: var(--brand-soft);
-  color: var(--brand-dark);
-}
-
-.m-pill.blue { background: rgba(31, 111, 230, 0.1); color: var(--pin-clean-2); }
-
-.m-stars { display: inline-flex; gap: 2px; margin-left: 5px; vertical-align: middle; }
-.m-stars i { width: 5px; height: 5px; border-radius: 999px; background: var(--pin-clean-2); display: block; }
-.m-stars i.off { background: var(--line-strong); }
-
-/* -- Tab bar (the app's floating glass bar) -- */
-
-.m-tabbar {
-  position: absolute;
-  left: 12px; right: 12px; bottom: 12px;
-  height: 50px;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  align-items: center;
-  padding: 0 5px;
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(14px) saturate(180%);
-  -webkit-backdrop-filter: blur(14px) saturate(180%);
-  box-shadow: 0 8px 26px rgba(15, 24, 38, 0.16), inset 0 0 0 1px rgba(255, 255, 255, 0.75);
-  z-index: 2;
-}
-
-.m-tab {
-  text-align: center;
-  font-size: 8.5px;
-  font-weight: 700;
-  color: var(--muted);
-  padding: 6px 0;
-  border-radius: 14px;
-}
-
-.m-tab b { display: block; font-size: 13px; line-height: 1.1; }
-.m-tab.on { background: var(--brand-soft); color: var(--brand-dark); }
-
-/* -- Map tab mock -- */
-
-.m-map {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(115deg, rgba(18, 161, 80, 0.14) 0 22%, transparent 22.4%),
-    linear-gradient(200deg, rgba(92, 176, 255, 0.2) 0 14%, transparent 14.4%),
-    repeating-linear-gradient(58deg, #eef1f4 0 44px, #e6eaef 44px 46px),
-    repeating-linear-gradient(-33deg, transparent 0 62px, #e6eaef 62px 64px),
-    #f1f4f7;
-}
-
-.m-search {
-  position: absolute;
-  top: 42px; left: 12px; right: 12px;
-  height: 34px;
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  padding: 0 12px;
-  border-radius: 999px;
-  background: #fff;
-  box-shadow: var(--shadow-sm);
-  font-size: 10.5px;
-  color: var(--faint);
-  font-weight: 600;
-}
-
-.m-guide {
-  position: absolute;
-  top: 84px; left: 12px;
-  padding: 5px 11px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.92);
-  box-shadow: var(--shadow-sm);
-  font-size: 9.5px;
-  font-weight: 800;
-  color: var(--brand);
-}
-
-.pin {
-  position: absolute;
-  width: 15px; height: 15px;
-  border-radius: 50% 50% 50% 0;
-  transform: rotate(-45deg);
-  background: var(--pin-public);
-  box-shadow: 0 2px 5px rgba(15, 24, 38, 0.3);
-}
-
-.pin::after {
-  content: "";
-  position: absolute;
-  inset: 4.4px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.92);
-}
-
-.pin.big { width: 19px; height: 19px; }
-.pin.clean { background: var(--pin-clean-2); }
-.pin.clean-light { background: var(--pin-clean-1); }
-.pin.clean-deep { background: var(--pin-clean-3); }
-.pin.near { background: var(--pin-near); }
-.pin.private { background: var(--pin-private); }
-
-/* Current location. The wrapper is a zero-size anchor point: every part centres
-   itself on it with a negative margin, so one `top/left` pair moves the whole
-   puck. Place it *before* the pins in the markup — the accuracy disc then sits
-   under them the way a map draws it, without needing a z-index ladder. */
-.m-here { position: absolute; width: 0; height: 0; }
-
-.m-here-dot {
-  position: absolute;
-  top: 0; left: 0;
-  width: 16px; height: 16px;
-  margin: -8px 0 0 -8px;
-  border-radius: 999px;
-  background: #1a73e8;
-  border: 2.5px solid #fff;
-  box-shadow: 0 2px 6px rgba(15, 24, 38, 0.32);
-}
-
-.m-here-acc,
-.m-here-ping {
-  position: absolute;
-  top: 0; left: 0;
-  width: 84px; height: 84px;
-  margin: -42px 0 0 -42px;
-  border-radius: 999px;
-  background: rgba(26, 115, 232, 0.13);
-  border: 1px solid rgba(26, 115, 232, 0.3);
-}
-
-/* The pulse the app draws while it keeps the fix warm. Purely decorative — the
-   static disc above already reads as "you are here" when motion is reduced. */
-.m-here-ping { animation: me-ping 2.6s cubic-bezier(0.2, 0.7, 0.3, 1) infinite; }
-
-@keyframes me-ping {
-  0% { transform: scale(0.3); opacity: 0.8; }
-  70%, 100% { transform: scale(1.25); opacity: 0; }
-}
-
-.m-here-label {
-  position: absolute;
-  top: 13px; left: 0;
-  transform: translateX(-50%);
-  padding: 3px 8px;
-  border-radius: 999px;
-  background: #1a73e8;
-  color: #fff;
-  font-size: 8.5px;
-  font-weight: 800;
-  white-space: nowrap;
-  box-shadow: 0 2px 6px rgba(26, 115, 232, 0.4);
-}
-
-.m-fab {
-  position: absolute;
-  right: 12px;
-  width: 34px; height: 34px;
-  border-radius: 999px;
-  display: grid;
-  place-items: center;
-  background: #fff;
-  color: var(--ink-soft);
-  font-size: 15px;
-  box-shadow: var(--shadow-md);
-}
-
-.m-fab.add { background: var(--brand); color: #fff; bottom: 118px; }
-.m-fab.locate { bottom: 74px; }
-/* Location tracking on — the app tints the button while it follows you. */
-.m-fab.locate.on { color: #1a73e8; }
-
-.m-sheet {
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  padding: 10px 13px 72px;
-  border-radius: 20px 20px 0 0;
-  background: #fff;
-  box-shadow: 0 -8px 28px rgba(15, 24, 38, 0.12);
-}
-
-.m-grab {
-  width: 34px; height: 4px;
-  margin: 0 auto 9px;
-  border-radius: 999px;
-  background: var(--line-strong);
-}
-
-.m-chiprow { display: flex; gap: 5px; margin-top: 9px; }
-
-.m-chip {
-  flex: 1;
-  text-align: center;
-  padding: 6px 0;
-  border-radius: 9px;
-  background: var(--bg-sunken);
-  font-size: 8.5px;
-  font-weight: 700;
-  color: var(--ink-soft);
-}
-
-.m-chip.on { background: var(--brand); color: #fff; }
 
 /* Floating stat card beside the hero device */
 .float-card {
@@ -873,9 +544,12 @@ section { position: relative; }
 
 .bullets { margin: 26px 0 0; padding: 0; list-style: none; display: grid; gap: 14px; }
 
+/* The tick is positioned rather than a flex item: as a flex child it put every
+   run of text after a <b> into a column of its own, so a label followed by a
+   sentence broke into two ragged blocks instead of reading as one line. */
 .bullets li {
-  display: flex;
-  gap: 12px;
+  position: relative;
+  padding-left: 32px;
   font-size: 15.5px;
   color: var(--ink-soft);
   font-weight: 500;
@@ -885,9 +559,10 @@ section { position: relative; }
 
 .bullets li::before {
   content: "";
-  flex: none;
+  position: absolute;
+  left: 0;
+  top: 2px;
   width: 20px; height: 20px;
-  margin-top: 2px;
   border-radius: 999px;
   background: var(--brand-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ff385c' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 13l4 4L19 7'/%3E%3C/svg%3E") center / 12px no-repeat;
 }
@@ -1018,47 +693,6 @@ section { position: relative; }
   letter-spacing: -0.02em;
   box-shadow: var(--shadow-sm);
 }
-
-/* --------------------------------------------------------------------------
-   Games
-   -------------------------------------------------------------------------- */
-
-.games {
-  display: grid;
-  gap: 14px;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-}
-
-.game {
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  background: #fff;
-  border: 1px solid var(--line);
-}
-
-.game-art {
-  height: 108px;
-  display: grid;
-  place-items: center;
-  gap: 3px;
-}
-
-.game-art .mini {
-  display: grid;
-  gap: 3px;
-}
-
-.game-body { padding: 16px 18px 20px; }
-.game-body h3 { font-size: 16px; }
-.game-body p { margin-top: 6px; font-size: 13px; color: var(--muted); font-weight: 500; }
-
-.tile {
-  width: 18px; height: 18px;
-  border-radius: 4px;
-  display: inline-block;
-}
-
-.row-tiles { display: flex; gap: 3px; }
 
 /* --------------------------------------------------------------------------
    CTA band

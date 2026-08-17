@@ -46,10 +46,8 @@ python -m http.server 8000   # http://localhost:8000
   hand (no includes) — change all pages together when editing shared chrome.
 - **Design language:** bold type, heavy whitespace, and the app's coral
   `--brand: #ff385c` (the `:root` block also mirrors the app's map-pin palette
-  from `mapHtml.ts` as `--pin-*`). The hero device mockup is pure CSS
-  (`.device` / `.screen` / the `.m-*` classes), not a screenshot — the app
-  ships most changes over OTA, so a captured PNG goes stale silently while
-  this does not.
+  from `mapHtml.ts` as `--pin-*`). The phones on the landing pages are a CSS
+  bezel (`.device`) around a real screenshot (`.shot`), one per locale.
 - **One optional script.** `assets/site.js` is the only JS: a header hairline
   on scroll and an `IntersectionObserver` reveal for `[data-reveal]` elements.
   It is pure progressive enhancement — the `js` class that arms the reveal is
@@ -75,6 +73,27 @@ python -m http.server 8000   # http://localhost:8000
 - **Social cards** are per-locale: `assets/og-image.png` for Korean pages,
   `assets/og-image-en.png` for `/en/`.
 
+## Screenshots
+
+`assets/shots/{home,map,detail,game}-{ko,en}.png` are the app's own screens, and
+they are **generated, never hand-captured**:
+
+```bash
+node tools/screenshots/build.js
+```
+
+`tools/screenshots/build.js` rebuilds 홈 · 지도 · 상세 시트 · 게임 as HTML at
+390×844 from the sibling `../app` checkout — `src/theme/index.ts` for the
+tokens, `TabBar.tsx` for the glass bar, the screens for their layout, the
+`ko`/`en` locale files for every string, and the app's own `Ionicons.ttf` for
+the icons — then shoots each one at 2x with headless Chrome. It needs the app
+checkout with `node_modules` installed, plus Chrome (or `CHROME_BIN`).
+
+So when a screen changes in the app, **edit `build.js` and re-run it**; the
+pages only reference the PNGs, and a stale shot is a bug in the shot rather than
+in the markup. The intermediate HTML goes to a temp dir, never into the repo
+(Pages serves this branch verbatim).
+
 ## Copy that must stay in sync
 
 - **Store links** live in `index.html` and `en/index.html` only, as two pairs
@@ -82,5 +101,9 @@ python -m http.server 8000   # http://localhost:8000
   store URL changes.
 - **Privacy** — `privacy/index.html` (and its `/en/` twin) is derived from the
   app's `PRIVACY_POLICY.md`; if the app's policy changes, update both pages.
+- **Button and tab names** quoted in the copy are the app's own labels, from
+  `../app/src/i18n/locales/{ko,en}.json` — e.g. 도보 길 찾기 / "Walking
+  directions", 리포트 / "Activity". Check the locale file before naming a
+  control in prose; the English tab is **Activity**, not "Report".
 
 Contact email used across the site: `cyshim0715@gmail.com`.

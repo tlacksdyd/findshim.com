@@ -81,56 +81,13 @@
           <p class="store-note">무료 · iOS &amp; 안드로이드 · 가입 없이 바로 사용</p>
         </div>
 
-        <!-- The app's 지도 tab, drawn in CSS. Deliberately not a screenshot: the
-             app ships most of its work as OTA updates, and a captured PNG goes
-             stale silently while this does not. -->
+        <!-- 앱을 켰을 때 처음 보이는 홈 탭. assets/shots/ 아래 PNG는
+             tools/screenshots/build.js가 ../app의 화면을 그대로 다시 세워
+             찍은 것이라, 앱 화면이 바뀌면 스크립트를 다시 돌려 교체합니다. -->
         <div class="hero-visual">
-          <div class="device" role="img" aria-label="KORE 앱 지도 화면 — 내 위치와 주변 화장실 핀, 가장 가까운 화장실 80m">
-            <div class="screen">
-              <div class="m-map"></div>
-              <div class="m-search">🔍 지역·주소·화장실 검색</div>
-              <div class="m-guide">ⓘ 마커 안내</div>
-
-              <!-- Current location first, so its accuracy disc paints under the pins. -->
-              <span class="m-here" style="top:52%;left:47%">
-                <span class="m-here-acc"></span>
-                <span class="m-here-ping"></span>
-                <span class="m-here-dot"></span>
-                <span class="m-here-label">내 위치</span>
-              </span>
-
-              <span class="pin" style="top:26%;left:17%"></span>
-              <span class="pin clean" style="top:30%;left:64%"></span>
-              <span class="pin near big" style="top:36%;left:44%"></span>
-              <span class="pin" style="top:44%;left:22%"></span>
-              <span class="pin clean-deep" style="top:47%;left:73%"></span>
-              <span class="pin private" style="top:61%;left:24%"></span>
-              <span class="pin clean-light" style="top:58%;left:69%"></span>
-
-              <span class="m-fab add">＋</span>
-              <span class="m-fab locate on">◎</span>
-
-              <div class="m-sheet">
-                <div class="m-grab"></div>
-                <div class="m-row" style="border-top:0;padding-top:0">
-                  <span class="m-rank">1</span>
-                  <div class="m-row-main">
-                    <div class="m-row-name">유성구청 공중화장실</div>
-                    <div class="m-row-addr">24시간 개방 · 남녀 분리</div>
-                  </div>
-                  <span class="m-pill">80m</span>
-                </div>
-                <div style="margin-top:6px"><span class="m-btn">도보 경로</span></div>
-              </div>
-
-              <div class="m-tabbar">
-                <div class="m-tab"><b>🏠</b>홈</div>
-                <div class="m-tab on"><b>🗺️</b>지도</div>
-                <div class="m-tab"><b>🎮</b>게임</div>
-                <div class="m-tab"><b>📋</b>리포트</div>
-                <div class="m-tab"><b>⚙️</b>설정</div>
-              </div>
-            </div>
+          <div class="device">
+            <img class="shot" src="assets/shots/home-ko.png" width="390" height="844"
+                 alt="KORE 앱 홈 화면. 가장 가까운 화장실 Top 3의 첫 줄이 80m로 표시되고, 그 아래로 가까운 깨끗한 화장실 목록이 이어진다." />
           </div>
 
           <div class="float-card one">
@@ -216,62 +173,20 @@
           <span class="kicker">지도</span>
           <h2>핀 색만 봐도<br />어떤 화장실인지 압니다</h2>
           <p class="lead">
-            지도는 설명을 읽는 곳이 아니라 훑어보는 곳입니다. KORE의 핀은
-            색 하나로 종류와 청결도를 말합니다.
+            지도는 오래 들여다보는 화면이 아닙니다. 그래서 KORE의 핀은
+            색 하나로 어떤 화장실인지, 얼마나 깨끗한지까지 알려줍니다.
           </p>
           <ul class="bullets">
-            <li><b>깨끗한 화장실만 보기</b> — 한 번 누르면 파란 핀만 남습니다.</li>
-            <li><b>지역·주소·이름 검색</b> — "유성구", "제주"처럼 지역을 치면 그 지역 전체가 잡히고, 오타도 잡아냅니다.</li>
-            <li><b>내 위치 기준 거리</b> — 걸어갈 만한 곳인지 바로 판단할 수 있게 거리부터 보여줍니다.</li>
+            <li><b>깨끗한 화장실만 보기</b>. 한 번 누르면 파란 핀만 남습니다.</li>
+            <li><b>지역·주소·이름 검색</b>. "유성구", "제주"처럼 지역을 치면 그 지역 전체가 한눈에 들어오고, 오타도 잡아냅니다.</li>
+            <li><b>내 위치 기준 거리</b>. 걸어갈 만한 곳인지 바로 알 수 있게 거리부터 보여줍니다.</li>
           </ul>
         </div>
 
         <div class="split-visual" data-reveal>
-          <div class="device" role="img" aria-label="KORE 앱 지도 화면 — 색으로 구분되는 화장실 핀">
-            <div class="screen">
-              <div class="m-map"></div>
-              <div class="m-search">🔍 지역·주소·화장실 검색</div>
-              <div class="m-guide">ⓘ 마커 안내</div>
-
-              <span class="m-here" style="top:47%;left:45%">
-                <span class="m-here-acc"></span>
-                <span class="m-here-ping"></span>
-                <span class="m-here-dot"></span>
-              </span>
-
-              <span class="pin" style="top:31%;left:16%"></span>
-              <span class="pin near big" style="top:26%;left:44%"></span>
-              <span class="pin clean" style="top:34%;left:70%"></span>
-              <span class="pin" style="top:42%;left:28%"></span>
-              <span class="pin clean-deep" style="top:46%;left:58%"></span>
-              <span class="pin near big" style="top:52%;left:38%"></span>
-              <span class="pin clean-light" style="top:56%;left:78%"></span>
-              <span class="pin private" style="top:60%;left:20%"></span>
-              <span class="pin" style="top:63%;left:62%"></span>
-
-              <span class="m-fab add">＋</span>
-              <span class="m-fab locate">◎</span>
-
-              <div class="m-sheet">
-                <div class="m-grab"></div>
-                <div class="m-title">유성구청 공중화장실</div>
-                <div class="m-sub">24시간 개방 · 남녀 분리 · 기저귀 교환대</div>
-                <div class="m-chiprow">
-                  <span class="m-chip on">도보 경로</span>
-                  <span class="m-chip">TMAP</span>
-                  <span class="m-chip">카카오맵</span>
-                  <span class="m-chip">네이버</span>
-                </div>
-              </div>
-
-              <div class="m-tabbar">
-                <div class="m-tab"><b>🏠</b>홈</div>
-                <div class="m-tab on"><b>🗺️</b>지도</div>
-                <div class="m-tab"><b>🎮</b>게임</div>
-                <div class="m-tab"><b>📋</b>리포트</div>
-                <div class="m-tab"><b>⚙️</b>설정</div>
-              </div>
-            </div>
+          <div class="device">
+            <img class="shot" src="assets/shots/map-ko.png" width="390" height="844" loading="lazy"
+                 alt="KORE 앱 지도 화면. 빨강·파랑·노랑·청록 핀이 흩어져 있고 왼쪽에 마커 안내, 랭킹, 깨끗한 화장실만 버튼이 있다." />
           </div>
         </div>
       </div>
@@ -313,54 +228,21 @@
           <span class="kicker">상세 정보</span>
           <h2>가기 전에 알아야 할 것부터<br />맨 위에 놓았습니다</h2>
           <p class="lead">
-            핀을 누르면 사진과 길 안내가 먼저 나오고, 그 아래로 "들어갈 수 있는가 →
-            어떤 곳인가" 순서로 정보가 이어집니다. 어떤 화장실이든 같은 순서로요.
+            핀을 누르면 길 안내 버튼이 맨 위에 오고, 사진이 있으면 그 위에 함께 붙습니다.
+            그 아래로는 들어갈 수 있는지, 어떤 곳인지 순서로 이어집니다. 어떤 화장실이든 같은 순서로요.
           </p>
           <ul class="bullets">
-            <li><b>도보 경로</b>를 앱 안에서 바로 그려줍니다.</li>
+            <li><b>도보 길 찾기</b>를 누르면 걸어가는 길을 앱 안에서 바로 그려줍니다.</li>
             <li>운전이 필요하면 <b>TMAP · 카카오맵 · 네이버지도</b>로 한 번에 넘겨줍니다.</li>
-            <li><b>개방시간, 도어락, 비상벨, 입구 CCTV, 기저귀 교환대, 비데, 층수</b> — 있는 정보만 보여주고, 없는 항목은 아예 표시하지 않습니다.</li>
+            <li><b>개방시간, 도어락, 비상벨, 입구 CCTV, 기저귀 교환대, 비데, 층수</b>. 기록이 있는 항목만 보여주고, 없는 항목은 빈칸으로 남기지 않고 아예 빼버립니다.</li>
             <li><b>후기 탭</b>에서 다녀온 사람들의 이야기를 읽고, 직접 남길 수도 있습니다.</li>
           </ul>
         </div>
 
         <div class="split-visual" data-reveal>
-          <div class="device" role="img" aria-label="KORE 앱 상세 정보 화면">
-            <div class="screen fade-bottom">
-              <div class="screen-scroll" style="padding-top:40px">
-                <div class="m-card">
-                  <div class="m-title" style="font-size:13px">유성구청 공중화장실</div>
-                  <div class="m-chiprow" style="margin-top:9px">
-                    <span class="m-chip on">정보</span>
-                    <span class="m-chip">후기 12</span>
-                  </div>
-                  <div style="height:62px;margin-top:10px;border-radius:11px;background:linear-gradient(120deg,#e6eaef,#f3f5f7);display:grid;place-items:center;font-size:20px">🖼️</div>
-                  <div style="margin-top:9px"><span class="m-btn">도보 경로</span></div>
-                  <div class="m-chiprow">
-                    <span class="m-chip">TMAP</span>
-                    <span class="m-chip">카카오맵</span>
-                    <span class="m-chip">네이버지도</span>
-                  </div>
-                </div>
-
-                <div class="m-card">
-                  <div class="m-sub" style="margin-bottom:6px">상세 정보</div>
-                  <div class="m-row" style="border-top:0"><div class="m-row-main"><div class="m-row-addr">운영 시간</div><div class="m-row-name">24시간</div></div></div>
-                  <div class="m-row"><div class="m-row-main"><div class="m-row-addr">청결도</div><div class="m-row-name">깨끗해요<span class="m-stars"><i></i><i></i><i class="off"></i></span></div></div></div>
-                  <div class="m-row"><div class="m-row-main"><div class="m-row-addr">안전시설</div><div class="m-row-name">비상벨 · 입구 CCTV</div></div></div>
-                  <div class="m-row"><div class="m-row-main"><div class="m-row-addr">기저귀 교환대</div><div class="m-row-name">남녀 화장실 모두</div></div></div>
-                  <div class="m-row"><div class="m-row-main"><div class="m-row-addr">주소</div><div class="m-row-name">대전 유성구 대학로 33</div></div></div>
-                </div>
-              </div>
-
-              <div class="m-tabbar">
-                <div class="m-tab"><b>🏠</b>홈</div>
-                <div class="m-tab on"><b>🗺️</b>지도</div>
-                <div class="m-tab"><b>🎮</b>게임</div>
-                <div class="m-tab"><b>📋</b>리포트</div>
-                <div class="m-tab"><b>⚙️</b>설정</div>
-              </div>
-            </div>
+          <div class="device">
+            <img class="shot" src="assets/shots/detail-ko.png" width="390" height="844" loading="lazy"
+                 alt="KORE 앱 화장실 상세 화면. 도보 길 찾기 버튼과 티맵·카카오맵·네이버지도 버튼, 그 아래로 운영 시간과 안전 시설, 도로명 주소." />
           </div>
         </div>
       </div>
@@ -372,7 +254,7 @@
         <div class="section-head center" data-reveal>
           <span class="kicker">앱 구성</span>
           <h2>다섯 개의 탭, 그게 전부입니다</h2>
-          <p>필요한 곳으로 한 번에 갑니다. 지도 위에 떠 있던 버튼들은 전부 제자리를 찾아갔어요.</p>
+          <p>화면을 뒤질 일이 없습니다. 찾기는 지도에, 내 기록은 리포트에, 나머지는 설정에 있습니다.</p>
         </div>
 
         <div class="tabs">
@@ -459,67 +341,27 @@
 
     <!-- ===================== Games ===================== -->
     <section class="section bg-soft" id="games">
-      <div class="container">
-        <div class="section-head center" data-reveal>
+      <div class="container split">
+        <div data-reveal>
           <span class="kicker">게임</span>
           <h2>줄 서서 기다리는 시간에</h2>
-          <p>설명서를 읽지 않아도 되는 게임 네 종. 매주 월요일에 갱신되는 주간 랭킹과 올타임 랭킹이 있습니다.</p>
+          <p class="lead">
+            설명서를 읽지 않아도 되는 게임 네 종. 주간 랭킹은 매주 월요일에 새로 시작하고,
+            올타임 랭킹은 계속 쌓입니다.
+          </p>
+          <ul class="bullets">
+            <li><b>테트리스</b> 블록을 쌓아 줄을 지우세요</li>
+            <li><b>2048</b> 같은 숫자를 밀어서 합치세요</li>
+            <li><b>스네이크</b> 쓸어서 방향을 바꾸세요</li>
+            <li><b>벽돌깨기</b> 공을 튕겨 벽돌을 깨세요</li>
+          </ul>
         </div>
 
-        <div class="games">
-          <article class="game" data-reveal>
-            <div class="game-art" style="background:#12131a">
-              <div class="mini">
-                <div class="row-tiles"><span class="tile" style="background:#4cc9f0"></span><span class="tile" style="background:#4cc9f0"></span><span class="tile" style="background:#4cc9f0"></span><span class="tile" style="background:#4cc9f0"></span></div>
-                <div class="row-tiles"><span class="tile" style="background:transparent"></span><span class="tile" style="background:#f72585"></span><span class="tile" style="background:#f72585"></span><span class="tile" style="background:#ffd400"></span></div>
-                <div class="row-tiles"><span class="tile" style="background:#7209b7"></span><span class="tile" style="background:#f72585"></span><span class="tile" style="background:#4361ee"></span><span class="tile" style="background:#ffd400"></span></div>
-              </div>
-            </div>
-            <div class="game-body">
-              <h3>테트리스</h3>
-              <p>블록을 쌓아 줄을 지우세요</p>
-            </div>
-          </article>
-
-          <article class="game" data-reveal>
-            <div class="game-art" style="background:#faf8ef">
-              <div class="mini">
-                <div class="row-tiles"><span class="tile" style="background:#eee4da"></span><span class="tile" style="background:#ede0c8"></span></div>
-                <div class="row-tiles"><span class="tile" style="background:#f2b179"></span><span class="tile" style="background:#f67c5f"></span></div>
-              </div>
-            </div>
-            <div class="game-body">
-              <h3>2048</h3>
-              <p>같은 숫자를 밀어서 합치세요</p>
-            </div>
-          </article>
-
-          <article class="game" data-reveal>
-            <div class="game-art" style="background:#0f2417">
-              <div class="mini">
-                <div class="row-tiles"><span class="tile" style="background:#3ddc84"></span><span class="tile" style="background:#3ddc84"></span><span class="tile" style="background:#3ddc84"></span><span class="tile" style="background:transparent"></span></div>
-                <div class="row-tiles"><span class="tile" style="background:transparent"></span><span class="tile" style="background:transparent"></span><span class="tile" style="background:#3ddc84"></span><span class="tile" style="background:#ff385c;border-radius:999px"></span></div>
-              </div>
-            </div>
-            <div class="game-body">
-              <h3>스네이크</h3>
-              <p>쓸어서 방향을 바꾸세요</p>
-            </div>
-          </article>
-
-          <article class="game" data-reveal>
-            <div class="game-art" style="background:#101828">
-              <div class="mini">
-                <div class="row-tiles"><span class="tile" style="background:#ff8fa3;height:9px"></span><span class="tile" style="background:#ffd400;height:9px"></span><span class="tile" style="background:#5cb0ff;height:9px"></span><span class="tile" style="background:#3ddc84;height:9px"></span></div>
-                <div class="row-tiles" style="justify-content:center"><span class="tile" style="background:#fff;width:7px;height:7px;border-radius:999px"></span></div>
-                <div class="row-tiles" style="justify-content:center"><span class="tile" style="background:#fff;width:34px;height:6px"></span></div>
-              </div>
-            </div>
-            <div class="game-body">
-              <h3>벽돌깨기</h3>
-              <p>공을 튕겨 벽돌을 깨세요</p>
-            </div>
-          </article>
+        <div class="split-visual" data-reveal>
+          <div class="device">
+            <img class="shot" src="assets/shots/game-ko.png" width="390" height="844" loading="lazy"
+                 alt="KORE 앱 게임 탭. 테트리스, 2048, 스네이크, 벽돌깨기 카드와 그 아래 주간 게임 랭킹." />
+          </div>
         </div>
       </div>
     </section>

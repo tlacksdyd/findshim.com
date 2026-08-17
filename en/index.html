@@ -80,56 +80,14 @@
           <p class="store-note">Free · iOS &amp; Android · No sign-up needed</p>
         </div>
 
-        <!-- The app's Map tab, drawn in CSS rather than captured: the app ships
-             most of its work as OTA updates, and a screenshot goes stale
-             silently while this does not. -->
+        <!-- The Home tab, as the app actually draws it. The PNGs under
+             assets/shots/ are built by tools/screenshots/build.js, which
+             reassembles each screen from ../app and shoots it — re-run it when
+             a screen changes. -->
         <div class="hero-visual">
-          <div class="device" role="img" aria-label="KORE app map screen — your location, restroom pins around it, nearest restroom 80m away">
-            <div class="screen">
-              <div class="m-map"></div>
-              <div class="m-search">🔍 Search region, address or name</div>
-              <div class="m-guide">ⓘ Marker guide</div>
-
-              <!-- Current location first, so its accuracy disc paints under the pins. -->
-              <span class="m-here" style="top:52%;left:47%">
-                <span class="m-here-acc"></span>
-                <span class="m-here-ping"></span>
-                <span class="m-here-dot"></span>
-                <span class="m-here-label">You are here</span>
-              </span>
-
-              <span class="pin" style="top:26%;left:17%"></span>
-              <span class="pin clean" style="top:30%;left:64%"></span>
-              <span class="pin near big" style="top:36%;left:44%"></span>
-              <span class="pin" style="top:44%;left:22%"></span>
-              <span class="pin clean-deep" style="top:47%;left:73%"></span>
-              <span class="pin private" style="top:61%;left:24%"></span>
-              <span class="pin clean-light" style="top:58%;left:69%"></span>
-
-              <span class="m-fab add">＋</span>
-              <span class="m-fab locate on">◎</span>
-
-              <div class="m-sheet">
-                <div class="m-grab"></div>
-                <div class="m-row" style="border-top:0;padding-top:0">
-                  <span class="m-rank">1</span>
-                  <div class="m-row-main">
-                    <div class="m-row-name">Yuseong-gu Office</div>
-                    <div class="m-row-addr">Open 24h · Separate men's and women's</div>
-                  </div>
-                  <span class="m-pill">80m</span>
-                </div>
-                <div style="margin-top:6px"><span class="m-btn">Walking route</span></div>
-              </div>
-
-              <div class="m-tabbar">
-                <div class="m-tab"><b>🏠</b>Home</div>
-                <div class="m-tab on"><b>🗺️</b>Map</div>
-                <div class="m-tab"><b>🎮</b>Games</div>
-                <div class="m-tab"><b>📋</b>Report</div>
-                <div class="m-tab"><b>⚙️</b>Settings</div>
-              </div>
-            </div>
+          <div class="device">
+            <img class="shot" src="../assets/shots/home-en.png" width="390" height="844"
+                 alt="KORE's Home tab: the nearest toilets, the closest one 80m away, and the nearest clean ones below." />
           </div>
 
           <div class="float-card one">
@@ -215,62 +173,20 @@
           <span class="kicker">The map</span>
           <h2>The colour of a pin<br />tells you what it is</h2>
           <p class="lead">
-            A map is for scanning, not for reading. In KORE one colour carries both the kind of
-            restroom and how clean it is.
+            Nobody studies a map while they are in a hurry. So in KORE a single colour carries
+            both what kind of restroom it is and how clean it is.
           </p>
           <ul class="bullets">
-            <li><b>Clean only</b> — one tap and nothing but the blue pins is left.</li>
-            <li><b>Search by region, address or name</b> — type "Yuseong-gu" or "Jeju" and the whole district is framed, typos included.</li>
-            <li><b>Distance first</b> — every result leads with how far it is, because that is the decision you're making.</li>
+            <li><b>Clean only.</b> One tap and nothing but the blue pins is left.</li>
+            <li><b>Search by region, address or name.</b> Type "Yuseong-gu" or "Jeju" and the whole district is framed, typos included.</li>
+            <li><b>Distance first.</b> Every result leads with how far away it is, because that is the decision you are making.</li>
           </ul>
         </div>
 
         <div class="split-visual" data-reveal>
-          <div class="device" role="img" aria-label="KORE app map screen — restroom pins colour-coded by kind">
-            <div class="screen">
-              <div class="m-map"></div>
-              <div class="m-search">🔍 Search region, address or name</div>
-              <div class="m-guide">ⓘ Marker guide</div>
-
-              <span class="m-here" style="top:47%;left:45%">
-                <span class="m-here-acc"></span>
-                <span class="m-here-ping"></span>
-                <span class="m-here-dot"></span>
-              </span>
-
-              <span class="pin" style="top:31%;left:16%"></span>
-              <span class="pin near big" style="top:26%;left:44%"></span>
-              <span class="pin clean" style="top:34%;left:70%"></span>
-              <span class="pin" style="top:42%;left:28%"></span>
-              <span class="pin clean-deep" style="top:46%;left:58%"></span>
-              <span class="pin near big" style="top:52%;left:38%"></span>
-              <span class="pin clean-light" style="top:56%;left:78%"></span>
-              <span class="pin private" style="top:60%;left:20%"></span>
-              <span class="pin" style="top:63%;left:62%"></span>
-
-              <span class="m-fab add">＋</span>
-              <span class="m-fab locate">◎</span>
-
-              <div class="m-sheet">
-                <div class="m-grab"></div>
-                <div class="m-title">Yuseong-gu Office restroom</div>
-                <div class="m-sub">Open 24h · Separate men's/women's · Changing table</div>
-                <div class="m-chiprow">
-                  <span class="m-chip on">Walk</span>
-                  <span class="m-chip">TMAP</span>
-                  <span class="m-chip">KakaoMap</span>
-                  <span class="m-chip">Naver</span>
-                </div>
-              </div>
-
-              <div class="m-tabbar">
-                <div class="m-tab"><b>🏠</b>Home</div>
-                <div class="m-tab on"><b>🗺️</b>Map</div>
-                <div class="m-tab"><b>🎮</b>Games</div>
-                <div class="m-tab"><b>📋</b>Report</div>
-                <div class="m-tab"><b>⚙️</b>Settings</div>
-              </div>
-            </div>
+          <div class="device">
+            <img class="shot" src="../assets/shots/map-en.png" width="390" height="844" loading="lazy"
+                 alt="KORE's map: red, blue, yellow and teal pins across a city, with the marker guide, ranking and clean-only buttons down the left." />
           </div>
         </div>
       </div>
@@ -310,56 +226,24 @@
       <div class="container split reverse">
         <div data-reveal>
           <span class="kicker">Details</span>
-          <h2>What you need before you go,<br />at the top of the sheet</h2>
+          <h2>What you need to know<br />before you go, up top</h2>
           <p class="lead">
-            Tap a pin and the photos and the way there come first. Below them, every layer reads
-            in the same order: can I get in → what is it like.
+            Tap a pin and the buttons that get you there sit at the top, with the photos above them
+            when there are any. Below that, every restroom reads in the same order: whether you can
+            get in, then what it is like inside.
           </p>
           <ul class="bullets">
-            <li>A <b>walking route</b> drawn inside the app.</li>
+            <li><b>Walking directions</b> drawn inside the app itself.</li>
             <li>Driving instead? Hand it to <b>TMAP, KakaoMap or Naver Map</b> in one tap.</li>
-            <li><b>Hours, door code, emergency bell, entrance CCTV, changing table, bidet, floor</b> — only what is actually on record; blanks are left out rather than shown empty.</li>
-            <li>A <b>reviews tab</b> with what other visitors found, and room to add yours.</li>
+            <li><b>Hours, door code, emergency bell, entrance CCTV, changing table, bidet, floor.</b> Only what is actually on record. Nothing is shown as an empty field.</li>
+            <li>A <b>reviews tab</b> with what other visitors found, and room for yours.</li>
           </ul>
         </div>
 
         <div class="split-visual" data-reveal>
-          <div class="device" role="img" aria-label="KORE app restroom detail screen">
-            <div class="screen fade-bottom">
-              <div class="screen-scroll" style="padding-top:40px">
-                <div class="m-card">
-                  <div class="m-title" style="font-size:13px">Yuseong-gu Office restroom</div>
-                  <div class="m-chiprow" style="margin-top:9px">
-                    <span class="m-chip on">Info</span>
-                    <span class="m-chip">Reviews 12</span>
-                  </div>
-                  <div style="height:62px;margin-top:10px;border-radius:11px;background:linear-gradient(120deg,#e6eaef,#f3f5f7);display:grid;place-items:center;font-size:20px">🖼️</div>
-                  <div style="margin-top:9px"><span class="m-btn">Walking route</span></div>
-                  <div class="m-chiprow">
-                    <span class="m-chip">TMAP</span>
-                    <span class="m-chip">KakaoMap</span>
-                    <span class="m-chip">Naver Map</span>
-                  </div>
-                </div>
-
-                <div class="m-card">
-                  <div class="m-sub" style="margin-bottom:6px">Details</div>
-                  <div class="m-row" style="border-top:0"><div class="m-row-main"><div class="m-row-addr">Hours</div><div class="m-row-name">Open 24 hours</div></div></div>
-                  <div class="m-row"><div class="m-row-main"><div class="m-row-addr">Cleanliness</div><div class="m-row-name">Clean<span class="m-stars"><i></i><i></i><i class="off"></i></span></div></div></div>
-                  <div class="m-row"><div class="m-row-main"><div class="m-row-addr">Safety</div><div class="m-row-name">Emergency bell · CCTV</div></div></div>
-                  <div class="m-row"><div class="m-row-main"><div class="m-row-addr">Changing table</div><div class="m-row-name">Both restrooms</div></div></div>
-                  <div class="m-row"><div class="m-row-main"><div class="m-row-addr">Address</div><div class="m-row-name">33 Daehak-ro, Yuseong-gu</div></div></div>
-                </div>
-              </div>
-
-              <div class="m-tabbar">
-                <div class="m-tab"><b>🏠</b>Home</div>
-                <div class="m-tab on"><b>🗺️</b>Map</div>
-                <div class="m-tab"><b>🎮</b>Games</div>
-                <div class="m-tab"><b>📋</b>Report</div>
-                <div class="m-tab"><b>⚙️</b>Settings</div>
-              </div>
-            </div>
+          <div class="device">
+            <img class="shot" src="../assets/shots/detail-en.png" width="390" height="844" loading="lazy"
+                 alt="KORE's detail sheet: walking directions, the TMAP / KakaoMap / Naver Map hand-off, then opening hours, safety equipment and the address." />
           </div>
         </div>
       </div>
@@ -371,7 +255,7 @@
         <div class="section-head center" data-reveal>
           <span class="kicker">Inside the app</span>
           <h2>Five tabs, and that's the whole app</h2>
-          <p>One tap to anywhere. The buttons that used to float over the map all found a home.</p>
+          <p>Nothing to hunt for. Finding is in Map, your own record is in Activity, everything else is in Settings.</p>
         </div>
 
         <div class="tabs">
@@ -392,7 +276,7 @@
           </div>
           <div class="tab-card" data-reveal>
             <div class="tab-glyph">📋</div>
-            <h3>Report</h3>
+            <h3>Activity</h3>
             <p>The status of everything you proposed, plus the messages you sent and the replies.</p>
           </div>
           <div class="tab-card" data-reveal>
@@ -422,7 +306,7 @@
           <div class="step" data-reveal>
             <div class="num"></div>
             <h3>It gets reviewed</h3>
-            <p>A human checks each one. The decision comes back to you in the Report tab.</p>
+            <p>A human checks each one. The decision comes back to you in the Activity tab.</p>
           </div>
           <div class="step" data-reveal>
             <div class="num"></div>
@@ -450,7 +334,7 @@
           <article class="card" data-reveal>
             <div class="icon">💬</div>
             <h3>Messages get answered</h3>
-            <p>Write from inside the app and the reply lands in your Report tab. No account required.</p>
+            <p>Write from inside the app and the reply lands in your Activity tab. No account required.</p>
           </article>
         </div>
       </div>
@@ -458,67 +342,27 @@
 
     <!-- ===================== Games ===================== -->
     <section class="section bg-soft" id="games">
-      <div class="container">
-        <div class="section-head center" data-reveal>
+      <div class="container split">
+        <div data-reveal>
           <span class="kicker">Games</span>
           <h2>For the time you spend in the queue</h2>
-          <p>Four games nobody needs to read instructions for, with a weekly board that turns over every Monday and an all-time one.</p>
+          <p class="lead">
+            Four games nobody needs to read instructions for. The weekly board starts over
+            every Monday; the all-time one just keeps going.
+          </p>
+          <ul class="bullets">
+            <li><b>Tetris</b> stack the blocks, clear the lines</li>
+            <li><b>2048</b> swipe matching numbers together</li>
+            <li><b>Snake</b> swipe to change direction</li>
+            <li><b>Brick Breaker</b> bounce the ball, break the bricks</li>
+          </ul>
         </div>
 
-        <div class="games">
-          <article class="game" data-reveal>
-            <div class="game-art" style="background:#12131a">
-              <div class="mini">
-                <div class="row-tiles"><span class="tile" style="background:#4cc9f0"></span><span class="tile" style="background:#4cc9f0"></span><span class="tile" style="background:#4cc9f0"></span><span class="tile" style="background:#4cc9f0"></span></div>
-                <div class="row-tiles"><span class="tile" style="background:transparent"></span><span class="tile" style="background:#f72585"></span><span class="tile" style="background:#f72585"></span><span class="tile" style="background:#ffd400"></span></div>
-                <div class="row-tiles"><span class="tile" style="background:#7209b7"></span><span class="tile" style="background:#f72585"></span><span class="tile" style="background:#4361ee"></span><span class="tile" style="background:#ffd400"></span></div>
-              </div>
-            </div>
-            <div class="game-body">
-              <h3>Tetris</h3>
-              <p>Stack the blocks, clear the lines</p>
-            </div>
-          </article>
-
-          <article class="game" data-reveal>
-            <div class="game-art" style="background:#faf8ef">
-              <div class="mini">
-                <div class="row-tiles"><span class="tile" style="background:#eee4da"></span><span class="tile" style="background:#ede0c8"></span></div>
-                <div class="row-tiles"><span class="tile" style="background:#f2b179"></span><span class="tile" style="background:#f67c5f"></span></div>
-              </div>
-            </div>
-            <div class="game-body">
-              <h3>2048</h3>
-              <p>Swipe matching numbers together</p>
-            </div>
-          </article>
-
-          <article class="game" data-reveal>
-            <div class="game-art" style="background:#0f2417">
-              <div class="mini">
-                <div class="row-tiles"><span class="tile" style="background:#3ddc84"></span><span class="tile" style="background:#3ddc84"></span><span class="tile" style="background:#3ddc84"></span><span class="tile" style="background:transparent"></span></div>
-                <div class="row-tiles"><span class="tile" style="background:transparent"></span><span class="tile" style="background:transparent"></span><span class="tile" style="background:#3ddc84"></span><span class="tile" style="background:#ff385c;border-radius:999px"></span></div>
-              </div>
-            </div>
-            <div class="game-body">
-              <h3>Snake</h3>
-              <p>Swipe to change direction</p>
-            </div>
-          </article>
-
-          <article class="game" data-reveal>
-            <div class="game-art" style="background:#101828">
-              <div class="mini">
-                <div class="row-tiles"><span class="tile" style="background:#ff8fa3;height:9px"></span><span class="tile" style="background:#ffd400;height:9px"></span><span class="tile" style="background:#5cb0ff;height:9px"></span><span class="tile" style="background:#3ddc84;height:9px"></span></div>
-                <div class="row-tiles" style="justify-content:center"><span class="tile" style="background:#fff;width:7px;height:7px;border-radius:999px"></span></div>
-                <div class="row-tiles" style="justify-content:center"><span class="tile" style="background:#fff;width:34px;height:6px"></span></div>
-              </div>
-            </div>
-            <div class="game-body">
-              <h3>Breakout</h3>
-              <p>Bounce the ball, break the bricks</p>
-            </div>
-          </article>
+        <div class="split-visual" data-reveal>
+          <div class="device">
+            <img class="shot" src="../assets/shots/game-en.png" width="390" height="844" loading="lazy"
+                 alt="KORE's Games tab: Tetris, 2048, Snake and Brick Breaker cards above this week's leaderboard." />
+          </div>
         </div>
       </div>
     </section>
@@ -582,7 +426,7 @@
             <div class="faq-body">
               <p>
                 Tap the pin and send an edit suggestion. It is reviewed, applied, and the outcome
-                comes back to you in the Report tab.
+                comes back to you in the Activity tab.
               </p>
             </div>
           </details>

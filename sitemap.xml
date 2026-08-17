@@ -38,7 +38,25 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://findshim.com/" />
     <priority>0.9</priority>
   </url>
-  <url><loc>https://findshim.com/en/support/</loc><priority>0.5</priority></url>
-  <url><loc>https://findshim.com/en/privacy/</loc><priority>0.5</priority></url>
-  <url><loc>https://findshim.com/en/contact/</loc><priority>0.4</priority></url>
+  <url>
+    <loc>https://findshim.com/en/support/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://findshim.com/support/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://findshim.com/en/support/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://findshim.com/support/" />
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://findshim.com/en/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://findshim.com/privacy/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://findshim.com/en/privacy/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://findshim.com/privacy/" />
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://findshim.com/en/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://findshim.com/contact/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://findshim.com/en/contact/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://findshim.com/contact/" />
+    <priority>0.5</priority>
+  </url>
 </urlset>
