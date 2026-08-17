@@ -135,6 +135,50 @@ a {
   }
 }
 
+/* ---------- Language switch (EN / 한국어) ----------
+   A two-option segmented pill in the header. Each option is a plain link
+   to the same page in the other language, so it works without JS.
+   Every page must point .ls-opt at its own counterpart (relative paths). */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  background: var(--bg-soft);
+  border-radius: 999px;
+  padding: 3px;
+}
+
+.nav .lang-switch a.ls-opt {
+  display: inline-flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--muted);
+  padding: 6px 13px;
+  border-radius: 999px;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.nav .lang-switch a.ls-opt:hover {
+  color: var(--ink);
+}
+
+.nav .lang-switch a.ls-opt.is-active {
+  color: var(--ink);
+  background: var(--white);
+  box-shadow: 0 1px 3px rgba(25, 31, 40, 0.12);
+}
+
+@media (max-width: 400px) {
+  .nav {
+    gap: 14px;
+  }
+  .nav .lang-switch a.ls-opt {
+    padding: 6px 10px;
+  }
+}
+
 /* ---------- Buttons ---------- */
 .btn-pill {
   display: inline-flex;
@@ -733,6 +777,67 @@ section {
   font-size: 20px;
   font-weight: 700;
   letter-spacing: -0.02em;
+}
+
+/* FAQ accordion (Korean support page) */
+.faq {
+  display: grid;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.faq-item {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 18px 22px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--muted);
+  flex: none;
+  line-height: 1;
+}
+
+.faq-item[open] summary::after {
+  content: "−";
+}
+
+.faq-item[open] summary {
+  border-bottom: 1px solid var(--line);
+}
+
+.faq-item .faq-body {
+  padding: 18px 22px;
+}
+
+.faq-item .faq-body p {
+  margin: 0;
+}
+
+.faq-item .faq-body p + p {
+  margin-top: 10px;
 }
 
 /* Contact details list */

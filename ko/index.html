@@ -1,49 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KORE — Find a public restroom anywhere in Korea</title>
-  <meta name="description" content="KORE helps tourists find public restrooms across Korea on a clean map — in your own language. Free to download for iOS and Android." />
+  <title>KORE — 전국 공중화장실 지도</title>
+  <meta name="description" content="급할 때 가장 가까운 공중화장실을 지도에서 바로. 전국 공중화장실을 한 지도에 모은 무료 앱 KORE. iOS·안드로이드 지원." />
 
   <!-- Open Graph / social -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="KORE — Find a public restroom anywhere in Korea" />
-  <meta property="og:description" content="Public restrooms across Korea on a clean map, in your language. Free on iOS and Android." />
-  <meta property="og:url" content="https://findshim.com/" />
+  <meta property="og:title" content="KORE — 전국 공중화장실 지도" />
+  <meta property="og:description" content="급할 때 가장 가까운 공중화장실을 지도에서 바로. iOS·안드로이드 무료 앱." />
+  <meta property="og:url" content="https://findshim.com/ko/" />
   <meta property="og:image" content="https://findshim.com/assets/app-icon.png" />
+  <meta property="og:locale" content="ko_KR" />
   <meta name="theme-color" content="#2b6ef6" />
 
-  <link rel="canonical" href="https://findshim.com/" />
+  <link rel="canonical" href="https://findshim.com/ko/" />
   <link rel="alternate" hreflang="en" href="https://findshim.com/" />
   <link rel="alternate" hreflang="ko" href="https://findshim.com/ko/" />
   <link rel="alternate" hreflang="x-default" href="https://findshim.com/" />
-  <link rel="icon" type="image/png" href="assets/favicon.png" />
-  <link rel="apple-touch-icon" href="assets/app-icon.png" />
+  <link rel="icon" type="image/png" href="../assets/favicon.png" />
+  <link rel="apple-touch-icon" href="../assets/app-icon.png" />
 
   <!-- Pretendard for the clean, bold Korean-friendly type (system fallback in CSS) -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="stylesheet" href="../assets/styles.css" />
 </head>
 <body>
   <!-- ===================== Header ===================== -->
   <header class="site-header">
     <div class="container">
-      <a class="brand" href="./" aria-label="KORE home">
-        <img src="assets/favicon.png" alt="" />
+      <a class="brand" href="./" aria-label="KORE 홈">
+        <img src="../assets/favicon.png" alt="" />
         <span>KORE</span>
       </a>
-      <nav class="nav" aria-label="Primary">
-        <a class="nav-link" href="#features">Features</a>
-        <a class="nav-link" href="#how">How it works</a>
-        <a class="nav-link" href="support/">Support</a>
-        <a class="nav-link" href="contact/">Contact</a>
-        <div class="lang-switch" role="group" aria-label="Language">
-          <a class="ls-opt is-active" href="./" aria-current="true">EN</a>
-          <a class="ls-opt" href="ko/" lang="ko" hreflang="ko">한국어</a>
+      <nav class="nav" aria-label="주요 메뉴">
+        <a class="nav-link" href="#features">기능</a>
+        <a class="nav-link" href="#how">이용 방법</a>
+        <a class="nav-link" href="support/">고객지원</a>
+        <a class="nav-link" href="contact/">문의</a>
+        <div class="lang-switch" role="group" aria-label="언어 선택">
+          <a class="ls-opt" href="../" lang="en" hreflang="en">EN</a>
+          <a class="ls-opt is-active" href="./" aria-current="true">한국어</a>
         </div>
-        <a class="btn-pill" href="#top">Download</a>
+        <a class="btn-pill" href="#top">다운로드</a>
       </nav>
     </div>
   </header>
@@ -53,37 +54,35 @@
     <section class="hero" id="top">
       <div class="container hero-inner">
         <div class="hero-copy">
-          <span class="eyebrow">🇰🇷 For travelers in Korea</span>
-          <h1>Find a restroom,<br /><span class="accent">anywhere in Korea.</span></h1>
+          <span class="eyebrow">🚻 전국 공중화장실 지도</span>
+          <h1>급할 때,<br /><span class="accent">가장 가까운 화장실.</span></h1>
           <p class="lead">
-            Thousands of public restrooms on one clean map — in your own
-            language. No more frantic searching when you need it most.
+            전국 공중화장실을 지도 한 장에 모았습니다. 헤매지 말고,
+            켜자마자 바로 찾으세요.
           </p>
 
           <!-- Store buttons: live App Store / Google Play links. Keep these in
                sync with the pair in the CTA section further down the page. -->
           <div class="store-buttons" id="download">
-            <a class="store-btn" href="https://apps.apple.com/kr/app/kore-korearestroom/id6774883751" aria-label="Download on the App Store">
+            <a class="store-btn" href="https://apps.apple.com/kr/app/kore-korearestroom/id6774883751" aria-label="App Store에서 다운로드">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.36 1c.09 1.06-.34 2.1-1 2.86-.69.78-1.81 1.38-2.9 1.3-.11-1.02.39-2.08 1.02-2.78C14.21 1.57 15.39.99 16.36 1zM20.5 17.2c-.55 1.27-.82 1.83-1.53 2.95-.99 1.56-2.39 3.5-4.12 3.51-1.54.02-1.93-1-4.02-.99-2.09.01-2.52 1.01-4.06.99-1.73-.01-3.05-1.76-4.04-3.32C-.07 16.6-.36 11.5 1.34 8.8c1.2-1.93 3.1-3.06 4.88-3.06 1.82 0 2.96 1 4.46 1 1.46 0 2.35-1 4.45-1 1.59 0 3.27.86 4.47 2.35-3.93 2.16-3.29 7.77.9 9.11z"/></svg>
-              <span class="store-text"><small>Download on the</small><strong>App Store</strong></span>
+              <span class="store-text"><small>다운로드</small><strong>App Store</strong></span>
             </a>
-            <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.touristtoiletmap.app" aria-label="Get it on Google Play">
+            <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.touristtoiletmap.app" aria-label="Google Play에서 받기">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 1.8c-.3.3-.5.8-.5 1.4v17.6c0 .6.2 1.1.5 1.4l.1.1L13.4 12v-.2L3.7 1.7l-.1.1zM17 15.3l-3.3-3.3v-.2L17 8.5l.1.1 3.9 2.2c1.1.6 1.1 1.7 0 2.3L17 15.3zM16.4 16 13 12.6 3.6 22c.4.4 1 .4 1.7.1L16.4 16zM5.3 1.9 16.4 8 13 11.4 3.6 2c.5-.4 1.2-.5 1.7-.1z"/></svg>
-              <span class="store-text"><small>Get it on</small><strong>Google Play</strong></span>
+              <span class="store-text"><small>지금 받기</small><strong>Google Play</strong></span>
             </a>
           </div>
-          <p class="store-note">Free to download · iOS &amp; Android </p>
+          <p class="store-note">무료 다운로드 · iOS &amp; 안드로이드</p>
         </div>
 
         <!-- Real app screenshot inside a CSS phone frame.
-             Drop your screenshot at assets/app-screenshot.png (a tall
-             phone-shaped PNG/JPG works best). To swap it, just replace
-             that file or change the src below. -->
+             Shares assets/app-screenshot.png with the English site. -->
         <div class="hero-visual">
           <div class="phone">
             <div class="phone-screen">
-              <img class="phone-shot" src="assets/app-screenshot.png"
-                   alt="KORE app showing nearby public restrooms on a map of Korea" />
+              <img class="phone-shot" src="../assets/app-screenshot.png"
+                   alt="KORE 앱 화면 — 지도 위에 표시된 주변 공중화장실" />
             </div>
           </div>
         </div>
@@ -94,39 +93,39 @@
     <section id="features" class="bg-soft">
       <div class="container">
         <div class="section-head">
-          <h2>Everything you need, nothing you don't</h2>
-          <p>Built for travelers who just want to find a clean restroom, fast.</p>
+          <h2>필요한 것만, 딱 이만큼</h2>
+          <p>복잡한 기능은 뺐습니다. 화장실을 빠르게 찾는 일에만 집중했어요.</p>
         </div>
         <div class="features">
           <article class="feature">
             <div class="icon">🗺️</div>
-            <h3>50K+ Restrooms</h3>
-            <p>Public restrooms from across Korea, plotted on one fast, easy-to-read map.</p>
-          </article>
-          <article class="feature">
-            <div class="icon">🌏</div>
-            <h3>Your language</h3>
-            <p>Use KORE in 9 languages — English, 日本語, 中文, Tiếng Việt, ไทย and more.</p>
+            <h3>전국 5만 곳 이상</h3>
+            <p>지하철역, 공원, 관공서까지. 전국 공중화장실을 한 지도에 모았습니다.</p>
           </article>
           <article class="feature">
             <div class="icon">📍</div>
-            <h3>Right where you are</h3>
-            <p>See restrooms near your location instantly, with distance at a glance.</p>
-          </article>
-          <article class="feature">
-            <div class="icon">🤝</div>
-            <h3>Community powered</h3>
-            <p>Add missing spots and helpful photos so the next traveler finds them too.</p>
+            <h3>지금 내 위치 기준</h3>
+            <p>앱을 켜면 주변 화장실이 바로 뜹니다. 거리까지 한눈에 보여요.</p>
           </article>
           <article class="feature">
             <div class="icon">⚡</div>
-            <h3>Fast &amp; lightweight</h3>
-            <p>Smooth panning and quick search, even with thousands of points on screen.</p>
+            <h3>가볍고 빠르게</h3>
+            <p>핀이 수천 개여도 지도가 부드럽게 움직입니다. 급할 땐 1초도 아까우니까요.</p>
+          </article>
+          <article class="feature">
+            <div class="icon">🤝</div>
+            <h3>같이 만드는 지도</h3>
+            <p>빠진 곳은 직접 추가하고 사진도 남겨보세요. 다음 사람이 덜 헤맵니다.</p>
+          </article>
+          <article class="feature">
+            <div class="icon">🌏</div>
+            <h3>9개 언어 지원</h3>
+            <p>영어, 일본어, 중국어까지 지원해요. 한국에 온 친구에게 추천하기 좋습니다.</p>
           </article>
           <article class="feature">
             <div class="icon">🆓</div>
-            <h3>Free to use</h3>
-            <p>No subscription, no clutter. Download and start finding restrooms right away.</p>
+            <h3>전부 무료</h3>
+            <p>구독도, 결제도 없습니다. 받아서 바로 쓰면 그걸로 끝이에요.</p>
           </article>
         </div>
       </div>
@@ -136,24 +135,24 @@
     <section id="how">
       <div class="container">
         <div class="section-head">
-          <h2>Find a restroom in three taps</h2>
-          <p>From "I need to go" to "found it" in seconds.</p>
+          <h2>세 번만 누르면 도착</h2>
+          <p>"아, 급한데" 싶은 순간부터 몇 초면 충분합니다.</p>
         </div>
         <div class="steps">
           <div class="step">
             <div class="num"></div>
-            <h3>Open the map</h3>
-            <p>KORE centers on your location and loads nearby restrooms automatically.</p>
+            <h3>지도 열기</h3>
+            <p>내 위치를 중심으로 주변 화장실이 자동으로 표시됩니다.</p>
           </div>
           <div class="step">
             <div class="num"></div>
-            <h3>Pick a pin</h3>
-            <p>Tap any marker to see distance, details, and traveler photos.</p>
+            <h3>핀 누르기</h3>
+            <p>마커를 누르면 거리와 상세 정보, 이용자 사진까지 확인할 수 있어요.</p>
           </div>
           <div class="step">
             <div class="num"></div>
-            <h3>Go</h3>
-            <p>Head straight there — no signup, no language barrier, no stress.</p>
+            <h3>출발</h3>
+            <p>가입도, 복잡한 설정도 없습니다. 바로 길만 나서면 됩니다.</p>
           </div>
         </div>
       </div>
@@ -163,10 +162,11 @@
     <section class="bg-soft">
       <div class="container">
         <div class="section-head">
-          <h2>Made for travelers from everywhere</h2>
-          <p>KORE speaks your language the moment you open it.</p>
+          <h2>한국에 온 친구에게도 추천하세요</h2>
+          <p>앱을 켜는 순간, 각자의 언어로 보입니다.</p>
         </div>
         <div class="lang-wrap">
+          <span class="lang-chip">한국어</span>
           <span class="lang-chip">English</span>
           <span class="lang-chip">日本語</span>
           <span class="lang-chip">简体中文</span>
@@ -175,7 +175,6 @@
           <span class="lang-chip">ไทย</span>
           <span class="lang-chip">Bahasa Melayu</span>
           <span class="lang-chip">Filipino</span>
-          <span class="lang-chip">한국어</span>
         </div>
       </div>
     </section>
@@ -184,16 +183,16 @@
     <section>
       <div class="container">
         <div class="cta">
-          <h2>Never get caught out in Korea again</h2>
-          <p>Download KORE and travel with one less thing to worry about.</p>
+          <h2>이제 급해도 당황하지 마세요</h2>
+          <p>KORE 하나 받아두고, 걱정 하나 덜어가세요.</p>
           <div class="store-buttons">
-            <a class="store-btn" href="https://apps.apple.com/kr/app/kore-korearestroom/id6774883751" aria-label="Download on the App Store">
+            <a class="store-btn" href="https://apps.apple.com/kr/app/kore-korearestroom/id6774883751" aria-label="App Store에서 다운로드">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.36 1c.09 1.06-.34 2.1-1 2.86-.69.78-1.81 1.38-2.9 1.3-.11-1.02.39-2.08 1.02-2.78C14.21 1.57 15.39.99 16.36 1zM20.5 17.2c-.55 1.27-.82 1.83-1.53 2.95-.99 1.56-2.39 3.5-4.12 3.51-1.54.02-1.93-1-4.02-.99-2.09.01-2.52 1.01-4.06.99-1.73-.01-3.05-1.76-4.04-3.32C-.07 16.6-.36 11.5 1.34 8.8c1.2-1.93 3.1-3.06 4.88-3.06 1.82 0 2.96 1 4.46 1 1.46 0 2.35-1 4.45-1 1.59 0 3.27.86 4.47 2.35-3.93 2.16-3.29 7.77.9 9.11z"/></svg>
-              <span class="store-text"><small>Download on the</small><strong>App Store</strong></span>
+              <span class="store-text"><small>다운로드</small><strong>App Store</strong></span>
             </a>
-            <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.touristtoiletmap.app" aria-label="Get it on Google Play">
+            <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.touristtoiletmap.app" aria-label="Google Play에서 받기">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 1.8c-.3.3-.5.8-.5 1.4v17.6c0 .6.2 1.1.5 1.4l.1.1L13.4 12v-.2L3.7 1.7l-.1.1zM17 15.3l-3.3-3.3v-.2L17 8.5l.1.1 3.9 2.2c1.1.6 1.1 1.7 0 2.3L17 15.3zM16.4 16 13 12.6 3.6 22c.4.4 1 .4 1.7.1L16.4 16zM5.3 1.9 16.4 8 13 11.4 3.6 2c.5-.4 1.2-.5 1.7-.1z"/></svg>
-              <span class="store-text"><small>Get it on</small><strong>Google Play</strong></span>
+              <span class="store-text"><small>지금 받기</small><strong>Google Play</strong></span>
             </a>
           </div>
         </div>
@@ -206,29 +205,29 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a class="brand" href="./" aria-label="KORE home">
-            <img src="assets/favicon.png" alt="" />
+          <a class="brand" href="./" aria-label="KORE 홈">
+            <img src="../assets/favicon.png" alt="" />
             <span>KORE</span>
           </a>
-          <p>Find public restrooms anywhere in Korea — in your language.</p>
+          <p>전국 공중화장실을 지도 한 장에. 어디서든, 급할 때 바로.</p>
         </div>
         <div class="footer-cols">
           <div class="footer-col">
-            <h4>Product</h4>
-            <a href="#features">Features</a>
-            <a href="#how">How it works</a>
-            <a href="#top">Download</a>
+            <h4>제품</h4>
+            <a href="#features">기능</a>
+            <a href="#how">이용 방법</a>
+            <a href="#top">다운로드</a>
           </div>
           <div class="footer-col">
-            <h4>Company</h4>
-            <a href="support/">Support</a>
-            <a href="privacy/">Privacy Policy</a>
-            <a href="contact/">Contact</a>
+            <h4>회사</h4>
+            <a href="support/">고객지원</a>
+            <a href="privacy/">개인정보처리방침</a>
+            <a href="contact/">문의하기</a>
           </div>
           <div class="footer-col">
-            <h4>Language</h4>
-            <a href="./">English</a>
-            <a href="ko/" lang="ko" hreflang="ko">한국어</a>
+            <h4>언어</h4>
+            <a href="../" lang="en" hreflang="en">English</a>
+            <a href="./">한국어</a>
           </div>
         </div>
       </div>

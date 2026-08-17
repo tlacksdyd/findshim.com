@@ -46,6 +46,17 @@ python -m http.server 8000   # http://localhost:8000
   hand (no includes) — change all pages together when editing shared chrome.
 - **Toss-inspired** visual language: bold type, heavy whitespace, the
   `--brand` blue. The hero phone mockup is pure CSS (`.phone`), not an image.
+- **Two locales, mirrored trees.** English lives at the root (`/`, `/privacy/`,
+  `/support/`, `/contact/`); Korean mirrors it under `/ko/` with the same
+  design and file layout. The Korean copy is written for Korean readers, not
+  translated line-for-line — keep it that way when editing. Korean pages are
+  one level deeper, so their asset/stylesheet paths use `../../assets/…`.
+- **Language switch.** Every page's header carries a `.lang-switch` pill (EN /
+  한국어) — two plain links, no JS. Each link must point at *that page's* own
+  counterpart (e.g. `/support/` ↔ `/ko/support/`), and the current locale gets
+  `class="ls-opt is-active"` plus `aria-current`. Pages also declare
+  `<link rel="alternate" hreflang>` for both locales. When adding a page, add
+  it in both trees, wire the switch both ways, and list it in `sitemap.xml`.
 
 ## Editable placeholders (intentional, leave discoverable)
 
