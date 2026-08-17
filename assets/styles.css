@@ -636,13 +636,55 @@ section { position: relative; }
 .pin.near { background: var(--pin-near); }
 .pin.private { background: var(--pin-private); }
 
-.m-me {
+/* Current location. The wrapper is a zero-size anchor point: every part centres
+   itself on it with a negative margin, so one `top/left` pair moves the whole
+   puck. Place it *before* the pins in the markup — the accuracy disc then sits
+   under them the way a map draws it, without needing a z-index ladder. */
+.m-here { position: absolute; width: 0; height: 0; }
+
+.m-here-dot {
   position: absolute;
-  width: 15px; height: 15px;
+  top: 0; left: 0;
+  width: 16px; height: 16px;
+  margin: -8px 0 0 -8px;
   border-radius: 999px;
   background: #1a73e8;
   border: 2.5px solid #fff;
-  box-shadow: 0 0 0 6px rgba(26, 115, 232, 0.18);
+  box-shadow: 0 2px 6px rgba(15, 24, 38, 0.32);
+}
+
+.m-here-acc,
+.m-here-ping {
+  position: absolute;
+  top: 0; left: 0;
+  width: 84px; height: 84px;
+  margin: -42px 0 0 -42px;
+  border-radius: 999px;
+  background: rgba(26, 115, 232, 0.13);
+  border: 1px solid rgba(26, 115, 232, 0.3);
+}
+
+/* The pulse the app draws while it keeps the fix warm. Purely decorative — the
+   static disc above already reads as "you are here" when motion is reduced. */
+.m-here-ping { animation: me-ping 2.6s cubic-bezier(0.2, 0.7, 0.3, 1) infinite; }
+
+@keyframes me-ping {
+  0% { transform: scale(0.3); opacity: 0.8; }
+  70%, 100% { transform: scale(1.25); opacity: 0; }
+}
+
+.m-here-label {
+  position: absolute;
+  top: 13px; left: 0;
+  transform: translateX(-50%);
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #1a73e8;
+  color: #fff;
+  font-size: 8.5px;
+  font-weight: 800;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(26, 115, 232, 0.4);
 }
 
 .m-fab {
@@ -660,6 +702,8 @@ section { position: relative; }
 
 .m-fab.add { background: var(--brand); color: #fff; bottom: 118px; }
 .m-fab.locate { bottom: 74px; }
+/* Location tracking on — the app tints the button while it follows you. */
+.m-fab.locate.on { color: #1a73e8; }
 
 .m-sheet {
   position: absolute;

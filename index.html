@@ -63,7 +63,7 @@
           <h1>급할 때,<br /><span class="accent">가장 가까운 화장실.</span></h1>
           <p class="lead">
             공중화장실부터 도서관, 카페까지. 전국 화장실을 한 지도에 모았습니다.
-            앱을 켜면 가장 가까운 세 곳이 먼저 보여요.
+            앱을 켜면 내 위치와 가장 가까운 화장실이 바로 뜹니다.
           </p>
 
           <!-- Store buttons: live App Store / Google Play links. Keep these in
@@ -81,107 +81,51 @@
           <p class="store-note">무료 · iOS &amp; 안드로이드 · 가입 없이 바로 사용</p>
         </div>
 
-        <!-- The app's 홈 tab, drawn in CSS. Deliberately not a screenshot: the
+        <!-- The app's 지도 tab, drawn in CSS. Deliberately not a screenshot: the
              app ships most of its work as OTA updates, and a captured PNG goes
              stale silently while this does not. -->
         <div class="hero-visual">
-          <div class="device" role="img" aria-label="KORE 앱 홈 화면 — 내 기여, 가장 가까운 화장실 Top 3, 가까운 깨끗한 화장실 Top 3">
-            <div class="screen fade-bottom">
-              <div class="screen-scroll">
-                <div class="m-masthead">
-                  <img src="assets/favicon.png" alt="" />
-                  <div>
-                    <div class="m-word">KORE</div>
-                    <div class="m-tagline">함께 만들어가는 한국 화장실 앱</div>
-                  </div>
-                </div>
+          <div class="device" role="img" aria-label="KORE 앱 지도 화면 — 내 위치와 주변 화장실 핀, 가장 가까운 화장실 80m">
+            <div class="screen">
+              <div class="m-map"></div>
+              <div class="m-search">🔍 지역·주소·화장실 검색</div>
+              <div class="m-guide">ⓘ 마커 안내</div>
 
-                <div class="m-card">
-                  <div class="m-card-head">
-                    <span class="m-dot coral">＋</span>
-                    <div><div class="m-title">내 기여</div></div>
-                  </div>
-                  <div class="m-tallies">
-                    <div class="m-tally"><b>12</b><span>제보</span></div>
-                    <div class="m-tally"><b>9</b><span>승인</span></div>
-                    <div class="m-tally"><b>3</b><span>검토 중</span></div>
-                  </div>
-                  <span class="m-btn">화장실 제보하기</span>
-                </div>
+              <!-- Current location first, so its accuracy disc paints under the pins. -->
+              <span class="m-here" style="top:52%;left:47%">
+                <span class="m-here-acc"></span>
+                <span class="m-here-ping"></span>
+                <span class="m-here-dot"></span>
+                <span class="m-here-label">내 위치</span>
+              </span>
 
-                <div class="m-card">
-                  <div class="m-card-head">
-                    <span class="m-dot coral">📍</span>
-                    <div>
-                      <div class="m-title">가장 가까운 화장실 Top 3</div>
-                      <div class="m-sub">현재 위치에서 직선거리 기준</div>
-                    </div>
-                  </div>
-                  <div class="m-row">
-                    <span class="m-rank">1</span>
-                    <div class="m-row-main">
-                      <div class="m-row-name">유성구청 공중화장실</div>
-                      <div class="m-row-addr">대전 유성구 대학로 33</div>
-                    </div>
-                    <span class="m-pill">80m</span>
-                  </div>
-                  <div class="m-row">
-                    <span class="m-rank">2</span>
-                    <div class="m-row-main">
-                      <div class="m-row-name">갑천 근린공원</div>
-                      <div class="m-row-addr">대전 유성구 온천북로</div>
-                    </div>
-                    <span class="m-pill">210m</span>
-                  </div>
-                  <div class="m-row">
-                    <span class="m-rank">3</span>
-                    <div class="m-row-main">
-                      <div class="m-row-name">유성온천역 2번 출구</div>
-                      <div class="m-row-addr">대전 유성구 계룡로</div>
-                    </div>
-                    <span class="m-pill">340m</span>
-                  </div>
-                </div>
+              <span class="pin" style="top:26%;left:17%"></span>
+              <span class="pin clean" style="top:30%;left:64%"></span>
+              <span class="pin near big" style="top:36%;left:44%"></span>
+              <span class="pin" style="top:44%;left:22%"></span>
+              <span class="pin clean-deep" style="top:47%;left:73%"></span>
+              <span class="pin private" style="top:61%;left:24%"></span>
+              <span class="pin clean-light" style="top:58%;left:69%"></span>
 
-                <div class="m-card">
-                  <div class="m-card-head">
-                    <span class="m-dot blue">✦</span>
-                    <div>
-                      <div class="m-title">가까운 깨끗한 화장실 Top 3</div>
-                      <div class="m-sub">청결도 2★ 이상 · 가까운 순</div>
-                    </div>
+              <span class="m-fab add">＋</span>
+              <span class="m-fab locate on">◎</span>
+
+              <div class="m-sheet">
+                <div class="m-grab"></div>
+                <div class="m-row" style="border-top:0;padding-top:0">
+                  <span class="m-rank">1</span>
+                  <div class="m-row-main">
+                    <div class="m-row-name">유성구청 공중화장실</div>
+                    <div class="m-row-addr">24시간 개방 · 남녀 분리</div>
                   </div>
-                  <div class="m-row">
-                    <span class="m-rank blue">1</span>
-                    <div class="m-row-main">
-                      <div class="m-row-name">스타벅스 유성점<span class="m-stars"><i></i><i></i><i></i></span></div>
-                      <div class="m-row-addr">대전 유성구 계룡로 106</div>
-                    </div>
-                    <span class="m-pill blue">120m</span>
-                  </div>
-                  <div class="m-row">
-                    <span class="m-rank blue">2</span>
-                    <div class="m-row-main">
-                      <div class="m-row-name">유성도서관<span class="m-stars"><i></i><i></i><i class="off"></i></span></div>
-                      <div class="m-row-addr">대전 유성구 문화원로</div>
-                    </div>
-                    <span class="m-pill blue">450m</span>
-                  </div>
-                  <div class="m-row">
-                    <span class="m-rank blue">3</span>
-                    <div class="m-row-main">
-                      <div class="m-row-name">한밭수목원 안내소<span class="m-stars"><i></i><i></i><i></i></span></div>
-                      <div class="m-row-addr">대전 서구 둔산대로</div>
-                    </div>
-                    <span class="m-pill blue">1.1km</span>
-                  </div>
-                  <div style="margin-top:9px"><span class="m-btn soft">지도에서 3곳 모두 보기</span></div>
+                  <span class="m-pill">80m</span>
                 </div>
+                <div style="margin-top:6px"><span class="m-btn">도보 경로</span></div>
               </div>
 
               <div class="m-tabbar">
-                <div class="m-tab on"><b>🏠</b>홈</div>
-                <div class="m-tab"><b>🗺️</b>지도</div>
+                <div class="m-tab"><b>🏠</b>홈</div>
+                <div class="m-tab on"><b>🗺️</b>지도</div>
                 <div class="m-tab"><b>🎮</b>게임</div>
                 <div class="m-tab"><b>📋</b>리포트</div>
                 <div class="m-tab"><b>⚙️</b>설정</div>
@@ -289,6 +233,12 @@
               <div class="m-search">🔍 지역·주소·화장실 검색</div>
               <div class="m-guide">ⓘ 마커 안내</div>
 
+              <span class="m-here" style="top:47%;left:45%">
+                <span class="m-here-acc"></span>
+                <span class="m-here-ping"></span>
+                <span class="m-here-dot"></span>
+              </span>
+
               <span class="pin" style="top:31%;left:16%"></span>
               <span class="pin near big" style="top:26%;left:44%"></span>
               <span class="pin clean" style="top:34%;left:70%"></span>
@@ -298,7 +248,6 @@
               <span class="pin clean-light" style="top:56%;left:78%"></span>
               <span class="pin private" style="top:60%;left:20%"></span>
               <span class="pin" style="top:63%;left:62%"></span>
-              <span class="m-me" style="top:47%;left:45%"></span>
 
               <span class="m-fab add">＋</span>
               <span class="m-fab locate">◎</span>
