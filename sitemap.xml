@@ -59,4 +59,33 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://findshim.com/contact/" />
     <priority>0.5</priority>
   </url>
+  <!-- 모두의 게임 (Modoo Game) — its own support and privacy pages. -->
+  <url>
+    <loc>https://findshim.com/modoogame/support/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://findshim.com/modoogame/support/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://findshim.com/en/modoogame/support/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://findshim.com/modoogame/support/" />
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://findshim.com/modoogame/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://findshim.com/modoogame/privacy/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://findshim.com/en/modoogame/privacy/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://findshim.com/modoogame/privacy/" />
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://findshim.com/en/modoogame/support/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://findshim.com/modoogame/support/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://findshim.com/en/modoogame/support/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://findshim.com/modoogame/support/" />
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://findshim.com/en/modoogame/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://findshim.com/modoogame/privacy/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://findshim.com/en/modoogame/privacy/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://findshim.com/modoogame/privacy/" />
+    <priority>0.4</priority>
+  </url>
 </urlset>
