@@ -62,7 +62,8 @@
       <div class="note-card">
         <strong>The short version</strong>
         Your location is used only while the app is open and is never stored on a server. An account
-        is optional, and you can delete it from inside the app at any time. Your advertising identifier
+        is optional, and you can delete it from inside the app at any time (sections 5 and 6 say what
+        stays afterwards and how to have that removed too). Your advertising identifier
         is used for personalised ads only if you allow it — every map feature works the same either
         way. We never sell your data.
       </div>
@@ -70,24 +71,25 @@
       <h2>1. Information we collect</h2>
       <h3>a. Information you give us</h3>
       <ul>
-        <li><strong>Account details</strong> — only if you choose to sign up: your email address and password. Passwords are handled by Google Firebase Authentication and are never visible to us.</li>
-        <li><strong>Profile</strong> — an optional nickname, profile photo and country, shown <em>publicly</em> on rankings, reviews and profile cards. Without a nickname you appear as "Anonymous".</li>
-        <li><strong>Submissions and edit suggestions</strong> — a restroom's location (coordinates), name, address, description and photos.</li>
+        <li><strong>Account details</strong> — only if you choose to sign up: your email address and password. Passwords are handled by Google Firebase Authentication and are never visible to us. Signing up links your email to the anonymous identifier described below.</li>
+        <li><strong>Profile</strong> — a nickname and country chosen when you sign up (required) and an optional profile photo, shown <em>publicly</em> on rankings, reviews and profile cards. Without an account you appear as "Anonymous", and if you haven't chosen a country, one inferred from the app's language (e.g. Korean → South Korea, Japanese → Japan) may be stored with your game records and shown as a flag on the boards.</li>
+        <li><strong>Submissions and edit suggestions</strong> — a restroom's location (coordinates), name, address, description and photos. If you're signed in, your account email is stored with them.</li>
         <li><strong>Reviews and ratings</strong> — star ratings, review text (up to 1,000 characters), the language it was written in, and answers such as "Is it open?" and "Is it clean?".</li>
-        <li><strong>Favorites and history</strong> — restrooms you starred and the ones you opened.</li>
-        <li><strong>Feedback</strong> — what you write to us, plus any contact details you choose to leave for a reply.</li>
-        <li><strong>Game records</strong> — minigame scores and when they were set, plus a province-level region for the region ranking (worked out on your device; coordinates are not sent).</li>
+        <li><strong>Favorites and history</strong> — restrooms you starred and the ones you opened (the restroom's name, address, coordinates and the time).</li>
+        <li><strong>Feedback</strong> — what you write to us, any contact details you choose to leave for a reply, the app language and, if you're signed in, your account email.</li>
+        <li><strong>Game records</strong> — minigame scores, when they were set, play counts and country, plus a province-level region for the region ranking (worked out on your device; coordinates are not sent).</li>
       </ul>
 
       <h3>b. Information processed automatically</h3>
       <ul>
-        <li><strong>Anonymous identifier</strong> — even without signing in, each device gets an anonymous account (UID). It links what you send (submissions, feedback, reviews, scores) to you so replies can reach you. It is not tied to your name, email or any other identity.</li>
-        <li><strong>Location</strong> — if you grant permission, your device's current location while you are using the app. It is <strong>never collected in the background</strong>, and it is not stored on a server or kept as a history.</li>
-        <li><strong>Notification token</strong> — if you allow notifications, your device's push token, used to tell you about submission decisions, feedback replies and app updates.</li>
+        <li><strong>Anonymous identifier</strong> — even without signing in, each device gets an anonymous account (UID). It links what you send (submissions, feedback, reviews, scores) to you so replies can reach you. While you are not signed in it is not tied to your name, email or any other identity; signing up links your email to it.</li>
+        <li><strong>Location</strong> — if you grant permission, your device's current location while you are using the app. It is <strong>never collected in the background</strong>, and it is not stored on a server or kept as a history. On the device it is also used to work out your province for the game boards, and to notice when you've reached (within about 70 m) a restroom you set off for, so the app can ask for a rating.</li>
+        <li><strong>Notification token</strong> — if you allow notifications, your device's push token plus device platform, app language and app version. It is used for submission decisions, feedback replies, app updates, "game tokens refilled" and "your game ranking changed" notifications; for the refill notice we store when your tokens will be full.</li>
         <li><strong>Advertising data</strong> — to show ads in the app, Google AdMob may process device information and the advertising identifier (IDFA/AAID). On iOS the identifier is used only if you allow it in the App Tracking Transparency prompt; in the EEA and UK it is processed according to your consent choice.</li>
-        <li><strong>Subscription status</strong> — if you subscribe to KORE Premium, the purchase information needed to confirm it (product and subscription period). Payment is handled by the App Store / Google Play; the app never receives card numbers or other payment details.</li>
+        <li><strong>Subscription status</strong> — if you subscribe to KORE Premium, the purchase information needed to confirm it (product and subscription period). Payment is handled by the App Store / Google Play; the app never receives card numbers or other payment details. If you received the promotional free traveller period, the nationality you declared, your country and the period are kept with it.</li>
         <li><strong>Crash reports</strong> — on Android, if the app crashes, a crash log and diagnostic information (Firebase Crashlytics) used to find the cause. Not linked to your identity.</li>
         <li><strong>Device integrity</strong> — app attestation (App Check) via Apple DeviceCheck / Google Play Integrity, used to block requests from tampered apps. It does not identify you.</li>
+        <li><strong>Update checks</strong> — when the app starts it checks Expo's servers (EAS Update) for a new update and downloads it. This passes your IP address, device platform and app version.</li>
       </ul>
 
       <h3>c. What we do not collect</h3>
@@ -104,15 +106,16 @@
         <tbody>
           <tr><td>Email · password</td><td>Signing in, keeping your account, password reset</td></tr>
           <tr><td>Nickname · profile photo · country</td><td>Shown on rankings, reviews and profile cards; the country ranking</td></tr>
-          <tr><td>Location</td><td>Centring the map on you, nearby restrooms and distances, walking directions</td></tr>
-          <tr><td>Submissions · edits · photos</td><td>Reviewed, then published to the map</td></tr>
+          <tr><td>Location</td><td>Centring the map on you, nearby restrooms and distances, walking directions, game province and the rating prompt on arrival (worked out on the device)</td></tr>
+          <tr><td>Submissions · edits · photos · account email</td><td>Reviewed, then published to the map; knowing who sent them during review</td></tr>
           <tr><td>Reviews · ratings · open-status answers</td><td>Shown to other users, translated into 5 languages, counted in restroom rankings</td></tr>
-          <tr><td>Favorites · history</td><td>Your Favorites on Home and your history under All</td></tr>
-          <tr><td>Feedback · contact details</td><td>Replying to you</td></tr>
-          <tr><td>Game records · province</td><td>Weekly, all-time, region and country leaderboards</td></tr>
-          <tr><td>Notification token</td><td>Decision, reply and update notifications</td></tr>
+          <tr><td>Favorites · history</td><td>Your Favorites on Home and your history under All, choosing which restroom to ask you to rate, totals for KORE Rankings</td></tr>
+          <tr><td>Feedback · contact details · account email</td><td>Replying to you, knowing who wrote</td></tr>
+          <tr><td>Game records · province · country</td><td>Weekly, all-time, region and country leaderboards</td></tr>
+          <tr><td>Notification token · scheduled time</td><td>Decision, reply, update, token-refill and ranking-change notifications</td></tr>
           <tr><td>Advertising data</td><td>Showing ads, personalised only with your permission</td></tr>
-          <tr><td>Subscription status</td><td>Unlocking KORE Premium</td></tr>
+          <tr><td>Subscription status · free-period grant</td><td>Unlocking KORE Premium</td></tr>
+          <tr><td>Update-check data</td><td>Delivering app updates</td></tr>
           <tr><td>Crash reports</td><td>Finding and fixing bugs</td></tr>
           <tr><td>Anonymous identifier</td><td>Linking what you send to its reply, preventing abuse</td></tr>
         </tbody>
@@ -121,10 +124,11 @@
       <h2>3. What becomes public</h2>
       <ul>
         <li><strong>Approved restroom information and photos</strong> appear on every user's map.</li>
-        <li><strong>Reviews</strong> are public with your nickname (or "Anonymous"), profile photo and flag, and are automatically translated into all 5 languages.</li>
+        <li><strong>Reviews</strong> store the nickname you had when writing (or "Anonymous") and are public with it, your profile photo and flag, and are automatically translated into all 5 languages.</li>
         <li><strong>The contributor and game boards</strong> show nicknames, profile photos, flags and records. Your email address is never shown anywhere.</li>
-        <li><strong>KORE Rankings</strong> show ratings, favourites and views only as per-restroom totals; who left them is never shown.</li>
-        <li><strong>"Only me" markers</strong>, favorites and history are not visible to other users. The operator can access them for running the service and responding to reports of unlawful content.</li>
+        <li><strong>KORE Rankings</strong> show ratings, favourites and views only as per-restroom totals, and the app never shows who left them. Star ratings and "Is it open?" answers are, however, stored with the author's anonymous identifier (UID), and those records and each UID's public profile (nickname, photo, country) can technically be read outside the app because of how the service is built.</li>
+        <li>The <strong>account email</strong> stored with submissions, suggestions and feedback is visible only to the operator.</li>
+        <li><strong>"Only me" markers</strong>, favorites and history are not visible to other users. The operator can access "only me" markers for running the service and responding to reports of unlawful content; favorites and history are not opened individually even by the operator and are only counted into per-restroom totals on the server.</li>
       </ul>
 
       <h2>4. Third-party services</h2>
@@ -135,8 +139,9 @@
         <li><strong>Apple App Store · Google Play</strong> — payment and management of the KORE Premium subscription.</li>
         <li><strong>Google Maps Platform</strong> — map display, address search and geocoding.</li>
         <li><strong>Google Cloud Translation</strong> — automatic translation of submissions and reviews.</li>
-        <li><strong>TMAP (SK Telecom)</strong> and <strong>Apple Maps Server API</strong> — walking-route calculation. Only the start and destination coordinates are sent, and only when you request a route; no account information is sent.</li>
-        <li><strong>The TMAP, KakaoMap and Naver Map apps</strong> — tapping a directions button passes the destination's coordinates and name to that app, whose own policy then applies.</li>
+        <li><strong>TMAP (SK Telecom)</strong> and <strong>Apple Maps Server API</strong> — walking-route calculation. Only when you request a route, the start and destination coordinates and names ("Current location" and the restroom's name) are sent; no account information is sent.</li>
+        <li><strong>The TMAP, KakaoMap and Naver Map apps</strong> — tapping a directions button passes the destination's coordinates and name to that app, and KakaoMap and Naver Map also receive your current location as the start point. That app's own policy then applies.</li>
+        <li><strong>Expo (EAS Update)</strong> — checking for and delivering app updates.</li>
       </ul>
       <p>
         Data is stored and processed primarily in Google Cloud's Seoul region (asia-northeast3); by the
@@ -146,18 +151,22 @@
 
       <h2>5. How long we keep it</h2>
       <ul>
-        <li>Account details and your profile are deleted when you delete your account.</li>
-        <li>Feedback and replies are kept after we answer, so we can follow up on the same issue; they are deleted on request.</li>
-        <li>Rejected submissions are deleted immediately. <strong>Restroom information published to the map</strong> remains after account deletion, because it has become part of the map others use (no longer linked to you).</li>
-        <li>You can edit or delete your reviews, ratings, favorites and history in the app at any time.</li>
+        <li>Deleting your account immediately deletes your account details, profile (nickname, photo, country), submissions and edit suggestions, "only me" markers, feedback, notification tokens and scheduled notifications.</li>
+        <li><strong>Reviews, star ratings, "Is it open?" answers, favorites, history and game records are not deleted by deleting the account</strong>; they remain with the anonymous identifier (reviews keep the nickname they were written under, and game boards show them as anonymous). Ask for them to be deleted as described in section 6.</li>
+        <li>Feedback and replies are kept after we answer, so we can follow up on the same issue; they are deleted when you delete your account or ask us to.</li>
+        <li>Rejected submissions are deleted immediately, although the operator may instead turn a suggestion, photos included, into an "only me" marker visible to its author alone. <strong>Restroom information published to the map</strong> remains after account deletion, because it has become part of the map others use (no longer linked to you).</li>
+        <li>You can delete your reviews, favorites and history in the app at any time, and change your star ratings and open-status answers (email us to have those deleted).</li>
+        <li>Records of the free traveller period are kept to confirm its dates and are deleted on request.</li>
         <li>Notification tokens stop being used when you sign out or turn notifications off, and are deleted with your account.</li>
         <li>Crash reports are deleted automatically after the retention period set by Firebase Crashlytics.</li>
       </ul>
 
       <h2>6. Your rights and how to delete</h2>
       <p>
-        Go to <strong>All → Delete Account</strong> and your account and its data are deleted immediately,
-        along with your nickname on the boards. To access, correct, delete or restrict processing of your
+        While signed in, go to <strong>All → Account card → Delete Account</strong> and the information listed
+        in section 5 is deleted immediately, along with your nickname on the contributor board. To also remove
+        the reviews, ratings, answers, favorites, history and game records that stay, email us
+        <strong>before</strong> deleting the account, from the address you signed up with. To access, correct, delete or restrict processing of your
         information — including anything you sent without an account — email us at the address below and
         we will act on it without delay.
       </p>
@@ -192,7 +201,7 @@
       <p>
         For anything about how your information is handled, email
         <a href="mailto:cyshim0715@gmail.com">cyshim0715@gmail.com</a>. Feedback sent from the app's
-        <strong>All → My markers · Feedback · History → Send Feedback</strong> reaches the same place.
+        <strong>All → My markers · Feedback · History → Feedback → Send Feedback</strong> reaches the same place.
       </p>
 
       <h2>Other languages</h2>
@@ -204,10 +213,10 @@
       <details class="lang-block">
         <summary>日本語 — プライバシーポリシー（要約）</summary>
         <div class="lang-body">
-          <p><strong>収集する情報：</strong>ログインを選択した場合のメールアドレスとパスワード、任意のニックネーム・プロフィール写真・国（ランキングとレビューに公開）、投稿されたトイレ情報・写真・レビュー・評価・フィードバック・ゲームスコア、お気に入りと利用履歴、端末ごとの匿名ID、位置情報（許可した場合、アプリ使用中のみ）、通知を許可した場合のプッシュトークン、広告表示のための端末情報と広告ID（許可・同意した場合のみ）、サブスクリプションの購入状態、Android のクラッシュログ。</p>
+          <p><strong>収集する情報：</strong>ログインを選択した場合のメールアドレスとパスワード、登録時に決めるニックネームと国・任意のプロフィール写真（ランキングとレビューに公開。国を選んでいない場合はアプリの言語から推定した国旗が表示されることがあります）、投稿されたトイレ情報・写真・レビュー・評価・フィードバック・ゲームスコア、お気に入りと利用履歴、端末ごとの匿名ID、位置情報（許可した場合、アプリ使用中のみ）、通知を許可した場合のプッシュトークン、広告表示のための端末情報と広告ID（許可・同意した場合のみ）、サブスクリプションの購入状態、Android のクラッシュログ。ログイン中に送った投稿・フィードバックにはアカウントのメールアドレスが付き、運営者のみが確認します。</p>
           <p><strong>利用目的：</strong>現在地周辺のトイレ表示と距離計算、徒歩ルート案内、投稿の審査と地図への反映、レビューの5言語翻訳、フィードバックへの返信、ランキング表示、通知の送信、広告の表示、KORE プレミアムの利用権確認、アプリの不具合修正。</p>
-          <p><strong>第三者：</strong>Google Firebase（Crashlytics・Cloud Messaging を含む）、Google AdMob、App Store / Google Play、Google Maps Platform、Google Cloud Translation、徒歩ルート計算のための TMAP／Apple Maps Server API（経路要求時に出発地と目的地の座標のみ送信）。個人情報を販売することはありません。</p>
-          <p><strong>削除：</strong>アプリの「すべて」タブ →「アカウントを削除」で、アカウントと関連データを即時削除できます。地図に公開済みのトイレ情報は残ります。パーソナライズド広告は端末の設定からいつでもオフにできます。</p>
+          <p><strong>第三者：</strong>Google Firebase（Crashlytics・Cloud Messaging を含む）、Google AdMob、App Store / Google Play、Google Maps Platform、Google Cloud Translation、徒歩ルート計算のための TMAP／Apple Maps Server API（経路要求時に出発地・目的地の座標と名称を送信）、アプリ更新のための Expo（EAS Update）。案内ボタンを押すと、TMAP には目的地が、KakaoMap・NAVER Map には目的地と現在地が渡されます。個人情報を販売することはありません。</p>
+          <p><strong>削除：</strong>アプリの「すべて」タブ →「アカウントを削除」で、アカウント・プロフィール・投稿・非公開マーカー・フィードバック・通知情報が即時削除されます。レビュー（投稿時のニックネーム付き）・評価・お気に入り・利用履歴・ゲーム記録は退会だけでは削除されないため、削除を希望される場合は退会前に登録メールアドレスからご連絡ください。地図に公開済みのトイレ情報は残ります。パーソナライズド広告は端末の設定からいつでもオフにできます。</p>
           <p><strong>お問い合わせ：</strong>cyshim0715@gmail.com</p>
         </div>
       </details>
@@ -215,10 +224,10 @@
       <details class="lang-block">
         <summary>简体中文 — 隐私政策（摘要）</summary>
         <div class="lang-body">
-          <p><strong>收集的信息：</strong>仅在您选择注册时收集的邮箱和密码；可选的昵称、头像和国家（会在排行榜和评价中公开）；您提交的厕所信息、照片、评价、评分、反馈和游戏分数；收藏与使用记录；每台设备的匿名标识；在您授权后、仅在使用应用期间的位置信息；允许通知时的推送令牌；用于展示广告的设备信息和广告标识符（仅在您允许或同意时）；订阅购买状态；Android 崩溃日志。</p>
+          <p><strong>收集的信息：</strong>仅在您选择注册时收集的邮箱和密码；注册时设定的昵称和国家，以及可选的头像（会在排行榜和评价中公开；未选择国家时，可能显示根据应用语言推定的国旗）；您提交的厕所信息、照片、评价、评分、反馈和游戏分数；收藏与使用记录；每台设备的匿名标识；在您授权后、仅在使用应用期间的位置信息；允许通知时的推送令牌；用于展示广告的设备信息和广告标识符（仅在您允许或同意时）；订阅购买状态；Android 崩溃日志。登录状态下提交的投稿和反馈会附带账号邮箱，仅运营者可见。</p>
           <p><strong>使用目的：</strong>显示附近厕所并计算距离、步行路线导航、审核并发布您的投稿、将评价翻译成五种语言、回复您的反馈、显示排行榜、发送通知、展示广告、确认 KORE 高级版权益、修复应用问题。</p>
-          <p><strong>第三方：</strong>Google Firebase（含 Crashlytics、Cloud Messaging）、Google AdMob、App Store / Google Play、Google Maps Platform、Google Cloud Translation，以及用于步行路线的 TMAP / Apple Maps Server API（仅在请求路线时发送起点与终点坐标）。我们不出售您的个人信息。</p>
-          <p><strong>删除：</strong>在应用「全部」标签中点击「删除账号」，账户及相关数据将立即删除；已公开在地图上的厕所信息会保留。个性化广告可随时在设备设置中关闭。</p>
+          <p><strong>第三方：</strong>Google Firebase（含 Crashlytics、Cloud Messaging）、Google AdMob、App Store / Google Play、Google Maps Platform、Google Cloud Translation，用于步行路线的 TMAP / Apple Maps Server API（请求路线时发送起点与终点的坐标和名称），以及用于应用更新的 Expo（EAS Update）。点击导航按钮时，TMAP 会收到目的地，KakaoMap 和 NAVER Map 会收到目的地和您的当前位置。我们不出售您的个人信息。</p>
+          <p><strong>删除：</strong>在应用「全部」标签中点击「删除账号」，账号、个人资料、投稿、私人标记、反馈和通知信息将立即删除。评价（保留发布时的昵称）、评分、收藏、使用记录和游戏记录不会随注销删除，如需删除，请在注销前用注册邮箱联系我们。已公开在地图上的厕所信息会保留。个性化广告可随时在设备设置中关闭。</p>
           <p><strong>联系方式：</strong>cyshim0715@gmail.com</p>
         </div>
       </details>
@@ -226,10 +235,10 @@
       <details class="lang-block">
         <summary>繁體中文 — 隱私權政策（摘要）</summary>
         <div class="lang-body">
-          <p><strong>蒐集的資訊：</strong>僅在您選擇註冊時蒐集的電子郵件與密碼；選填的暱稱、大頭貼與國家（會在排行榜與評論中公開）；您提交的廁所資訊、照片、評論、評分、意見回饋與遊戲分數；收藏與使用紀錄；每台裝置的匿名識別碼；在您授權後、僅於使用應用程式期間的位置資訊；允許通知時的推播權杖；用於顯示廣告的裝置資訊與廣告識別碼（僅在您允許或同意時）；訂閱購買狀態；Android 當機紀錄。</p>
+          <p><strong>蒐集的資訊：</strong>僅在您選擇註冊時蒐集的電子郵件與密碼；註冊時設定的暱稱與國家，以及選填的大頭貼（會在排行榜與評論中公開；未選擇國家時，可能顯示依應用程式語言推定的國旗）；您提交的廁所資訊、照片、評論、評分、意見回饋與遊戲分數；收藏與使用紀錄；每台裝置的匿名識別碼；在您授權後、僅於使用應用程式期間的位置資訊；允許通知時的推播權杖；用於顯示廣告的裝置資訊與廣告識別碼（僅在您允許或同意時）；訂閱購買狀態；Android 當機紀錄。登入狀態下送出的投稿與意見回饋會附上帳號電子郵件，僅營運者可見。</p>
           <p><strong>使用目的：</strong>顯示附近廁所並計算距離、步行路線導引、審核並發佈您的投稿、將評論翻譯成五種語言、回覆您的意見回饋、顯示排行榜、傳送通知、顯示廣告、確認 KORE 進階版權益、修正應用程式問題。</p>
-          <p><strong>第三方：</strong>Google Firebase（含 Crashlytics、Cloud Messaging）、Google AdMob、App Store / Google Play、Google Maps Platform、Google Cloud Translation，以及用於步行路線的 TMAP / Apple Maps Server API（僅在請求路線時傳送起點與終點座標）。我們不會出售您的個人資料。</p>
-          <p><strong>刪除：</strong>在應用程式「全部」分頁點選「刪除帳號」，帳戶與相關資料將立即刪除；已公開於地圖上的廁所資訊會保留。個人化廣告可隨時在裝置設定中關閉。</p>
+          <p><strong>第三方：</strong>Google Firebase（含 Crashlytics、Cloud Messaging）、Google AdMob、App Store / Google Play、Google Maps Platform、Google Cloud Translation，用於步行路線的 TMAP / Apple Maps Server API（請求路線時傳送起點與終點的座標與名稱），以及用於應用程式更新的 Expo（EAS Update）。點選導航按鈕時，TMAP 會收到目的地，KakaoMap 與 NAVER Map 會收到目的地與您的目前位置。我們不會出售您的個人資料。</p>
+          <p><strong>刪除：</strong>在應用程式「全部」分頁點選「刪除帳號」，帳號、個人檔案、投稿、私人標記、意見回饋與通知資訊將立即刪除。評論（保留發佈時的暱稱）、評分、收藏、使用紀錄與遊戲紀錄不會隨註銷刪除，如需刪除，請於註銷前以註冊電子郵件與我們聯絡。已公開於地圖上的廁所資訊會保留。個人化廣告可隨時在裝置設定中關閉。</p>
           <p><strong>聯絡方式：</strong>cyshim0715@gmail.com</p>
         </div>
       </details>

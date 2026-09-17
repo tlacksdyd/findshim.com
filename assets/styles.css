@@ -830,6 +830,10 @@ section { position: relative; }
 .prose strong { color: var(--ink); font-weight: 700; }
 
 .prose a { color: var(--brand); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+/* Buttons inside prose (the support pages' "send an email") keep their own look —
+   the link rule above would otherwise paint coral text on the coral pill. */
+.prose a.btn-pill { color: #fff; text-decoration: none; }
+.prose a.btn-ghost { color: var(--ink); }
 
 .prose .policy-title {
   font-size: 20px;
