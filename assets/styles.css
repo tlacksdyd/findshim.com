@@ -371,10 +371,8 @@ section { position: relative; }
 
 /* --------------------------------------------------------------------------
    Phone frames — real screenshots of the app in a CSS bezel.
-   The PNGs under assets/shots/ are captures of the app's own screens, built by
-   tools/screenshots/build.js: it reassembles each screen from ../app (the theme
-   tokens, the Ionicons font, the ko/en strings) and shoots it at 390x844 @2x.
-   Re-run that script when a screen changes; only the frame here is CSS.
+   The PNGs under assets/shots/ are real iPhone captures of the app, fitted to
+   390x844 @2x (780x1688). Only the frame here is CSS.
    -------------------------------------------------------------------------- */
 
 .device {
@@ -398,10 +396,13 @@ section { position: relative; }
 }
 
 /* The shot is 390x844. aspect-ratio holds its box before the file has loaded,
-   so the frame never resizes under the reader mid-scroll. */
+   so the frame never resizes under the reader mid-scroll. height: auto is what
+   lets it apply — the <img height="844"> attribute otherwise pins the height at
+   844px while the width shrinks to the bezel, stretching the phone vertically. */
 .shot {
   display: block;
   width: 100%;
+  height: auto;
   aspect-ratio: 390 / 844;
   border-radius: 36px;
   background: var(--bg-soft);

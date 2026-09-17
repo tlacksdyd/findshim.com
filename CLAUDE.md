@@ -7,8 +7,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 The marketing/legal site for **KORE** (`findshim.com`) — a static HTML/CSS site
 introducing the KORE app and hosting the `/privacy` and `/support` pages that
 App Store and AdMob review require. The KORE app source itself lives in the
-sibling `../app` folder (an Expo React Native app for finding public toilets in
-Korea); read `../app/CLAUDE.md` and `../app/PRIVACY_POLICY.md` when site copy
+sibling `../app` folder (an Expo React Native app — an all-in-one restroom app
+for Korea, not just a toilet map); read `../app/CLAUDE.md` and `../app/PRIVACY_POLICY.md` when site copy
 needs to stay in sync with the app.
 
 ## No build step

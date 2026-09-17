@@ -1,7 +1,8 @@
 # KORE — findshim.com
 
-Marketing site for **KORE**, the app that helps people find public toilets
-anywhere in Korea, in their own language.
+Marketing site for **KORE**, the all-in-one restroom app for Korea —
+finding, rating, reviewing and adding toilets anywhere in the country, in
+the user's own language.
 
 Static HTML/CSS — no build step. Deployed via **GitHub Pages**.
 
