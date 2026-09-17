@@ -75,35 +75,31 @@ python -m http.server 8000   # http://localhost:8000
 
 ## Screenshots
 
-`assets/shots/{home,map,detail,game}-{ko,en}.png` are the app's own screens, and
-they are **generated, never hand-captured**:
+`assets/shots/{home,map,detail,game}-{ko,en}.png` are **real iPhone captures**
+of the app, taken from `../data/pic,video/` (the newest set is
+`KakaoTalk_20260822_*.png`, 1179x2556). Each one is resized to 780px wide and
+cropped to 780x1688 so it fits the `.shot` box (390x844 @2x); keep that size
+when replacing a shot. Pick the most recent capture of the same screen for each
+locale — Korean UI for `-ko`, English UI for `-en`.
 
-```bash
-node tools/screenshots/build.js
-```
-
-`tools/screenshots/build.js` rebuilds 홈 · 지도 · 상세 시트 · 게임 as HTML at
-390×844 from the sibling `../app` checkout — `src/theme/index.ts` for the
-tokens, `TabBar.tsx` for the glass bar, the screens for their layout, the
-`ko`/`en` locale files for every string, and the app's own `Ionicons.ttf` for
-the icons — then shoots each one at 2x with headless Chrome. It needs the app
-checkout with `node_modules` installed, plus Chrome (or `CHROME_BIN`).
-
-So when a screen changes in the app, **edit `build.js` and re-run it**; the
-pages only reference the PNGs, and a stale shot is a bug in the shot rather than
-in the markup. The intermediate HTML goes to a temp dir, never into the repo
-(Pages serves this branch verbatim).
+`tools/screenshots/build.js` is the older generator that rebuilt these screens
+as HTML from the `../app` checkout and shot them with headless Chrome. It is
+kept as a fallback, but it has not tracked the app's newer screens.
 
 ## Copy that must stay in sync
 
 - **Store links** live in `index.html` and `en/index.html` only, as two pairs
   of `.store-btn` anchors (hero + CTA). Keep all four in sync per page if a
   store URL changes.
-- **Privacy** — `privacy/index.html` (and its `/en/` twin) is derived from the
-  app's `PRIVACY_POLICY.md`; if the app's policy changes, update both pages.
+- **Privacy** — `privacy/index.html` (and its `/en/` twin) is the policy itself
+  (there is no separate source in `../app`). When the app adds something that
+  touches personal data (ads, subscriptions, push, crash reports, ...), update
+  both pages and the effective date.
 - **Button and tab names** quoted in the copy are the app's own labels, from
   `../app/src/i18n/locales/{ko,en}.json` — e.g. 도보 길 찾기 / "Walking
-  directions", 리포트 / "Activity". Check the locale file before naming a
-  control in prose; the English tab is **Activity**, not "Report".
+  directions". The tabs are 홈 · 지도 · 게임 · 랭킹 · 전체 / Home · Map ·
+  Games · Rankings · All (리포트 and 설정 no longer exist as tabs). The app
+  supports **5 languages** (ko · en · ja · zh-CN · zh-TW). Check the locale file
+  before naming a control in prose.
 
 Contact email used across the site: `cyshim0715@gmail.com`.
