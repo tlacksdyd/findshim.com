@@ -48,7 +48,7 @@
     <section class="page-hero">
       <div class="container">
         <h1>Privacy Policy</h1>
-        <p class="meta">Effective September 17, 2026 · app "KORE - KoreaRestroom"</p>
+        <p class="meta">Effective September 25, 2026 · app "KORE - KoreaRestroom"</p>
       </div>
     </section>
 
@@ -86,8 +86,9 @@
         <li><strong>Location</strong> — if you grant permission, your device's current location while you are using the app. It is <strong>never collected in the background</strong>, and it is not stored on a server or kept as a history. On the device it is also used to work out your province for the game boards, and to notice when you've reached (within about 70 m) a restroom you set off for, so the app can ask for a rating.</li>
         <li><strong>Notification token</strong> — if you allow notifications, your device's push token plus device platform, app language and app version. It is used for submission decisions, feedback replies, app updates, "game tokens refilled" and "your game ranking changed" notifications; for the refill notice we store when your tokens will be full.</li>
         <li><strong>Advertising data</strong> — to show ads in the app, Google AdMob may process device information and the advertising identifier (IDFA/AAID). On iOS the identifier is used only if you allow it in the App Tracking Transparency prompt; in the EEA and UK it is processed according to your consent choice.</li>
-        <li><strong>Subscription status</strong> — if you subscribe to KORE Premium, the purchase information needed to confirm it (product and subscription period). Payment is handled by the App Store / Google Play; the app never receives card numbers or other payment details. If you received the promotional free traveller period, the nationality you declared, your country and the period are kept with it.</li>
+        <li><strong>Subscription status</strong> — if you subscribe to KORE Premium or the ad-free subscription, the purchase information needed to confirm it (product and subscription period). A KORE Premium subscriber marker (with how long it is valid) is stored on your profile. Payment is handled by the App Store / Google Play; the app never receives card numbers or other payment details. If you received the promotional free traveller period, the nationality you declared, your country and the period are kept with it.</li>
         <li><strong>Crash reports</strong> — on Android, if the app crashes, a crash log and diagnostic information (Firebase Crashlytics) used to find the cause. Not linked to your identity.</li>
+        <li><strong>Usage analytics</strong> — to improve the service, Google Analytics for Firebase collects app usage information (screens viewed, features used, search terms, game results, purchase attempt outcomes and similar), a device identifier, and approximate region, device and app version. Your email, nickname and precise location are never sent, and this is not used to identify you.</li>
         <li><strong>Device integrity</strong> — app attestation (App Check) via Apple DeviceCheck / Google Play Integrity, used to block requests from tampered apps. It does not identify you.</li>
         <li><strong>Update checks</strong> — when the app starts it checks Expo's servers (EAS Update) for a new update and downloads it. This passes your IP address, device platform and app version.</li>
       </ul>
@@ -117,6 +118,7 @@
           <tr><td>Subscription status · free-period grant</td><td>Unlocking KORE Premium</td></tr>
           <tr><td>Update-check data</td><td>Delivering app updates</td></tr>
           <tr><td>Crash reports</td><td>Finding and fixing bugs</td></tr>
+          <tr><td>Usage analytics</td><td>Understanding how the app is used; improving features, screens and the purchase flow</td></tr>
           <tr><td>Anonymous identifier</td><td>Linking what you send to its reply, preventing abuse</td></tr>
         </tbody>
       </table>
@@ -125,7 +127,7 @@
       <ul>
         <li><strong>Approved restroom information and photos</strong> appear on every user's map.</li>
         <li><strong>Reviews</strong> store the nickname you had when writing (or "Anonymous") and are public with it, your profile photo and flag, and are automatically translated into all 5 languages.</li>
-        <li><strong>The contributor and game boards</strong> show nicknames, profile photos, flags and records. Your email address is never shown anywhere.</li>
+        <li><strong>The contributor and game boards</strong> show nicknames, profile photos, flags and records, and a KORE Premium subscriber's profile ring and name colour show that they subscribe. Your email address is never shown anywhere.</li>
         <li><strong>KORE Rankings</strong> show ratings, favourites and views only as per-restroom totals, and the app never shows who left them. Star ratings and "Is it open?" answers are, however, stored with the author's anonymous identifier (UID), and those records and each UID's public profile (nickname, photo, country) can technically be read outside the app because of how the service is built.</li>
         <li>The <strong>account email</strong> stored with submissions, suggestions and feedback is visible only to the operator.</li>
         <li><strong>"Only me" markers</strong>, favorites and history are not visible to other users. The operator can access "only me" markers for running the service and responding to reports of unlawful content; favorites and history are not opened individually even by the operator and are only counted into per-restroom totals on the server.</li>
@@ -134,7 +136,7 @@
       <h2>4. Third-party services</h2>
       <p>The app uses the services below, each governed by its own privacy policy.</p>
       <ul>
-        <li><strong>Google Firebase</strong> (Authentication, Cloud Firestore, Storage, Cloud Functions, App Check, Cloud Messaging, Crashlytics) — storing and processing accounts, submissions, reviews, feedback, photos and scores; sending notifications; crash reports.</li>
+        <li><strong>Google Firebase</strong> (Authentication, Cloud Firestore, Storage, Cloud Functions, App Check, Cloud Messaging, Crashlytics, Google Analytics) — storing and processing accounts, submissions, reviews, feedback, photos and scores; sending notifications; crash reports; usage analytics.</li>
         <li><strong>Google AdMob</strong> — showing ads and managing ad consent.</li>
         <li><strong>Apple App Store · Google Play</strong> — payment and management of the KORE Premium subscription.</li>
         <li><strong>Google Maps Platform</strong> — map display, address search and geocoding.</li>
@@ -159,6 +161,7 @@
         <li>Records of the free traveller period are kept to confirm its dates and are deleted on request.</li>
         <li>Notification tokens stop being used when you sign out or turn notifications off, and are deleted with your account.</li>
         <li>Crash reports are deleted automatically after the retention period set by Firebase Crashlytics.</li>
+        <li>Usage analytics are deleted automatically after at most 14 months, per the Google Analytics data-retention setting.</li>
       </ul>
 
       <h2>6. Your rights and how to delete</h2>
@@ -215,7 +218,7 @@
         <div class="lang-body">
           <p><strong>収集する情報：</strong>ログインを選択した場合のメールアドレスとパスワード、登録時に決めるニックネームと国・任意のプロフィール写真（ランキングとレビューに公開。国を選んでいない場合はアプリの言語から推定した国旗が表示されることがあります）、投稿されたトイレ情報・写真・レビュー・評価・フィードバック・ゲームスコア、お気に入りと利用履歴、端末ごとの匿名ID、位置情報（許可した場合、アプリ使用中のみ）、通知を許可した場合のプッシュトークン、広告表示のための端末情報と広告ID（許可・同意した場合のみ）、サブスクリプションの購入状態、Android のクラッシュログ。ログイン中に送った投稿・フィードバックにはアカウントのメールアドレスが付き、運営者のみが確認します。</p>
           <p><strong>利用目的：</strong>現在地周辺のトイレ表示と距離計算、徒歩ルート案内、投稿の審査と地図への反映、レビューの5言語翻訳、フィードバックへの返信、ランキング表示、通知の送信、広告の表示、KORE プレミアムの利用権確認、アプリの不具合修正。</p>
-          <p><strong>第三者：</strong>Google Firebase（Crashlytics・Cloud Messaging を含む）、Google AdMob、App Store / Google Play、Google Maps Platform、Google Cloud Translation、徒歩ルート計算のための TMAP／Apple Maps Server API（経路要求時に出発地・目的地の座標と名称を送信）、アプリ更新のための Expo（EAS Update）。案内ボタンを押すと、TMAP には目的地が、KakaoMap・NAVER Map には目的地と現在地が渡されます。個人情報を販売することはありません。</p>
+          <p><strong>第三者：</strong>Google Firebase（Crashlytics・Cloud Messaging を含む）、Google Analytics for Firebase（アプリ利用統計：画面・機能の利用、検索語、端末識別子。個人の特定には使用しません）、Google AdMob、App Store / Google Play、Google Maps Platform、Google Cloud Translation、徒歩ルート計算のための TMAP／Apple Maps Server API（経路要求時に出発地・目的地の座標と名称を送信）、アプリ更新のための Expo（EAS Update）。案内ボタンを押すと、TMAP には目的地が、KakaoMap・NAVER Map には目的地と現在地が渡されます。個人情報を販売することはありません。</p>
           <p><strong>削除：</strong>アプリの「すべて」タブ →「アカウントを削除」で、アカウント・プロフィール・投稿・非公開マーカー・フィードバック・通知情報が即時削除されます。レビュー（投稿時のニックネーム付き）・評価・お気に入り・利用履歴・ゲーム記録は退会だけでは削除されないため、削除を希望される場合は退会前に登録メールアドレスからご連絡ください。地図に公開済みのトイレ情報は残ります。パーソナライズド広告は端末の設定からいつでもオフにできます。</p>
           <p><strong>お問い合わせ：</strong>cyshim0715@gmail.com</p>
         </div>
@@ -226,7 +229,7 @@
         <div class="lang-body">
           <p><strong>收集的信息：</strong>仅在您选择注册时收集的邮箱和密码；注册时设定的昵称和国家，以及可选的头像（会在排行榜和评价中公开；未选择国家时，可能显示根据应用语言推定的国旗）；您提交的厕所信息、照片、评价、评分、反馈和游戏分数；收藏与使用记录；每台设备的匿名标识；在您授权后、仅在使用应用期间的位置信息；允许通知时的推送令牌；用于展示广告的设备信息和广告标识符（仅在您允许或同意时）；订阅购买状态；Android 崩溃日志。登录状态下提交的投稿和反馈会附带账号邮箱，仅运营者可见。</p>
           <p><strong>使用目的：</strong>显示附近厕所并计算距离、步行路线导航、审核并发布您的投稿、将评价翻译成五种语言、回复您的反馈、显示排行榜、发送通知、展示广告、确认 KORE 高级版权益、修复应用问题。</p>
-          <p><strong>第三方：</strong>Google Firebase（含 Crashlytics、Cloud Messaging）、Google AdMob、App Store / Google Play、Google Maps Platform、Google Cloud Translation，用于步行路线的 TMAP / Apple Maps Server API（请求路线时发送起点与终点的坐标和名称），以及用于应用更新的 Expo（EAS Update）。点击导航按钮时，TMAP 会收到目的地，KakaoMap 和 NAVER Map 会收到目的地和您的当前位置。我们不出售您的个人信息。</p>
+          <p><strong>第三方：</strong>Google Firebase（含 Crashlytics、Cloud Messaging）、Google Analytics for Firebase（应用使用统计：页面与功能使用、搜索词、设备标识符，不用于识别个人）、Google AdMob、App Store / Google Play、Google Maps Platform、Google Cloud Translation，用于步行路线的 TMAP / Apple Maps Server API（请求路线时发送起点与终点的坐标和名称），以及用于应用更新的 Expo（EAS Update）。点击导航按钮时，TMAP 会收到目的地，KakaoMap 和 NAVER Map 会收到目的地和您的当前位置。我们不出售您的个人信息。</p>
           <p><strong>删除：</strong>在应用「全部」标签中点击「删除账号」，账号、个人资料、投稿、私人标记、反馈和通知信息将立即删除。评价（保留发布时的昵称）、评分、收藏、使用记录和游戏记录不会随注销删除，如需删除，请在注销前用注册邮箱联系我们。已公开在地图上的厕所信息会保留。个性化广告可随时在设备设置中关闭。</p>
           <p><strong>联系方式：</strong>cyshim0715@gmail.com</p>
         </div>
@@ -237,7 +240,7 @@
         <div class="lang-body">
           <p><strong>蒐集的資訊：</strong>僅在您選擇註冊時蒐集的電子郵件與密碼；註冊時設定的暱稱與國家，以及選填的大頭貼（會在排行榜與評論中公開；未選擇國家時，可能顯示依應用程式語言推定的國旗）；您提交的廁所資訊、照片、評論、評分、意見回饋與遊戲分數；收藏與使用紀錄；每台裝置的匿名識別碼；在您授權後、僅於使用應用程式期間的位置資訊；允許通知時的推播權杖；用於顯示廣告的裝置資訊與廣告識別碼（僅在您允許或同意時）；訂閱購買狀態；Android 當機紀錄。登入狀態下送出的投稿與意見回饋會附上帳號電子郵件，僅營運者可見。</p>
           <p><strong>使用目的：</strong>顯示附近廁所並計算距離、步行路線導引、審核並發佈您的投稿、將評論翻譯成五種語言、回覆您的意見回饋、顯示排行榜、傳送通知、顯示廣告、確認 KORE 進階版權益、修正應用程式問題。</p>
-          <p><strong>第三方：</strong>Google Firebase（含 Crashlytics、Cloud Messaging）、Google AdMob、App Store / Google Play、Google Maps Platform、Google Cloud Translation，用於步行路線的 TMAP / Apple Maps Server API（請求路線時傳送起點與終點的座標與名稱），以及用於應用程式更新的 Expo（EAS Update）。點選導航按鈕時，TMAP 會收到目的地，KakaoMap 與 NAVER Map 會收到目的地與您的目前位置。我們不會出售您的個人資料。</p>
+          <p><strong>第三方：</strong>Google Firebase（含 Crashlytics、Cloud Messaging）、Google Analytics for Firebase（應用程式使用統計：頁面與功能使用、搜尋詞、裝置識別碼，不用於識別個人）、Google AdMob、App Store / Google Play、Google Maps Platform、Google Cloud Translation，用於步行路線的 TMAP / Apple Maps Server API（請求路線時傳送起點與終點的座標與名稱），以及用於應用程式更新的 Expo（EAS Update）。點選導航按鈕時，TMAP 會收到目的地，KakaoMap 與 NAVER Map 會收到目的地與您的目前位置。我們不會出售您的個人資料。</p>
           <p><strong>刪除：</strong>在應用程式「全部」分頁點選「刪除帳號」，帳號、個人檔案、投稿、私人標記、意見回饋與通知資訊將立即刪除。評論（保留發佈時的暱稱）、評分、收藏、使用紀錄與遊戲紀錄不會隨註銷刪除，如需刪除，請於註銷前以註冊電子郵件與我們聯絡。已公開於地圖上的廁所資訊會保留。個人化廣告可隨時在裝置設定中關閉。</p>
           <p><strong>聯絡方式：</strong>cyshim0715@gmail.com</p>
         </div>
