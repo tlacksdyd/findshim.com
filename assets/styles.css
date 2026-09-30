@@ -1036,3 +1036,116 @@ section { position: relative; }
   .prose { font-size: 16px; }
   .contact-card { flex-direction: column; align-items: flex-start; }
 }
+
+
+/* --------------------------------------------------------------------------
+   Press kit (/press/) — English-only, built on .page-hero + .prose
+   -------------------------------------------------------------------------- */
+
+.press-eyebrow {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--brand-soft);
+  color: var(--brand);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.press-accent { color: var(--brand); }
+
+.press-copy {
+  display: grid;
+  gap: 8px;
+  margin: 14px 0;
+  padding: 18px 20px;
+  border-radius: var(--radius);
+  background: var(--bg-soft);
+}
+.press-copy p { margin: 0; }
+.press-copy #long { display: grid; gap: 10px; }
+.press-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.press-copy-btn {
+  justify-self: start;
+  padding: 5px 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--brand);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.press-copy-btn:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+.press-src { color: var(--muted); }
+
+.press-shots {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 18px;
+}
+.press-shots figure { margin: 0; }
+.press-shots img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow-sm);
+}
+.press-shots figcaption { margin-top: 8px; font-size: 13px; color: var(--muted); text-align: center; }
+
+.press-table { overflow-x: auto; }
+.press-table td { font-variant-numeric: tabular-nums; }
+.press-when { white-space: nowrap; }
+
+.press-founders {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+.press-person { padding: 18px 20px; border: 1px solid var(--line); border-radius: var(--radius); }
+.press .press-person h3 { margin: 0 0 2px; }
+.press-person h3 span { font-weight: 500; color: var(--muted); }
+.press-role { margin-bottom: 8px; font-size: 14px; font-weight: 700; color: var(--brand); }
+.press .press-person p { margin: 0; font-size: 15px; }
+
+.press-icon { display: flex; align-items: center; gap: 16px; margin-top: 14px; }
+.press-icon img { width: 72px; height: 72px; border-radius: 16px; box-shadow: var(--shadow-sm); }
+.press-icon span { font-size: 14px; }
+
+.press-links { display: grid; grid-template-columns: max-content 1fr; gap: 10px 18px; margin: 14px 0 0; }
+.press-links dt { font-weight: 700; color: var(--ink); }
+.press-links dd { margin: 0; overflow-wrap: anywhere; }
+
+.press-contact {
+  display: grid;
+  gap: 6px;
+  margin-top: 44px;
+  padding: clamp(22px, 4vw, 32px);
+  border-radius: var(--radius-lg);
+  background: var(--ink-deep);
+  color: #fff;
+}
+.press-contact .press-label { color: #aab3bf; }
+.press-mail { font-size: clamp(20px, 3vw, 26px); font-weight: 800; letter-spacing: -0.02em; user-select: all; }
+.press .press-contact p { margin: 0; color: #c7cdd5; }
+
+@media (max-width: 640px) {
+  .press-shots { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px) {
+  .press-links { grid-template-columns: 1fr; gap: 2px 0; }
+  .press-links dd { margin-bottom: 10px; }
+}
