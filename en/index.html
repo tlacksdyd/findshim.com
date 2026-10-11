@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KORE — The all-in-one restroom app for Korea</title>
-  <meta name="description" content="The all-in-one restroom app for Korea: 64,000+ restrooms with cleanliness ratings, walking routes, reviews and rankings — in 5 languages. Free on iOS and Android." />
+  <meta name="description" content="The all-in-one restroom app for Korea: 64,000+ restrooms with cleanliness ratings, walking routes, reviews and rankings, plus a toilet character to raise — in 5 languages. Free on iOS and Android." />
 
   <!-- Open Graph / social -->
   <meta property="og:type" content="website" />
@@ -42,6 +42,7 @@
       <nav class="nav" aria-label="Primary">
         <a class="nav-link" href="#map">The map</a>
         <a class="nav-link" href="#community">Community</a>
+        <a class="nav-link" href="#kore">KORE</a>
         <a class="nav-link" href="support/">Support</a>
         <div class="lang-switch" role="group" aria-label="Language">
           <a class="ls-opt" href="../" lang="ko" hreflang="ko">한국어</a>
@@ -61,7 +62,7 @@
           <h1>Find a restroom,<br /><span class="accent">anywhere in Korea.</span></h1>
           <p class="lead">
             Find the closest one, see how clean it is, walk there, leave a review —
-            all in one app, in your own language. Open it and you see what's nearest.
+            all in one app, in your own language. Open it and the map shows what's around you, with the nearest ones listed in order below.
           </p>
 
           <!-- Store buttons: live App Store / Google Play links. Keep these in
@@ -79,18 +80,18 @@
           <p class="store-note">Free · iOS &amp; Android · No sign-up needed</p>
         </div>
 
-        <!-- The Home tab, as the app actually draws it. The PNGs under
-             assets/shots/ are real iPhone captures of the app, fitted to
-             390x844 @2x. -->
+        <!-- "Nearby restrooms" in the sheet over the map. The PNGs under
+             assets/shots/ are captures of app 2.1.0 on an iPhone 17 Pro
+             simulator, fitted to 390x844 @2x. -->
         <div class="hero-visual">
           <div class="device">
             <img class="shot" src="../assets/shots/home-en.png" width="390" height="844"
-                 alt="KORE's Home tab: the three nearest toilets, the closest one 207m away, then the nearest clean ones and the contributor ranking." />
+                 alt="KORE's map around Gangnam Station with the three nearest restrooms marked 1, 2, 3, and a sheet below listing them by distance, the closest 69m away." />
           </div>
 
           <div class="float-card one">
             <span class="fc-icon">📍</span>
-            <div>207m<small>to the nearest restroom</small></div>
+            <div>69m<small>to the nearest restroom</small></div>
           </div>
           <div class="float-card two">
             <span class="fc-icon">🌏</span>
@@ -106,7 +107,7 @@
         <div class="stats">
           <div class="stat" data-reveal><b>64,000+</b><span>restrooms in the app</span></div>
           <div class="stat" data-reveal><b>5</b><span>languages</span></div>
-          <div class="stat" data-reveal><b>7</b><span>minigames</span></div>
+          <div class="stat" data-reveal><b>15</b><span>levels of toilet to raise</span></div>
           <div class="stat" data-reveal><b>₩0</b><span>free download, no sign-up</span></div>
         </div>
       </div>
@@ -126,7 +127,8 @@
             <li><b>Clean only.</b> One tap and nothing but the blue pins is left.</li>
             <li><b>Filter by what you need.</b> Accessible stalls, changing tables, open 24h, open right now (KORE Premium).</li>
             <li><b>Search by region, address or name.</b> Type "Yuseong-gu" or "Jeju" and the whole district is framed, typos included.</li>
-            <li><b>The nearest three</b> show as yellow pins. Tap the Top 3 on Home and the map marks them 1, 2, 3.</li>
+            <li><b>The nearest three</b> show as yellow pins. Tap "Nearby restrooms" in the sheet below and the map marks them 1, 2, 3. Switch to "Cleanest" for the nearest clean ones.</li>
+            <li><b>What's popular around here.</b> Pull up the sheet for the restrooms people in this district visit, save, review and rate most.</li>
             <li><b>Zoom out for the big picture.</b> Each province and district shows how many restrooms it has at a glance.</li>
           </ul>
         </div>
@@ -134,7 +136,7 @@
         <div class="split-visual" data-reveal>
           <div class="device">
             <img class="shot" src="../assets/shots/map-en.png" width="390" height="844" loading="lazy"
-                 alt="KORE's map: blue pins and yellow pins numbered 1 to 3 across a neighbourhood, the search bar, marker guide and clean-only buttons above, and the nearest clean toilets listed below." />
+                 alt="KORE's map around Gangnam Station: red and blue pins across the streets, the search bar with Clean only and Filters above, and a sheet with Seocho-gu and Nearby restrooms below." />
           </div>
         </div>
       </div>
@@ -165,6 +167,10 @@
             <span class="legend-pin" style="background:var(--pin-address)"></span>
             <div class="legend-text"><b>Violet pin</b><span>Searched address</span></div>
           </div>
+          <div class="legend-item">
+            <span class="legend-pin" style="background:#008a05"></span>
+            <div class="legend-text"><b>Green star</b><span>A restroom you saved</span></div>
+          </div>
         </div>
       </div>
     </section>
@@ -185,15 +191,15 @@
             <li>Driving instead? Hand it to <b>TMAP, KakaoMap or Naver Map</b> in one tap.</li>
             <li><b>Hours, door code, emergency bell, entrance CCTV, changing table, bidet, floor.</b> Only what is actually on record. Nothing is shown as an empty field.</li>
             <li><b>Is it open right now?</b> See what recent visitors reported.</li>
-            <li>A <b>reviews tab</b> with what other visitors found, and room for your stars and your review.</li>
-            <li>Tap the star to keep a place in <b>Favorites</b>, one tap away on Home.</li>
+            <li>A <b>reviews tab</b> with what other visitors found, and room for your stars and your review. Like the helpful ones, reply to ask a question.</li>
+            <li>Tap the star to keep a place in <b>Favorites</b>: it shows on the map as a green star and is listed under All.</li>
           </ul>
         </div>
 
         <div class="split-visual" data-reveal>
           <div class="device">
             <img class="shot" src="../assets/shots/detail-en.png" width="390" height="844" loading="lazy"
-                 alt="KORE's detail sheet: restroom photos, walking directions, the TMAP / KakaoMap / Naver Map hand-off, then the cleanliness rating and amenities such as toilet paper, soap and separate men's and women's rooms." />
+                 alt="KORE's detail sheet for a Gangnam Station restroom: walking directions, star rating, Is it open right now?, the TMAP / KakaoMap / Naver Map hand-off, then opening hours 05~24 and safety features such as an emergency bell and entrance CCTV." />
           </div>
         </div>
       </div>
@@ -205,7 +211,7 @@
         <div class="section-head center" data-reveal>
           <span class="kicker">Built together</span>
           <h2>A missing restroom is<br />something anyone can fix</h2>
-          <p>You can contribute without an account. Submissions are reviewed, published, and counted on the contributor board.</p>
+          <p>You can contribute without an account. Submissions are reviewed, published, and counted on the contributor board. Approved submissions, reviews, star ratings and "Is it open?" answers also earn KORE coins and crystals.</p>
         </div>
 
         <div class="steps">
@@ -251,31 +257,30 @@
       </div>
     </section>
 
-    <!-- ===================== Games ===================== -->
-    <section class="section" id="games">
+    <!-- ===================== KORE character ===================== -->
+    <section class="section" id="kore">
       <div class="container split">
         <div data-reveal>
-          <span class="kicker">Games</span>
-          <h2>For those few minutes<br />on the toilet</h2>
+          <span class="kicker">KORE</span>
+          <h2>For those few minutes<br />on the toilet, raise one</h2>
           <p class="lead">
-            A few minutes on the toilet go faster with a quick round. Seven games nobody needs to read instructions for,
-            four of them on the shelf, with some swapping out at random each midnight. A round costs one
-            token, and tokens refill every 30 minutes. The weekly board starts over every Monday, the all-time one just
-            keeps going, and your scores count toward your region and country too.
+            The KORE tab is home to your own toilet character. Poop piles up one an hour, six at most, and
+            when it's full you flush for coins. Spend them decorating its room, or head to Grow and merge
+            matching toilets into higher and higher levels.
           </p>
           <ul class="bullets">
-            <li><b>Tetris</b> stack the blocks, clear the lines</li>
-            <li><b>Brick Breaker</b> drag anywhere to move the paddle</li>
-            <li><b>Stack</b> tap to drop the block right on target</li>
-            <li><b>Minesweeper</b> tap to open, long-press to flag</li>
-            <li><b>Flappy · Ping Pong · Dodge</b> quick rounds, one thumb</li>
+            <li><b>Flush</b> the fuller it is, the more coins one flush pays</li>
+            <li><b>Decorate</b> rooms and items in four themes: Basic, Hanok, Seoul Night and Palace</li>
+            <li><b>Grow</b> merge toilets from the kiln to fill a 15-level collection, plus six hidden easter-egg toilets</li>
+            <li><b>30-day check-in and daily/weekly missions</b> coins, crystals and special reward toilets</li>
+            <li><b>Crystals</b> unlock a clean restroom's full details, one place at a time</li>
           </ul>
         </div>
 
         <div class="split-visual" data-reveal>
           <div class="device">
-            <img class="shot" src="../assets/shots/game-en.png" width="390" height="844" loading="lazy"
-                 alt="KORE's Games tab: Tetris, Brick Breaker, Stack and Minesweeper cards above the Top 5 Leaderboard." />
+            <img class="shot" src="../assets/shots/kore-en.png" width="390" height="844" loading="lazy"
+                 alt="The KORE tab lobby: a dizzy toilet character full of poop, the Poop 6/6 gauge, a Flush +1,800 button and Decorate below." />
           </div>
         </div>
       </div>
@@ -313,12 +318,13 @@
             <div class="faq-body">
               <p>
                 Yes. Download it free and start finding restrooms, getting directions, adding places, writing
-                reviews and playing right away, with ads.
+                reviews and raising your KORE right away, with ads.
               </p>
               <p>
-                Details behind blue (clean) pins, filters, no ads and unlimited game tokens come with
+                Details behind blue (clean) pins, filters, no ads and a +10% KORE flush bonus come with
                 <b>KORE Premium</b>, an optional monthly subscription. A first subscription the store deems
-                eligible starts with a 7-day free trial.
+                eligible starts with a 7-day free trial. You can also unlock a clean restroom's details one at a
+                time with crystals earned in KORE.
               </p>
             </div>
           </details>
@@ -326,8 +332,8 @@
             <summary>Do I need an account?</summary>
             <div class="faq-body">
               <p>
-                No. Browsing the map, adding restrooms, suggesting edits, writing reviews, the game
-                boards and even private "only me" markers all work without signing in. An account
+                No. Browsing the map, adding restrooms, suggesting edits, writing reviews, raising your KORE
+                and even private "only me" markers all work without signing in. An account
                 just keeps your records with you when you change phones.
               </p>
             </div>
@@ -396,6 +402,7 @@
             <h4>Product</h4>
             <a href="#map">The map</a>
             <a href="#community">Community</a>
+            <a href="#kore">KORE</a>
             <a href="#download">Download</a>
           </div>
           <div class="footer-col">

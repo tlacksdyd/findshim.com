@@ -75,12 +75,14 @@ python -m http.server 8000   # http://localhost:8000
 
 ## Screenshots
 
-`assets/shots/{home,map,detail,game}-{ko,en}.png` are **real iPhone captures**
-of the app, taken from `../data/pic,video/` (the newest set is
-`KakaoTalk_20260822_*.png`, 1179x2556). Each one is resized to 780px wide and
-cropped to 780x1688 so it fits the `.shot` box (390x844 @2x); keep that size
-when replacing a shot. Pick the most recent capture of the same screen for each
-locale — Korean UI for `-ko`, English UI for `-en`.
+`assets/shots/{home,map,detail,kore}-{ko,en}.png` are captures of app 2.1.0
+taken on the iPhone 17 Pro simulator (1206x2622): `home` is the map with the
+"가까운 화장실" sheet up, `map` the map with the sheet at peek, `detail` the
+강남역(2) detail sheet pulled to full, `kore` the KORE tab lobby. Each one is
+resized to 780px wide, cropped to 780x1688 so it fits the `.shot` box (390x844
+@2x), and palette-compressed; keep that size when replacing a shot. The KORE
+shot needs a debug build against the local emulators, because App Check fails
+on the simulator and the release build can't reach the KORE functions.
 
 `tools/screenshots/build.js` is the older generator that rebuilt these screens
 as HTML from the `../app` checkout and shot them with headless Chrome. It is
@@ -97,8 +99,8 @@ kept as a fallback, but it has not tracked the app's newer screens.
   both pages and the effective date.
 - **Button and tab names** quoted in the copy are the app's own labels, from
   `../app/src/i18n/locales/{ko,en}.json` — e.g. 도보 길 찾기 / "Walking
-  directions". The tabs are 홈 · 지도 · 게임 · 랭킹 · 전체 / Home · Map ·
-  Games · Rankings · All (리포트 and 설정 no longer exist as tabs). The app
+  directions". Since 2.1.0 the tabs are 지도 · KORE · 전체 / Map · KORE · All
+  — one bottom sheet over a full-screen map; 홈, 게임 and 랭킹 are gone as tabs. The app
   supports **5 languages** (ko · en · ja · zh-CN · zh-TW). Check the locale file
   before naming a control in prose.
 

@@ -23,7 +23,7 @@ Korean is the default locale and lives at the root; English mirrors it under
 ├── assets/
 │   ├── styles.css        # Single shared stylesheet (design system)
 │   ├── site.js           # Only script: sticky-header hairline + scroll reveal
-│   ├── shots/            # App screenshots (홈 · 지도 · 상세 · 게임, ko + en)
+│   ├── shots/            # App screenshots (가까운 화장실 · 지도 · 상세 · KORE, ko + en)
 │   ├── favicon.png       # Browser favicon / brand mark
 │   ├── app-icon.png      # App icon (apple-touch-icon)
 │   ├── logo-mark.png     # Transparent app mark (used inside the screenshots)

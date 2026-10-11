@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KORE — 한국 화장실 종합 앱</title>
-  <meta name="description" content="급할 때 가장 가까운 화장실을 3초 만에. 전국 화장실 6만 4천여 곳의 위치와 청결도, 도보 길 찾기, 후기, 랭킹까지 한 앱에 담은 한국 화장실 종합 앱 KORE. 5개 언어, 무료." />
+  <meta name="description" content="급할 때 가장 가까운 화장실을 3초 만에. 전국 화장실 6만 4천여 곳의 위치와 청결도, 도보 길 찾기, 후기, 랭킹, 변기 캐릭터 키우기까지 한 앱에 담은 한국 화장실 종합 앱 KORE. 5개 언어, 무료." />
 
   <!-- Open Graph / social -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="KORE" />
   <meta property="og:title" content="KORE — 한국 화장실 종합 앱" />
-  <meta property="og:description" content="찾기부터 청결도·길 찾기·후기·랭킹까지, 한국 화장실의 모든 것을 한 앱에. 전국 6만 4천여 곳. iOS·안드로이드 무료." />
+  <meta property="og:description" content="찾기부터 청결도·길 찾기·후기·랭킹, 변기 캐릭터 키우기까지. 한국 화장실의 모든 것을 한 앱에. 전국 6만 4천여 곳. iOS·안드로이드 무료." />
   <meta property="og:url" content="https://findshim.com/" />
   <meta property="og:image" content="https://findshim.com/assets/og-image.png" />
   <meta property="og:locale" content="ko_KR" />
@@ -43,6 +43,7 @@
       <nav class="nav" aria-label="주요 메뉴">
         <a class="nav-link" href="#map">지도</a>
         <a class="nav-link" href="#community">함께 만들기</a>
+        <a class="nav-link" href="#kore">KORE</a>
         <a class="nav-link" href="support/">고객지원</a>
         <div class="lang-switch" role="group" aria-label="언어 선택">
           <a class="ls-opt is-active" href="./" aria-current="true">한국어</a>
@@ -62,7 +63,7 @@
           <h1>급할 때,<br /><span class="accent">가장 가까운 화장실.</span></h1>
           <p class="lead">
             찾기, 청결도, 길 찾기, 후기, 랭킹까지. 화장실에 필요한 모든 걸 앱 하나에 담았습니다.
-            앱을 켜면 내 위치와 가장 가까운 화장실이 바로 뜹니다.
+            앱을 켜면 지도 위에 내 주변 화장실이 바로 뜨고, 아래 시트에서 가장 가까운 곳을 거리순으로 짚어줍니다.
           </p>
 
           <!-- Store buttons: live App Store / Google Play links. Keep these in
@@ -80,17 +81,17 @@
           <p class="store-note">무료 · iOS &amp; 안드로이드 · 가입 없이 바로 사용</p>
         </div>
 
-        <!-- 앱을 켰을 때 처음 보이는 홈 탭. assets/shots/ 아래 PNG는 실제
-             iPhone에서 캡처한 앱 화면을 390x844 @2x로 맞춘 것입니다. -->
+        <!-- 지도 위 시트의 "가까운 화장실". assets/shots/ 아래 PNG는 앱 2.1.0을
+             iPhone 17 Pro 시뮬레이터에서 캡처해 390x844 @2x로 맞춘 것입니다. -->
         <div class="hero-visual">
           <div class="device">
             <img class="shot" src="assets/shots/home-ko.png" width="390" height="844"
-                 alt="KORE 앱 홈 화면. 가장 가까운 화장실 Top 3가 209m부터 거리순으로 표시되고, 그 아래로 가까운 깨끗한 화장실 Top 3와 기여자 랭킹이 이어진다." />
+                 alt="KORE 앱 지도 화면. 내 위치 주변 지도에 가장 가까운 화장실 세 곳이 1·2·3 번호로 표시되고, 아래 시트에 69m 거리의 강남역 화장실부터 거리순 목록이 이어진다." />
           </div>
 
           <div class="float-card one">
             <span class="fc-icon">📍</span>
-            <div>209m<small>가장 가까운 화장실</small></div>
+            <div>69m<small>가장 가까운 화장실</small></div>
           </div>
           <div class="float-card two">
             <span class="fc-icon">🌏</span>
@@ -106,7 +107,7 @@
         <div class="stats">
           <div class="stat" data-reveal><b>64,000+</b><span>전국 화장실 정보</span></div>
           <div class="stat" data-reveal><b>5개</b><span>지원 언어</span></div>
-          <div class="stat" data-reveal><b>7종</b><span>미니게임</span></div>
+          <div class="stat" data-reveal><b>15단계</b><span>변기 캐릭터 키우기</span></div>
           <div class="stat" data-reveal><b>0원</b><span>무료 다운로드 · 가입 없이 바로</span></div>
         </div>
       </div>
@@ -126,7 +127,8 @@
             <li><b>깨끗한 화장실만</b>. 한 번 누르면 파란 핀만 남습니다.</li>
             <li><b>조건으로 찾는 필터</b>. 장애인 화장실, 기저귀 교환대, 24시간 개방, 지금 열려 있는 곳까지 골라 봅니다(KORE 프리미엄).</li>
             <li><b>지역·주소·이름 검색</b>. "유성구", "제주"처럼 지역을 치면 그 지역 전체가 한눈에 들어오고, 오타도 잡아냅니다.</li>
-            <li><b>가장 가까운 3곳</b>은 노란 핀으로 표시되고, 홈에서 Top 3를 누르면 지도에 1·2·3 번호를 붙여 짚어줍니다.</li>
+            <li><b>가장 가까운 3곳</b>은 노란 핀으로 표시되고, 아래 시트의 "가까운 화장실"을 누르면 1·2·3 번호를 붙여 짚어줍니다. "깨끗한"으로 바꾸면 가까운 깨끗한 화장실 Top 3.</li>
+            <li><b>이 동네 인기 화장실</b>. 시트를 올리면 지금 이 지역에서 많이 찾는 곳, 저장·후기·별점이 많은 곳 순위가 나옵니다.</li>
             <li><b>멀리 보면 지역별로</b>. 지도를 축소하면 시·도, 시·군·구마다 화장실이 몇 곳인지 한눈에 보여줍니다.</li>
           </ul>
         </div>
@@ -134,7 +136,7 @@
         <div class="split-visual" data-reveal>
           <div class="device">
             <img class="shot" src="assets/shots/map-ko.png" width="390" height="844" loading="lazy"
-                 alt="KORE 앱 지도 화면. 파란 핀과 1·2·3 번호가 붙은 노란 핀이 흩어져 있고, 위쪽에 검색창과 마커 안내·깨끗한 화장실만 버튼, 아래에 가까운 깨끗한 화장실 Top 3 목록이 있다." />
+                 alt="KORE 앱 지도 화면. 강남역 주변에 빨간 핀과 파란 핀이 흩어져 있고, 위쪽에 검색창과 깨끗한 화장실만·필터 버튼, 아래에 서초구 · 가까운 화장실 전환이 있는 시트가 있다." />
           </div>
         </div>
       </div>
@@ -165,6 +167,10 @@
             <span class="legend-pin" style="background:var(--pin-address)"></span>
             <div class="legend-text"><b>보라 핀</b><span>검색한 주소</span></div>
           </div>
+          <div class="legend-item">
+            <span class="legend-pin" style="background:#008a05"></span>
+            <div class="legend-text"><b>초록 별</b><span>저장한 화장실</span></div>
+          </div>
         </div>
       </div>
     </section>
@@ -185,15 +191,15 @@
             <li>운전이 필요하면 <b>TMAP · 카카오맵 · 네이버지도</b>로 한 번에 넘겨줍니다.</li>
             <li><b>개방시간, 출입 비밀번호, 비상벨, 입구 CCTV, 기저귀 교환대, 비데, 층수</b>. 기록이 있는 항목만 보여주고, 없는 항목은 빈칸으로 남기지 않고 아예 빼버립니다.</li>
             <li><b>지금 열려 있나요?</b> 다녀온 사람들이 최근에 확인한 개방 여부를 함께 보여줍니다.</li>
-            <li><b>후기 탭</b>에서 다녀온 사람들의 이야기를 읽고, 별점이나 후기를 직접 남길 수도 있습니다.</li>
-            <li>자주 가는 곳은 별을 눌러 <b>즐겨찾기</b>에 넣어두면 홈에서 바로 꺼내 볼 수 있습니다.</li>
+            <li><b>후기 탭</b>에서 다녀온 사람들의 이야기를 읽고, 별점이나 후기를 직접 남길 수도 있습니다. 마음에 드는 후기엔 좋아요, 궁금한 건 답글로.</li>
+            <li>자주 가는 곳은 별을 눌러 <b>즐겨찾기</b>에 넣어두면 지도에 초록 별로 표시되고, 전체 탭에서 모아 볼 수 있습니다.</li>
           </ul>
         </div>
 
         <div class="split-visual" data-reveal>
           <div class="device">
             <img class="shot" src="assets/shots/detail-ko.png" width="390" height="844" loading="lazy"
-                 alt="KORE 앱 화장실 상세 화면. 화장실 사진 아래에 도보 길 찾기 버튼과 티맵·카카오맵·네이버지도 버튼, 그 아래로 청결도 별점과 화장지·비누·남녀 분리 같은 편의시설 정보." />
+                 alt="KORE 앱 강남역 화장실 상세 화면. 도보 길 찾기 버튼 아래에 별점과 지금 열려 있나요? 응답, 티맵·카카오맵·네이버지도 버튼, 운영 시간 05~24와 비상벨·입구 CCTV 같은 안전 시설 정보." />
           </div>
         </div>
       </div>
@@ -205,7 +211,7 @@
         <div class="section-head center" data-reveal>
           <span class="kicker">함께 만들기</span>
           <h2>빠진 화장실은<br />누구나 채워 넣을 수 있습니다</h2>
-          <p>로그인 없이도 제보할 수 있습니다. 검토를 거쳐 지도에 올라가고, 승인된 제보는 기여자 랭킹에 쌓입니다.</p>
+          <p>로그인 없이도 제보할 수 있습니다. 검토를 거쳐 지도에 올라가고, 승인된 제보는 기여자 랭킹에 쌓입니다. 제보가 승인되거나 후기·별점·"열려 있나요?"를 남기면 KORE 코인과 크리스탈도 받습니다.</p>
         </div>
 
         <div class="steps">
@@ -251,31 +257,30 @@
       </div>
     </section>
 
-    <!-- ===================== Games ===================== -->
-    <section class="section" id="games">
+    <!-- ===================== KORE character ===================== -->
+    <section class="section" id="kore">
       <div class="container split">
         <div data-reveal>
-          <span class="kicker">게임</span>
-          <h2>화장실에 앉아 있는<br />잠깐 동안</h2>
+          <span class="kicker">KORE</span>
+          <h2>화장실에 앉아 있는<br />잠깐 동안, 변기 키우기</h2>
           <p class="lead">
-            볼일 보는 몇 분, 그냥 폰만 넘기기엔 심심하니까. 설명서 없이 바로 한 판 하는 미니게임 일곱 종.
-            그중 네 개가 오늘의 게임으로 올라오고, 매일 자정 몇 개씩 무작위로 바뀝니다. 한 판에 토큰
-            하나, 토큰은 30분마다 다시 찹니다. 주간 랭킹은 매주 월요일에 새로 시작하고, 올타임 랭킹은
-            계속 쌓이며, 내 점수는 지역·국가 랭킹에도 더해집니다.
+            KORE 탭에는 나만의 변기 캐릭터가 삽니다. 똥이 한 시간에 하나씩, 최대 여섯 개까지 쌓이고,
+            가득 차면 물을 내려 코인을 받습니다. 모은 코인으로 방을 꾸미고, 키우기에서는 같은 단계
+            변기끼리 합쳐 더 높은 단계로 올립니다.
           </p>
           <ul class="bullets">
-            <li><b>테트리스</b> 블록을 쌓아 줄을 지우세요</li>
-            <li><b>벽돌깨기</b> 어디든 끌어 막대를 움직이세요</li>
-            <li><b>블록 쌓기</b> 눌러서 블록을 딱 맞춰 쌓으세요</li>
-            <li><b>지뢰찾기</b> 눌러 열고, 길게 눌러 깃발을 꽂으세요</li>
-            <li><b>플래피 · 핑퐁 · 피하기</b> 짧게 한 판, 손끝으로 가볍게</li>
+            <li><b>물 내리기</b> 꽉 채워서 내릴수록 한 번에 받는 코인이 많아집니다</li>
+            <li><b>꾸미기</b> 기본 · 한옥 · 서울 나이트 · 궁전, 네 가지 테마의 방과 소품</li>
+            <li><b>키우기</b> 가마에서 뽑은 변기를 합쳐 15단계 도감 채우기, 숨은 이스터에그 변기 6종까지</li>
+            <li><b>30일 출석판 · 일일/주간 미션</b> 매일 들어오면 코인과 크리스탈, 특별한 보상 변기</li>
+            <li><b>크리스탈</b>로 깨끗한 화장실의 상세 정보를 한 곳씩 열 수 있습니다</li>
           </ul>
         </div>
 
         <div class="split-visual" data-reveal>
           <div class="device">
-            <img class="shot" src="assets/shots/game-ko.png" width="390" height="844" loading="lazy"
-                 alt="KORE 앱 게임 탭. 테트리스, 벽돌깨기, 블록 쌓기, 지뢰찾기 카드와 그 아래 게임 랭킹 TOP 5." />
+            <img class="shot" src="assets/shots/kore-ko.png" width="390" height="844" loading="lazy"
+                 alt="KORE 탭 로비 화면. 똥이 가득 찬 변기 캐릭터가 어지러운 표정을 짓고 있고, 아래에 똥 6/6 게이지와 물 내리기 +1,800 버튼, 꾸미기 버튼이 있다." />
           </div>
         </div>
       </div>
@@ -312,11 +317,12 @@
             <summary>무료로 쓸 수 있나요?</summary>
             <div class="faq-body">
               <p>
-                네. 무료로 내려받아 화장실 찾기와 길 찾기, 제보, 후기, 게임까지 바로 쓸 수 있습니다(광고 포함).
+                네. 무료로 내려받아 화장실 찾기와 길 찾기, 제보, 후기, KORE 키우기까지 바로 쓸 수 있습니다(광고 포함).
               </p>
               <p>
-                깨끗한 화장실(파란 핀)의 상세 정보, 조건으로 찾는 필터, 광고 제거, 게임 토큰 무제한은 선택형
+                깨끗한 화장실(파란 핀)의 상세 정보, 조건으로 찾는 필터, 광고 제거, KORE 물내림 보너스 +10%는 선택형
                 월 구독인 <b>KORE 프리미엄</b>에서 제공되며, 스토어에서 대상이 되는 첫 구독에는 7일 무료 체험이 있습니다.
+                깨끗한 화장실 상세 정보는 KORE에서 모은 크리스탈로 한 곳씩 열 수도 있습니다.
               </p>
             </div>
           </details>
@@ -324,7 +330,7 @@
             <summary>회원가입을 해야 하나요?</summary>
             <div class="faq-body">
               <p>
-                아니요. 화장실 찾기는 물론이고 제보·후기 작성·게임 랭킹·"나만 보기" 마커까지
+                아니요. 화장실 찾기는 물론이고 제보·후기 작성·KORE 키우기·"나만 보기" 마커까지
                 로그인 없이 할 수 있습니다. 가입해 두면 휴대폰을 바꿔도 기록이 그대로 이어집니다.
               </p>
             </div>
@@ -393,6 +399,7 @@
             <h4>제품</h4>
             <a href="#map">지도</a>
             <a href="#community">함께 만들기</a>
+            <a href="#kore">KORE</a>
             <a href="#download">다운로드</a>
           </div>
           <div class="footer-col">
