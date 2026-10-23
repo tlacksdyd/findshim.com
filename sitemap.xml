@@ -25,6 +25,13 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://findshim.com/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://findshim.com/terms/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://findshim.com/en/terms/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://findshim.com/terms/" />
+    <priority>0.4</priority>
+  </url>
+  <url>
     <loc>https://findshim.com/contact/</loc>
     <xhtml:link rel="alternate" hreflang="ko" href="https://findshim.com/contact/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://findshim.com/en/contact/" />
@@ -51,6 +58,13 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://findshim.com/en/privacy/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://findshim.com/privacy/" />
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://findshim.com/en/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://findshim.com/terms/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://findshim.com/en/terms/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://findshim.com/terms/" />
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://findshim.com/en/contact/</loc>
