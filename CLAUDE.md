@@ -104,4 +104,4 @@ kept as a fallback, but it has not tracked the app's newer screens.
   supports **5 languages** (ko · en · ja · zh-CN · zh-TW). Check the locale file
   before naming a control in prose.
 
-Contact email used across the site: `cyshim0715@gmail.com`.
+Contact email used across the site: `findshim@gmail.com`.
