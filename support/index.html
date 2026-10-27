@@ -13,9 +13,10 @@
   <meta property="og:title" content="고객지원 — KORE" />
   <meta property="og:description" content="자주 묻는 질문, 문의 방법, 계정·데이터 삭제 안내." />
   <meta property="og:url" content="https://findshim.com/support/" />
-  <meta property="og:image" content="https://findshim.com/assets/og-image.png" />
+  <meta property="og:image" content="https://findshim.com/assets/og-image.png?v=220" />
   <meta name="theme-color" content="#3F8CFC" />
-  <link rel="icon" type="image/png" href="../assets/favicon.png" />
+  <link rel="icon" href="../favicon.ico" sizes="48x48" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon.png" />
   <link rel="apple-touch-icon" href="../assets/app-icon.png" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
@@ -28,7 +29,7 @@
   <header class="site-header">
     <div class="container">
       <a class="brand" href="../" aria-label="KORE 홈">
-        <img src="../assets/app-icon.png" alt="" width="34" height="34" />
+        <img src="../assets/favicon.png" alt="" width="34" height="34" />
         <span>KORE</span>
       </a>
       <nav class="nav" aria-label="주요 메뉴">
@@ -57,9 +58,9 @@
       <div class="contact-card">
         <div>
           <div class="ct-label">이메일 문의</div>
-          <div class="ct-value">cyshim0715@gmail.com</div>
+          <div class="ct-value">findshim@gmail.com</div>
         </div>
-        <a class="btn-pill" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=cyshim0715@gmail.com&amp;su=KORE%20%EB%AC%B8%EC%9D%98" target="_blank" rel="noopener">메일 보내기</a>
+        <a class="btn-pill" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=findshim@gmail.com&amp;su=KORE%20%EB%AC%B8%EC%9D%98" target="_blank" rel="noopener">메일 보내기</a>
       </div>
 
       <h2>문의하는 방법</h2>
@@ -138,8 +139,12 @@
             </p>
             <p>
               가입하면 휴대폰을 바꿔도 KORE 진행과 즐겨찾기, 기록이 그대로 이어지고, 게스트로 쌓은 기록은
-              로그인한 계정으로 옮겨집니다. 로그인하지 않고 쓰면 앱을 지우거나 기기를 바꿨을 때 이어지지 않을 수
-              있습니다. 닉네임과 국기, 프로필 사진(선택)은 랭킹과 후기에 표시됩니다.
+              로그인한 계정으로 옮겨집니다. 닉네임과 국기, 프로필 사진(선택)은 랭킹과 후기에 표시됩니다.
+            </p>
+            <p>
+              다만 로그인하지 않은 동안의 기록과 구매는 이 기기의 게스트 기록에 저장되므로, 가입하지
+              않은 채 앱을 지우면 되찾을 방법이 없습니다. 충전 상품을 샀다면 앱을 지우기 전에 꼭 가입해 주세요
+              (가입하면 그대로 계정으로 이어지고, 기존 계정으로 로그인하면 그 계정으로 옮겨집니다).
             </p>
           </div>
         </details>
@@ -250,27 +255,64 @@
             </p>
           </div>
         </details>
+
+        <details class="faq-item">
+          <summary>유료 코인·크리스탈의 청약철회와 환불은 어떻게 하나요?</summary>
+          <div class="faq-body">
+            <p>
+              결제는 App Store / Google Play가 처리하므로 환불은 먼저 각 스토어의 환불 절차로 요청해 주세요
+              (App Store: reportaproblem.apple.com, Google Play: Play 스토어 → 결제 및 정기 결제 → 예산 및 기록).
+            </p>
+            <p>
+              「전자상거래 등에서의 소비자보호에 관한 법률」에 따라 <strong>사용하지 않은 유료 코인·크리스탈은
+              결제일로부터 7일 이내에 청약철회</strong>할 수 있습니다. 일부라도 사용했다면 사용하지 않은 만큼만
+              돌려드리며, 이미 사용한 코인·크리스탈과 그것으로 산 아이템·변기는 철회 대상이 아닙니다. 코인은 무료로 받은
+              것을 먼저 쓰고, 유료로 산 것은 오래된 결제부터 씁니다.
+            </p>
+            <p>
+              스토어에서 환불이 끝나면 그 결제로 받은 코인 중 남은 양이, 크리스탈은 그 상품의 수량만큼(잔액이
+              모자라면 남은 만큼) 회수됩니다. 문의는 앱의
+              <strong>전체 탭 → 피드백</strong> 또는 이메일로 결제 날짜와 상품을 알려 주세요.
+            </p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>게임 탭은 어디로 갔나요?</summary>
+          <div class="faq-body">
+            <p>
+              2.1.0 업데이트에서 게임 탭이 KORE 탭으로 바뀌었습니다. 이전에 쌓은 게임 기록은 처음 KORE를
+              열 때 한 번 코인으로 바꿔 드립니다.
+            </p>
+          </div>
+        </details>
       </div>
 
       <h2>계정 및 데이터 삭제</h2>
       <p>
-        로그인한 상태에서 <strong>전체 탭의 계정 카드 → 회원 탈퇴</strong>를 누르고 확인한 뒤 비밀번호를 다시
-        입력하면 계정이 삭제됩니다. 이때 제보·즐겨찾기·이용 내역·프로필(닉네임·사진·국가)이 영구 삭제되고,
-        <strong>KORE 코인(구매한 코인 포함)·크리스탈·꾸미기·키우기 기록도 함께 사라지며 되돌릴 수 없습니다.</strong>
+        로그인한 상태에서 <strong>전체 탭 맨 아래 계정 카드 → 회원 탈퇴</strong>를 누르고 확인한 뒤
+        비밀번호를 다시 입력하면 계정이 삭제됩니다. 이때 계정과 닉네임·프로필 사진·국가, 제보와 수정 제안,
+        나만 보기 마커, 피드백, 즐겨찾기, 이용 내역, 알림 정보가 즉시 함께 지워지고, KORE 기록(코인·크리스탈·
+        아이템·키우기)과 키우기 랭킹, 후기 좋아요도 자동으로 삭제됩니다. 코인·크리스탈 결제 기록은 법에 따라
+        결제일로부터 5년간 보관합니다(<a href="../privacy/">개인정보처리방침</a> 5항).
       </p>
       <p>
         <strong>KORE 프리미엄 등 구독은 탈퇴로 해지되지 않습니다</strong> — 스토어의 구독 관리에서 따로 해지해 주세요.
-        이미 남긴 후기는 지도 정보의 일부로 남되 작성자 닉네임은 표시되지 않습니다. 관련 법령에 따라 보관해야 하는
-        결제 기록은 정해진 기간 동안 보관됩니다.
+      </p>
+      <p>
+        <strong>후기, 후기 답글, 별점, "열려 있나요?" 응답, 이전 게임 기록은 탈퇴 후에도 남습니다.</strong>
+        후기와 답글에는 작성할 때의 닉네임이 남습니다. 후기와 답글은 탈퇴하기 전에 앱에서 직접 지울 수
+        있습니다. 별점과 이전 게임 기록까지 모두 지우고 싶으시면
+        <strong>탈퇴하기 전에</strong> 가입한 이메일로 위 주소에 요청해 주세요. 확인 후 지체 없이 삭제해 드립니다.
       </p>
       <p>
         로그인하지 않고 쓰신 경우에는 회원 탈퇴 메뉴가 없으니, 기록 삭제를 원하시면 이메일로 알려주세요.
-        이미 승인되어 <strong>지도에 공개된 화장실 정보</strong>는 다른 사용자가 쓰는 지도의 일부가 되므로
-        삭제 후에도 남습니다.
+        이미 승인되어 <strong>지도에 공개된 화장실 정보</strong>는 다른 사용자가 사용하는 지도의 일부가
+        되므로 삭제 후에도 남습니다.
       </p>
       <p>
         수집하는 정보와 처리 방식은 <a href="../privacy/">개인정보처리방침</a>에서 자세히 확인하실 수 있습니다.
       </p>
+
 
       <p><a class="back-link" href="../">← 홈으로 돌아가기</a></p>
     </article>
@@ -282,7 +324,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a class="brand" href="../" aria-label="KORE 홈">
-            <img src="../assets/app-icon.png" alt="" width="34" height="34" />
+            <img src="../assets/favicon.png" alt="" width="34" height="34" />
             <span>KORE</span>
           </a>
           <p>함께 만들어가는 전세계 화장실 앱. 어디서든, 가장 가까운 화장실로.</p>
@@ -298,8 +340,9 @@
           <div class="footer-col">
             <h4>지원</h4>
             <a href="../support/">고객지원</a>
-            <a href="../privacy/">개인정보처리방침</a>
             <a href="../contact/">문의하기</a>
+            <a href="../privacy/">개인정보처리방침</a>
+            <a href="../terms/">유료 서비스 이용약관</a>
           </div>
           <div class="footer-col">
             <h4>언어</h4>

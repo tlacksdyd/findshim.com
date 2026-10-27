@@ -17,8 +17,11 @@ Korean is the default locale and lives at the root; English mirrors it under
 ├── privacy/index.html    # /privacy — Privacy Policy (App Store / AdMob compliance)
 ├── support/index.html    # /support — Support & FAQ
 ├── contact/index.html    # /contact — Contact
-├── en/                   # English mirror: /en/, /en/privacy/, /en/support/, /en/contact/
+├── terms/index.html      # /terms — Terms for paid services (coins, crystals, subscriptions)
+├── press/index.html      # /press — English press kit (uses the 2.1.0 PNG shots)
+├── en/                   # English mirror: /en/, /en/privacy/, /en/support/, /en/contact/, /en/terms/
 ├── ko/                   # Legacy /ko/ URLs — noindex redirects to the root pages
+├── favicon.ico           # 48px favicon for browsers and Google
 ├── 404.html              # Custom not-found page (absolute paths — served from the domain root)
 ├── assets/
 │   ├── styles.css        # Single shared stylesheet (design system)
@@ -27,7 +30,7 @@ Korean is the default locale and lives at the root; English mirrors it under
 │   ├── kore/             # Mascot poses, toilet levels, coin/crystal art (from ../kore/assets)
 │   ├── favicon.png       # Browser favicon (the app icon)
 │   ├── app-icon.png      # App icon (apple-touch-icon); app-icon-512.png for JSON-LD
-│   ├── logo-mark.png     # Transparent app mark (used inside the screenshots)
+│   ├── logo-mark.png     # Transparent app mark
 │   ├── og-image.png      # Social card — Korean pages
 │   └── og-image-en.png   # Social card — English pages
 ├── tools/screenshots/    # crop.py (shots), og.py (social cards), build.js (old 2.0 generator)

@@ -98,6 +98,10 @@ Island (the capture tool's icon sits in it), and evens every shot to 780x1552.
 a phone (`.ui-card`). Re-run the script after replacing a capture and look at
 the output — a new layout can need a different `fix` band.
 
+The four PNGs `{home,map,detail,kore}-en.png` are the older 2.1.0 simulator
+captures; only `/press/` uses them (the press kit's wording is the owner's, from
+`../kore/press/presskit.md`). Replace them there before deleting them.
+
 `python tools/screenshots/og.py` rebuilds the social cards (`og-image.png`,
 `og-image-en.png`, 1200x630) from the world shot, the mascot and Pretendard
 Bold in `../kore/assets/fonts`.
@@ -111,13 +115,14 @@ as HTML; it does not know the current app and is kept only for reference.
   of `.store-btn` anchors (hero + CTA), plus the JSON-LD `downloadUrl` in each
   page's head. The Korean page links the `kr` App Store; the English page the
   storefront-neutral `apps.apple.com/app/id6774883751`.
-- **Privacy** — `privacy/index.html` (and its `/en/` twin) is the policy itself.
-  **It still describes the 2.0 app (game records, game tokens)** and does not
-  yet cover KORE coins/crystals and the retained payment records — the owner's
-  draft is `../kore/docs/legal/2026-10-23-privacy-terms-draft.md`. The policy is
-  the owner's to approve, so do not rewrite it unasked. When the app adds something that
-  touches personal data (ads, subscriptions, push, crash reports, ...), update
-  both pages and the effective date.
+- **Privacy** — `privacy/index.html` (and its `/en/` twin) is the policy itself,
+  revised for 2.2.0 (commit 50499cd); `terms/` is the paid-services terms. Both
+  are legal text the owner approves — do not rewrite them unasked. When the app
+  adds something that touches personal data (ads, subscriptions, push, crash
+  reports, ...), update both locales and the effective date. The support page's
+  deletion section is kept word-for-word in step with privacy section 5.
+- **No 모두의 게임 (modoogame).** The owner dropped it on 2026-10-27; its pages,
+  icon and sitemap entries are gone. Don't bring any of it back.
 - **Button and tab names** quoted in the copy are the app's own labels, from
   `../kore/src/i18n/locales/{ko,en}.json` — e.g. 도보 길 찾기 / "Walking
   directions", 정보가 틀렸나요? 수정·삭제 요청하기 / "Something wrong? Suggest an
@@ -128,4 +133,4 @@ as HTML; it does not know the current app and is kept only for reference.
   in prose. KORE Premium's benefits are `premiumBenefit*` / `benefitNotice2Line3`
   there — do not list a benefit the app no longer gives.
 
-Contact email used across the site: `cyshim0715@gmail.com`.
+Contact email used across the site: `findshim@gmail.com`.
