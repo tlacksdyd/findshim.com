@@ -548,6 +548,148 @@ html[lang="en"] .hero h1 { font-size: clamp(36px, 5vw, 60px); }
 .chip-float.two { bottom: 110px; right: -20px; }
 
 /* --------------------------------------------------------------------------
+   Achievements — the first thing in the hero. App Store #3 sits in a gold
+   laurel wreath; the rest are glass chips beside it.
+   -------------------------------------------------------------------------- */
+
+.proof-wrap { position: relative; z-index: 2; }
+
+.proof {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 2vw, 28px);
+  margin-bottom: clamp(28px, 4vw, 48px);
+  padding: 12px clamp(14px, 2vw, 26px);
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 18px 50px rgba(30, 40, 140, 0.18);
+}
+
+.award {
+  position: relative;
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.award::before {
+  content: "";
+  position: absolute;
+  inset: 6% 12%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(255, 222, 120, 0.6), transparent);
+  filter: blur(8px);
+}
+
+.laurel {
+  position: relative;
+  width: 48px;
+  height: 108px;
+  filter: drop-shadow(0 2px 4px rgba(90, 50, 0, 0.35));
+}
+
+.laurel.r { transform: scaleX(-1); }
+
+.award-text {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100px;
+  line-height: 1;
+  text-align: center;
+}
+
+.award-text small { font-size: 14px; font-weight: 800; letter-spacing: 0.02em; color: #fff; }
+
+.award-text b {
+  margin: 4px 0 6px;
+  font-size: 54px;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  background: linear-gradient(180deg, #fff6cf 0%, #ffd75e 45%, #f0a91c 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 3px rgba(90, 50, 0, 0.45));
+}
+
+.award-text span { font-size: 12px; font-weight: 700; color: rgba(255, 255, 255, 0.9); white-space: nowrap; }
+
+.proof-list {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.proof-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px clamp(10px, 1.4vw, 18px);
+  min-width: 0;
+  text-align: left;
+}
+
+.proof-list li + li { border-left: 1px solid rgba(255, 255, 255, 0.22); }
+
+.proof-list .pi {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 42px; height: 42px;
+  border-radius: 13px;
+  background: #fff;
+  font-size: 21px;
+  box-shadow: 0 6px 14px rgba(20, 30, 120, 0.18);
+}
+
+.proof-list b { display: block; font-size: 16px; font-weight: 900; line-height: 1.25; letter-spacing: -0.02em; }
+.proof-list span:not(.pi) { display: block; margin-top: 2px; font-size: 12.5px; font-weight: 600; opacity: 0.86; line-height: 1.35; }
+
+@media (max-width: 1080px) {
+  .proof { flex-direction: column; }
+  .proof-list { width: 100%; grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 4px; }
+  .proof-list li:nth-child(3) { border-left: 0; }
+}
+
+@media (max-width: 520px) {
+  .proof-list li { flex-direction: column; align-items: center; text-align: center; gap: 6px; padding: 8px 6px; }
+  .proof-list .pi { width: 36px; height: 36px; font-size: 18px; }
+  .proof-list b { font-size: 14px; }
+}
+
+/* --------------------------------------------------------------------------
+   The mascot, peeking in around the page
+   -------------------------------------------------------------------------- */
+
+.peek {
+  position: absolute;
+  z-index: 3;
+  width: 96px;
+  pointer-events: none;
+  filter: drop-shadow(0 10px 16px rgba(14, 21, 48, 0.18));
+}
+
+.peek.bob { animation: bob 4.6s ease-in-out infinite; }
+.peek.sway { animation: sway 5.2s ease-in-out infinite; transform-origin: 50% 100%; }
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-6deg); }
+  50% { transform: rotate(6deg); }
+}
+
+.peek-host { position: relative; }
+
+/* --------------------------------------------------------------------------
    Phone frames — real screenshots of the app in a CSS bezel.
    assets/shots/*.webp are real iPhone captures, cut by
    tools/screenshots/crop.py to 780x1552 (the AdMob test banner removed).
@@ -858,7 +1000,7 @@ html[lang="en"] .hero h1 { font-size: clamp(36px, 5vw, 60px); }
 
 .evo:hover img { transform: translateY(-8px) scale(1.06); }
 
-.evo span {
+.evo > span:not(.evo-pic) {
   display: inline-block;
   margin-top: 8px;
   padding: 3px 9px;
@@ -869,7 +1011,23 @@ html[lang="en"] .hero h1 { font-size: clamp(36px, 5vw, 60px); }
   color: var(--wood-ink);
 }
 
-.evo.egg span { background: linear-gradient(90deg, #ffd6f2, #d7d6ff); }
+.evo.egg > span:not(.evo-pic) { background: linear-gradient(90deg, #ffd6f2, #d7d6ff); }
+
+/* Level 16 and up are secrets: black silhouettes (assets/kore/*_secret.webp)
+   with a question mark, like an unfilled page of the in-app collection. */
+.evo-pic { position: relative; display: block; }
+.evo.locked img { filter: drop-shadow(0 6px 8px rgba(40, 20, 0, 0.25)); opacity: 0.9; }
+.evo-pic b {
+  position: absolute;
+  left: 50%; top: 54%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(22px, 3vw, 38px);
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+}
+.evo.locked > span:not(.evo-pic) { background: #3a2b1d; color: #f6e3c5; }
 
 /* --------------------------------------------------------------------------
    Steps (함께 만들기)
@@ -1286,6 +1444,8 @@ html[lang="en"] .hero h1 { font-size: clamp(36px, 5vw, 60px); }
   border: 1px solid var(--line);
 }
 
+.contact-card + .contact-card { margin-top: -22px; }
+
 .ct-label { font-size: 13px; font-weight: 700; color: var(--muted); }
 
 .ct-value {
@@ -1325,12 +1485,24 @@ html[lang="en"] .hero h1 { font-size: clamp(36px, 5vw, 60px); }
    -------------------------------------------------------------------------- */
 
 .site-footer {
+  position: relative;
   padding: clamp(52px, 6vw, 76px) 0 40px;
   background: var(--ink);
   color: rgba(255, 255, 255, 0.72);
 }
 
 .site-footer .brand { color: #fff; }
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  right: max(24px, calc(50% - 540px));
+  top: -64px;
+  width: 72px;
+  height: 90px;
+  background: url("kore/pose_thanks.webp") center bottom / contain no-repeat;
+  filter: drop-shadow(0 8px 12px rgba(14, 21, 48, 0.25));
+}
 
 .footer-grid {
   display: grid;
@@ -1444,6 +1616,9 @@ html[lang="en"] .hero h1 { font-size: clamp(36px, 5vw, 60px); }
 
 @media (max-width: 720px) {
   :root { --pad: 18px; }
+
+  .peek { width: 68px; }
+  .peek.hide-sm { display: none; }
 
   .site-header .container { height: 60px; gap: 8px; }
   .nav-link { display: none; }
