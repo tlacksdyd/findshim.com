@@ -9,6 +9,14 @@
 (function () {
   'use strict';
 
+  // A language picked on the switch (or the footer) is remembered, so the
+  // Korean-browser redirect in the English pages' <head> never undoes it.
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[hreflang]');
+    if (!a) return;
+    try { localStorage.setItem('kore.lang', a.getAttribute('hreflang')); } catch (err) {}
+  });
+
   function init() {
     var reduced =
       window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;

@@ -4,22 +4,358 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>고객지원 — KORE</title>
-  <!-- Moved: Korean support is now at /support/. Kept as a forwarder for old links. -->
-  <meta name="robots" content="noindex, follow" />
-  <meta http-equiv="refresh" content="0; url=../../support/" />
-  <link rel="canonical" href="https://findshim.com/support/" />
+  <meta name="description" content="KORE 이용 중 궁금한 점이 있으신가요? 자주 묻는 질문, 문의 방법, 계정·데이터 삭제 안내입니다." />
+  <link rel="canonical" href="https://findshim.com/ko/support/" />
+  <link rel="alternate" hreflang="ko" href="https://findshim.com/ko/support/" />
+  <link rel="alternate" hreflang="en" href="https://findshim.com/support/" />
+  <link rel="alternate" hreflang="x-default" href="https://findshim.com/support/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="고객지원 — KORE" />
+  <meta property="og:description" content="자주 묻는 질문, 문의 방법, 계정·데이터 삭제 안내." />
+  <meta property="og:url" content="https://findshim.com/ko/support/" />
+  <meta property="og:image" content="https://findshim.com/assets/og-image.png?v=221" />
+  <meta name="theme-color" content="#3F8CFC" />
   <link rel="icon" href="../../favicon.ico" sizes="48x48" />
   <link rel="icon" type="image/png" sizes="192x192" href="../../assets/favicon.png" />
-  <link rel="stylesheet" href="../../assets/styles.css" />
-  <script>location.replace('../../support/');</script>
+  <link rel="apple-touch-icon" href="../../assets/app-icon.png" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link rel="stylesheet" href="../../assets/styles.css?v=2.2.6" />
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="../../assets/site.js?v=2.2.6" defer></script>
 </head>
 <body>
-  <main class="container" style="min-height:60vh;display:grid;place-items:center;text-align:center;">
-    <div>
-      <p class="kicker">고객지원 페이지가 이동했습니다</p>
-      <p style="font-size:18px;color:var(--ink-soft);margin:0 0 28px;">잠시 후 자동으로 이동합니다.</p>
-      <a class="btn-pill" href="../../support/">고객지원 보기</a>
+  <!-- ===================== Header ===================== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../" aria-label="KORE 홈">
+        <img src="../../assets/favicon.png" alt="" width="34" height="34" />
+        <span>KORE</span>
+      </a>
+      <nav class="nav" aria-label="주요 메뉴">
+        <a class="nav-link" href="../#world">전세계 지도</a>
+        <a class="nav-link" href="../#kore">KORE 키우기</a>
+        <a class="nav-link wide" href="../support/">고객지원</a>
+        <div class="lang-switch" role="group" aria-label="언어 선택">
+          <a class="ls-opt is-active" href="./" aria-current="true">한국어</a>
+          <a class="ls-opt" href="../../support/?lang=en" lang="en" hreflang="en">EN</a>
+        </div>
+        <a class="btn-pill" href="../#download">다운로드</a>
+      </nav>
     </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <img class="page-mascot" src="../../assets/kore/pose_guide.webp" width="300" height="320" alt="" />
+        <h1>고객지원</h1>
+        <p class="meta">막히는 부분이 있으면 언제든 알려주세요. 최대한 빨리 답장드립니다.</p>
+      </div>
+    </section>
+
+    <article class="prose">
+      <div class="contact-card">
+        <div>
+          <div class="ct-label">이메일 문의</div>
+          <div class="ct-value">findshim@gmail.com</div>
+        </div>
+        <a class="btn-pill" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=findshim@gmail.com&amp;su=KORE%20%EB%AC%B8%EC%9D%98" target="_blank" rel="noopener">메일 보내기</a>
+      </div>
+
+      <h2>문의하는 방법</h2>
+      <p>
+        가장 빠른 길은 <strong>앱 안에서 보내는 것</strong>입니다. <strong>전체 탭 → 내 마커 · 피드백</strong>에서
+        피드백을 남기면 운영자가 직접 답장하고, 답장이 오면 알림으로 알려드립니다.
+        로그인하지 않아도 피드백과 답장 모두 가능합니다.
+      </p>
+      <p>
+        메일이 편하시면 위 주소로 보내주세요. 오류 제보, 화장실 정보 수정 요청, 제휴 문의 모두
+        환영합니다. 사용 중인 기기(iPhone / 안드로이드)와 앱 버전, 어떤 화면에서 문제가 생겼는지 함께
+        알려주시면 훨씬 빠르게 확인할 수 있습니다.
+      </p>
+
+      <h2>자주 묻는 질문</h2>
+      <div class="faq">
+        <details class="faq-item">
+          <summary>이용료가 있나요?</summary>
+          <div class="faq-body">
+            <p>
+              KORE는 무료로 내려받아 쓰는 앱입니다. 전세계 화장실 지도와 상세 정보, 길 찾기, 화장실 추가와
+              수정 요청, 후기와 별점, KORE 키우기까지 돈을 내지 않고 쓸 수 있습니다. 무료로 쓰실 때는 광고가
+              표시됩니다.
+            </p>
+            <p>원하는 분만 고르는 월 구독이 두 가지 있습니다.</p>
+            <ul>
+              <li><strong>KORE 프리미엄</strong> — 광고 없이 · KORE 물내림 +10% · 키우기 자리 비운 보상 3배 · 가입 즉시 특별 변기 ‘챔피언 변기’ · 금빛으로 빛나는 프로필과 무지개 테두리</li>
+              <li><strong>광고 제거</strong> — 배너 광고만 사라지고, 그 밖의 기능은 무료와 같습니다</li>
+            </ul>
+            <p>
+              KORE의 코인·크리스탈 충전도 원하는 분만 하는 선택 사항입니다. 가격은 앱의 결제 화면에 스토어
+              기준으로 표시됩니다. 지도의 조건 필터(깔때기)는 2.2.0에서 종료되었고, ‘깨끗한 화장실만’ 보기는
+              누구나 쓸 수 있습니다.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>KORE 프리미엄 구독·해지·복원은 어떻게 하나요?</summary>
+          <div class="faq-body">
+            <p>
+              <strong>전체 탭 맨 위의 KORE 프리미엄</strong>에서 구독할 수 있습니다. 구독은 매월 자동 갱신되고,
+              결제는 App Store / Google Play가 처리합니다. 무료 체험 대상이라면 구독 화면에 체험 기간이
+              표시되며, 체험이 끝나기 전에 해지하면 요금이 나가지 않습니다.
+            </p>
+            <p>
+              해지는 구독 화면의 <strong>구독 관리</strong>를 누르면 열리는 스토어 구독 설정에서 합니다. 해지해도
+              이미 결제한 기간이 끝날 때까지는 그대로 쓸 수 있습니다. 휴대폰을 바꾸거나 앱을 다시 설치했다면
+              구독 화면의 <strong>구매 복원</strong>을 눌러 주세요. <strong>회원 탈퇴를 해도 구독은 해지되지 않으니</strong>
+              스토어에서 따로 해지해 주세요.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>해외에서도 쓸 수 있나요?</summary>
+          <div class="faq-body">
+            <p>
+              네. 2.2.0부터 230여 개 나라의 화장실이 지도에 나옵니다. 지도를 멀리 보면 나라마다 화장실 수가,
+              가까이 보면 핀이 보입니다. 해외 화장실은 영업시간·층·요금 같은 정보를 기록이 있는 만큼 보여주고,
+              이름·주소·설명을 앱 언어로 번역해 원문과 함께 표시합니다.
+            </p>
+            <p>
+              해외에서의 길 안내는 상세 화면의 <strong>Google 지도 · Apple 지도</strong> 버튼으로 넘겨줍니다.
+              한국의 화장실 정보와 앱 안의 도보 길 찾기는 이전과 그대로입니다.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>회원가입을 꼭 해야 하나요?</summary>
+          <div class="faq-body">
+            <p>
+              아니요. 지도 보기, 화장실 추가와 수정·삭제 요청, 후기와 별점, KORE 키우기,
+              <strong>"나만 보기" 마커</strong>까지 로그인 없이 쓸 수 있습니다.
+            </p>
+            <p>
+              가입하면 휴대폰을 바꿔도 KORE 진행과 즐겨찾기, 기록이 그대로 이어지고, 게스트로 쌓은 기록은
+              로그인한 계정으로 옮겨집니다. 닉네임과 국기, 프로필 사진(선택)은 랭킹과 후기에 표시됩니다.
+            </p>
+            <p>
+              다만 로그인하지 않은 동안의 기록과 구매는 이 기기의 게스트 기록에 저장되므로, 가입하지
+              않은 채 앱을 지우면 되찾을 방법이 없습니다. 충전 상품을 샀다면 앱을 지우기 전에 꼭 가입해 주세요
+              (가입하면 그대로 계정으로 이어지고, 기존 계정으로 로그인하면 그 계정으로 옮겨집니다).
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>위치 권한을 꼭 허용해야 하나요?</summary>
+          <div class="faq-body">
+            <p>
+              필수는 아닙니다. 다만 허용하면 지도가 지금 계신 곳을 중심으로 열리고, 가까운 순서와 거리,
+              가장 가까운 세 곳(노란 핀)이 함께 표시돼 훨씬 편합니다. 허용하지 않아도 지도를 직접 움직여 원하는
+              지역의 화장실을 볼 수 있습니다.
+            </p>
+            <p>
+              위치는 <strong>앱을 사용하는 동안에만</strong> 쓰이며, 백그라운드에서 수집하지 않습니다.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>화장실 정보가 실제와 다르거나 빠져 있어요.</summary>
+          <div class="faq-body">
+            <p>
+              화장실을 누른 뒤 상세 화면의 <strong>정보가 틀렸나요? 수정·삭제 요청하기</strong>로 알려주세요.
+              한국이든 해외든 어떤 화장실이든, 로그인하지 않아도 보낼 수 있습니다. 지도에 아예 없는 곳이라면
+              지도의 <strong>＋ (화장실 마커 추가)</strong> 버튼으로 직접 추가하실 수 있습니다.
+            </p>
+            <p>
+              추가와 수정·삭제 요청은 운영자 검토를 거쳐 반영됩니다. 보낸 내용은 <strong>전체 탭 → 내 마커 ·
+              피드백</strong>에서 확인할 수 있고, 처리되면 알림으로 알려드립니다. 승인된 추가는 기여자 랭킹에
+              반영되고 KORE 코인·크리스탈 보상도 들어옵니다.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>핀 색깔은 무슨 뜻인가요?</summary>
+          <div class="faq-body">
+            <ul>
+              <li><strong>빨간 핀</strong> — 일반 개방 화장실</li>
+              <li><strong>파란 핀</strong> — 깨끗한 화장실 (파란색이 진할수록 더 깨끗)</li>
+              <li><strong>노란 핀</strong> — 가장 가까운 화장실 (1·2·3 번호)</li>
+              <li><strong>초록 별</strong> — 저장한(즐겨찾기) 화장실</li>
+              <li><strong>청록 핀</strong> — 나만 보기 화장실</li>
+            </ul>
+            <p>앱에서는 <strong>전체 탭 → 지도 핀 안내</strong>에서 같은 설명을 볼 수 있습니다. 지도의 ★ 버튼으로 초록 별을 켜고 끌 수 있습니다.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>길찾기는 어떻게 하나요?</summary>
+          <div class="faq-body">
+            <p>
+              한국에서는 상세 화면의 <strong>도보 길 찾기</strong> 버튼이 앱 안에서 걸어가는 길을 그려줍니다.
+              바로 아래 <strong>티맵 · 카카오맵 · 네이버지도</strong> 버튼으로 평소 쓰던 내비게이션 앱으로
+              넘어갈 수도 있습니다. 해외에서는 <strong>Google 지도 · Apple 지도</strong>로 넘겨줍니다.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>앱 언어를 바꾸고 싶어요.</summary>
+          <div class="faq-body">
+            <p>
+              <strong>전체 탭 → 언어 변경</strong>에서 바꿀 수 있습니다. 한국어, English, 日本語,
+              简体中文, 繁體中文 다섯 가지를 지원하며 화장실 이름과 주소, 시설 정보, 후기까지 함께 바뀝니다.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>후기는 누가 볼 수 있나요?</summary>
+          <div class="faq-body">
+            <p>
+              공개된 화장실에 남긴 후기는 올리는 즉시 다른 사용자에게 보이고, 작성한 언어 그대로 저장된 뒤 나머지
+              언어로 번역되어 표시됩니다. 다른 사람이 답글을 달 수 있고, 내 후기에 답글이 달리면 알림이 옵니다.
+              본인이 쓴 후기는 언제든 수정하거나 삭제할 수 있습니다. 후기에는 닉네임이 함께 표시되며, 닉네임이
+              없으면 익명으로 표시됩니다.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>KORE 키우기는 무엇인가요?</summary>
+          <div class="faq-body">
+            <p>
+              하단의 <strong>KORE</strong> 탭에서 변기 마스코트 KORE를 키우는 놀이입니다. 쌓인 똥을 물 내리면
+              코인이 들어오고, 같은 단계의 변기 둘을 합치면 다음 단계가 됩니다. 30단계까지의 도감과 숨은
+              이스터에그 변기를 모으고, 코인과 크리스탈로 방을 꾸미고, 전세계 랭킹에서 최고 단계와 꾸미기 점수를
+              겨룹니다.
+            </p>
+            <p>
+              30일 출석판과 매일·매주 미션이 있고, 후기·별점·"열려 있나요?" 확인·제보 승인처럼 지도를 함께 만드는
+              일에도 코인과 크리스탈 보상이 들어옵니다.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>KORE 진행이나 결제한 코인이 보이지 않아요.</summary>
+          <div class="faq-body">
+            <p>
+              KORE의 코인·크리스탈·키우기 기록은 서버에 저장되므로 인터넷에 연결된 상태에서 KORE 탭을 다시 열어
+              보세요. 다른 기기에서 이어 쓰려면 같은 계정으로 로그인해야 합니다.
+            </p>
+            <p>
+              결제했는데 코인·크리스탈이 들어오지 않았다면, 스토어 영수증(주문 번호)과 함께 위 이메일로 알려주세요.
+              확인 후 처리해 드립니다.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>유료 코인·크리스탈의 청약철회와 환불은 어떻게 하나요?</summary>
+          <div class="faq-body">
+            <p>
+              결제는 App Store / Google Play가 처리하므로 환불은 먼저 각 스토어의 환불 절차로 요청해 주세요
+              (App Store: reportaproblem.apple.com, Google Play: Play 스토어 → 결제 및 정기 결제 → 예산 및 기록).
+            </p>
+            <p>
+              「전자상거래 등에서의 소비자보호에 관한 법률」에 따라 <strong>사용하지 않은 유료 코인·크리스탈은
+              결제일로부터 7일 이내에 청약철회</strong>할 수 있습니다. 일부라도 사용했다면 사용하지 않은 만큼만
+              돌려드리며, 이미 사용한 코인·크리스탈과 그것으로 산 아이템·변기는 철회 대상이 아닙니다. 코인은 무료로 받은
+              것을 먼저 쓰고, 유료로 산 것은 오래된 결제부터 씁니다.
+            </p>
+            <p>
+              스토어에서 환불이 끝나면 그 결제로 받은 코인 중 남은 양이, 크리스탈은 그 상품의 수량만큼(잔액이
+              모자라면 남은 만큼) 회수됩니다. 문의는 앱의
+              <strong>전체 탭 → 피드백</strong> 또는 이메일로 결제 날짜와 상품을 알려 주세요.
+            </p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>게임 탭은 어디로 갔나요?</summary>
+          <div class="faq-body">
+            <p>
+              2.1.0 업데이트에서 게임 탭이 KORE 탭으로 바뀌었습니다. 이전에 쌓은 게임 기록은 처음 KORE를
+              열 때 한 번 코인으로 바꿔 드립니다.
+            </p>
+          </div>
+        </details>
+      </div>
+
+      <h2>계정 및 데이터 삭제</h2>
+      <p>
+        로그인한 상태에서 <strong>전체 탭 맨 아래 계정 카드 → 회원 탈퇴</strong>를 누르고 확인한 뒤
+        비밀번호를 다시 입력하면 계정이 삭제됩니다. 이때 계정과 닉네임·프로필 사진·국가, 제보와 수정 제안,
+        나만 보기 마커, 피드백, 즐겨찾기, 이용 내역, 알림 정보가 즉시 함께 지워지고, KORE 기록(코인·크리스탈·
+        아이템·키우기)과 키우기 랭킹, 후기 좋아요도 자동으로 삭제됩니다. 코인·크리스탈 결제 기록은 법에 따라
+        결제일로부터 5년간 보관합니다(<a href="../privacy/">개인정보처리방침</a> 5항).
+      </p>
+      <p>
+        <strong>KORE 프리미엄 등 구독은 탈퇴로 해지되지 않습니다</strong> — 스토어의 구독 관리에서 따로 해지해 주세요.
+      </p>
+      <p>
+        <strong>후기, 후기 답글, 별점, "열려 있나요?" 응답, 이전 게임 기록은 탈퇴 후에도 남습니다.</strong>
+        후기와 답글에는 작성할 때의 닉네임이 남습니다. 후기와 답글은 탈퇴하기 전에 앱에서 직접 지울 수
+        있습니다. 별점과 이전 게임 기록까지 모두 지우고 싶으시면
+        <strong>탈퇴하기 전에</strong> 가입한 이메일로 위 주소에 요청해 주세요. 확인 후 지체 없이 삭제해 드립니다.
+      </p>
+      <p>
+        로그인하지 않고 쓰신 경우에는 회원 탈퇴 메뉴가 없으니, 기록 삭제를 원하시면 이메일로 알려주세요.
+        이미 승인되어 <strong>지도에 공개된 화장실 정보</strong>는 다른 사용자가 사용하는 지도의 일부가
+        되므로 삭제 후에도 남습니다.
+      </p>
+      <p>
+        수집하는 정보와 처리 방식은 <a href="../privacy/">개인정보처리방침</a>에서 자세히 확인하실 수 있습니다.
+      </p>
+
+
+      <p><a class="back-link" href="../">← 홈으로 돌아가기</a></p>
+    </article>
   </main>
+
+  <!-- ===================== Footer ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="../" aria-label="KORE 홈">
+            <img src="../../assets/favicon.png" alt="" width="34" height="34" />
+            <span>KORE</span>
+          </a>
+          <p>함께 만들어가는 전세계 화장실 앱. 어디서든, 가장 가까운 화장실로.</p>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h4>제품</h4>
+            <a href="../#world">전세계 지도</a>
+            <a href="../#nearby">내 주변</a>
+            <a href="../#kore">KORE 키우기</a>
+            <a href="../#download">다운로드</a>
+          </div>
+          <div class="footer-col">
+            <h4>지원</h4>
+            <a href="../support/">고객지원</a>
+            <a href="../contact/">문의하기</a>
+            <a href="../privacy/">개인정보처리방침</a>
+            <a href="../terms/">유료 서비스 이용약관</a>
+          </div>
+          <div class="footer-col">
+            <h4>언어</h4>
+            <a href="../">한국어</a>
+            <a href="../../?lang=en" lang="en" hreflang="en">English</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 KORE. All rights reserved.</span>
+        <span>findshim.com</span>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

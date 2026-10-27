@@ -67,25 +67,34 @@ python -m http.server 8000   # http://localhost:8000
   It is pure progressive enhancement — the `js` class that arms the reveal is
   set by a one-liner in each page's `<head>`, so a page whose script fails to
   load shows all its content instead of none. Keep that property.
-- **Korean is the default locale and lives at the root** (`/`, `/privacy/`,
-  `/support/`, `/contact/`); English mirrors it under `/en/` with the same
-  design and file layout. The two copies are written for their own readers, not
-  translated line-for-line — keep it that way when editing. English pages are
-  one level deeper, so their asset/stylesheet paths use `../assets/…` (and
-  `../../assets/…` for `/en/<page>/`).
-- **`/ko/` is a legacy forwarder tree.** The old Korean URLs still exist as
-  tiny `noindex, follow` pages that `location.replace()` to their new root
-  counterpart. Don't delete them (old links and store listings point there) and
-  don't add new pages under `/ko/`.
+- **English is the default locale and lives at the root** (`/`, `/support/`,
+  `/privacy/`, `/contact/`, `/terms/`, `/press/`) since 2026-10-27 (the owner:
+  the app is worldwide now). Korean mirrors it under `/ko/` with the same design
+  and file layout, so Korean pages are one level deeper (`../assets/…`,
+  `../../assets/…` for `/ko/<page>/`). The two copies are written for their own
+  readers, not translated line-for-line — keep it that way when editing.
+- **Korean browsers are sent to Korean once.** Each English page's `<head>`
+  carries a one-line script, before anything paints: if the browser's first
+  language is Korean and the visitor has not chosen a language, it
+  `location.replace()`s to the `/ko/` counterpart. A choice is remembered in
+  `localStorage['kore.lang']` — by `?lang=en|ko` on the link (the Korean pages'
+  English links all carry `?lang=en`, so this works even with a stale cached
+  `site.js`) and by the click handler in `assets/site.js`. Crawlers see English.
+  The app stores link `findshim.com/privacy/` — it is English now; Korean
+  readers are redirected as above or use the switch.
+- **`/en/` is a legacy forwarder tree.** The old English URLs are tiny
+  `noindex, follow` pages that `location.replace()` to their root counterpart.
+  Don't delete them (old links point there) and don't add pages under `/en/`.
+  (Before 2026-10-27 the roles were reversed and `/ko/` held the forwarders.)
 - **Language switch.** Every real page's header carries a `.lang-switch` pill
-  (한국어 / EN) — two plain links, no JS. Each link must point at *that page's*
-  own counterpart (e.g. `/support/` ↔ `/en/support/`), and the current locale
-  gets `class="ls-opt is-active"` plus `aria-current`. Pages also declare
-  `<link rel="alternate" hreflang>` for `ko`, `en`, and `x-default` (Korean).
+  (한국어 / EN) — two plain links. Each link must point at *that page's* own
+  counterpart (e.g. `/support/` ↔ `/ko/support/`), and the current locale gets
+  `class="ls-opt is-active"` plus `aria-current`. Pages also declare
+  `<link rel="alternate" hreflang>` for `en`, `ko`, and `x-default` (English).
   When adding a page, add it in both trees, wire the switch both ways, and list
   it in `sitemap.xml`.
-- **Social cards** are per-locale: `assets/og-image.png` for Korean pages,
-  `assets/og-image-en.png` for `/en/`.
+- **Social cards** are per-locale: `assets/og-image-en.png` for the English
+  (root) pages, `assets/og-image.png` for `/ko/`.
 
 ## Screenshots
 
@@ -111,11 +120,11 @@ as HTML; it does not know the current app and is kept only for reference.
 
 ## Copy that must stay in sync
 
-- **Store links** live in `index.html` and `en/index.html` only, as two pairs
+- **Store links** live in `index.html` and `ko/index.html` only, as two pairs
   of `.store-btn` anchors (hero + CTA), plus the JSON-LD `downloadUrl` in each
   page's head. The Korean page links the `kr` App Store; the English page the
   storefront-neutral `apps.apple.com/app/id6774883751`.
-- **Privacy** — `privacy/index.html` (and its `/en/` twin) is the policy itself,
+- **Privacy** — `privacy/index.html` (and its `/ko/` twin) is the policy itself,
   revised for 2.2.0 (commit 50499cd); `terms/` is the paid-services terms. Both
   are legal text the owner approves — do not rewrite them unasked. When the app
   adds something that touches personal data (ads, subscriptions, push, crash

@@ -8,19 +8,20 @@ Static HTML/CSS — no build step. Deployed via **GitHub Pages**.
 
 ## Structure
 
-Korean is the default locale and lives at the root; English mirrors it under
-`/en/`.
+English is the default locale and lives at the root; Korean mirrors it under
+`/ko/`. Korean browsers are sent to `/ko/` once, unless the visitor picked a
+language (see CLAUDE.md).
 
 ```
 .
-├── index.html            # / — Korean landing page
+├── index.html            # / — English landing page (the default)
 ├── privacy/index.html    # /privacy — Privacy Policy (App Store / AdMob compliance)
 ├── support/index.html    # /support — Support & FAQ
 ├── contact/index.html    # /contact — Contact
 ├── terms/index.html      # /terms — Terms for paid services (coins, crystals, subscriptions)
 ├── press/index.html      # /press — English press kit (uses the 2.1.0 PNG shots)
-├── en/                   # English mirror: /en/, /en/privacy/, /en/support/, /en/contact/, /en/terms/
-├── ko/                   # Legacy /ko/ URLs — noindex redirects to the root pages
+├── ko/                   # Korean mirror: /ko/, /ko/support/, /ko/privacy/, /ko/contact/, /ko/terms/
+├── en/                   # Legacy /en/ URLs — noindex redirects to the root pages
 ├── favicon.ico           # 48px favicon for browsers and Google
 ├── 404.html              # Custom not-found page (absolute paths — served from the domain root)
 ├── assets/
@@ -43,10 +44,10 @@ Korean is the default locale and lives at the root; English mirrors it under
 
 ## Editing copy
 
-- **Two locales:** every page exists twice (root = Korean, `/en/` = English).
+- **Two locales:** every page exists twice (root = English, `/ko/` = Korean).
   Edit both, keep the header `.lang-switch` links pointing at each page's own
   counterpart, and list new pages in `sitemap.xml`.
-- **Store links:** live in `index.html` and `en/index.html` only, as two pairs
+- **Store links:** live in `index.html` and `ko/index.html` only, as two pairs
   of `.store-btn` anchors (hero + CTA). Keep them in sync if a URL changes.
 - **Privacy page:** derived from the app's `PRIVACY_POLICY.md` — update the
   Korean and English pages together when the app's policy changes.
