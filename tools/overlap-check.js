@@ -1,6 +1,7 @@
 // Dev check: paste into the console (or eval it) on any page — lists text and
 // image boxes that intersect. Not loaded by the site.
 (() => {
+  const NEAR = 6; // px of clear space text should keep from an image or icon
   document.querySelectorAll('[data-reveal]').forEach((e) => e.classList.add('is-in'));
   const items = [];
   const visible = (e) => {
@@ -47,6 +48,9 @@
       const h = Math.min(a.box.bottom, b.box.bottom) - Math.max(a.box.top, b.box.top);
       if (w > 1.5 && h > 1.5) {
         out.push(`${Math.round(w * h)}px² ${desc(a.el)} × ${desc(b.el)} @y${Math.round(a.box.top + scrollY)}`);
+      } else if (a.kind !== b.kind && w > -NEAR && h > -NEAR && (w > 0 || h > 0)) {
+        // text crowding an image/icon: not touching, but closer than NEAR px
+        out.push(`near ${Math.round(Math.max(-w, -h, 0))}px ${desc(a.el)} ~ ${desc(b.el)} @y${Math.round(a.box.top + scrollY)}`);
       }
     }
   }

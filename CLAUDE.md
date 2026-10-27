@@ -135,9 +135,16 @@ as HTML; it does not know the current app and is kept only for reference.
   pages, the LLM pipeline), no internal software, infrastructure or file names
   (Firebase product names, Cloud Functions, regions, hostnames, EAS, App Check,
   repo paths) — in page text, HTML comments or the public CSS/JS comments.
-  The privacy policy keeps only what law and Google's terms require: the
-  receiving companies and countries (Google LLC, Apple Inc., 650 Industries,
-  TMAP/SK텔레콤) and the names Google Analytics and Google AdMob.
+  The privacy policy names no providers at all — each is described by role
+  (cloud, analytics, advertising, map, translation, route calculation, update
+  delivery) and the overseas-transfer table lists roles and countries. The
+  owner decided this after legal advice (2026-10-27) and takes responsibility
+  for it; don't reintroduce the names. Only what users see and use themselves
+  is named: App Store / Google Play (payment, refunds) and the navigation apps
+  opened by a button (TMAP·카카오맵·네이버지도, Google 지도·Apple 지도).
+- **Check spacing with `tools/overlap-check.js`** after layout changes: it
+  reports text that overlaps anything, and text closer than 6px to an image or
+  icon (the award labels once touched their laurels).
 - **No 모두의 게임 (modoogame).** The owner dropped it on 2026-10-27; its pages,
   icon and sitemap entries are gone. Don't bring any of it back.
 - **Button and tab names** quoted in the copy are the app's own labels, from

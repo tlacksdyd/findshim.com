@@ -570,6 +570,7 @@ html[lang="en"] .hero h1 { font-size: clamp(36px, 5vw, 60px); }
 
 .award {
   --lw: 42px;                     /* laurel width */
+  --lg: 12px;                     /* clear space between laurel and text */
   position: relative;
   container-type: inline-size;
   display: flex;
@@ -613,7 +614,8 @@ html[lang="en"] .hero h1 { font-size: clamp(36px, 5vw, 60px); }
   flex-direction: column;
   align-items: center;
   min-width: 0;
-  max-width: calc(100% - 2 * var(--lw));
+  margin: 0 var(--lg);
+  max-width: calc(100% - 2 * (var(--lw) + var(--lg)));
   line-height: 1;
   text-align: center;
 }
@@ -625,7 +627,7 @@ html[lang="en"] .hero h1 { font-size: clamp(36px, 5vw, 60px); }
   font-size: clamp(24px, 3vw, 44px);
   /* the room between the laurels divided by the word's width in em (--w,
      set per award in the HTML) — so no word can run over its laurels */
-  font-size: clamp(12px, calc((100cqi - 2 * var(--lw) - 6px) / var(--w, 2.4)), 46px);
+  font-size: clamp(12px, calc((100cqi - 2 * (var(--lw) + var(--lg)) - 4px) / var(--w, 2.4)), 46px);
   font-weight: 900;
   letter-spacing: -0.04em;
   white-space: nowrap;
@@ -650,7 +652,7 @@ html[lang="en"] .hero h1 { font-size: clamp(36px, 5vw, 60px); }
 
 @media (max-width: 520px) {
   .proof { padding: 8px 4px; }
-  .award { --lw: 22px; }
+  .award { --lw: 22px; --lg: 6px; }
   .laurel { height: 64px; }
   .award-text b { margin: 4px 0 5px; }
   .award-text small, .award-text span { font-size: 10.5px; }
