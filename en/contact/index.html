@@ -14,12 +14,12 @@
   <meta property="og:description" content="How to reach the person who builds and runs KORE." />
   <meta property="og:url" content="https://findshim.com/en/contact/" />
   <meta property="og:image" content="https://findshim.com/assets/og-image-en.png" />
-  <meta name="theme-color" content="#FF385C" />
+  <meta name="theme-color" content="#3F8CFC" />
   <link rel="icon" type="image/png" href="../../assets/favicon.png" />
   <link rel="apple-touch-icon" href="../../assets/app-icon.png" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-  <link rel="stylesheet" href="../../assets/styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link rel="stylesheet" href="../../assets/styles.css?v=2.2.0" />
   <script>document.documentElement.classList.add('js');</script>
   <script src="../../assets/site.js" defer></script>
 </head>
@@ -28,13 +28,13 @@
   <header class="site-header">
     <div class="container">
       <a class="brand" href="../" aria-label="KORE home">
-        <img src="../../assets/favicon.png" alt="" />
+        <img src="../../assets/app-icon.png" alt="" width="34" height="34" />
         <span>KORE</span>
       </a>
-      <nav class="nav" aria-label="Primary">
-        <a class="nav-link" href="../#map">The map</a>
-        <a class="nav-link" href="../privacy/">Privacy</a>
-        <a class="nav-link" href="../support/">Support</a>
+      <nav class="nav" aria-label="Main">
+        <a class="nav-link" href="../#world">World map</a>
+        <a class="nav-link" href="../#kore">Raise KORE</a>
+        <a class="nav-link wide" href="../support/">Support</a>
         <div class="lang-switch" role="group" aria-label="Language">
           <a class="ls-opt" href="../../contact/" lang="ko" hreflang="ko">한국어</a>
           <a class="ls-opt is-active" href="./" aria-current="true">EN</a>
@@ -47,6 +47,7 @@
   <main>
     <section class="page-hero">
       <div class="container">
+        <img class="page-mascot" src="../../assets/kore/pose_hello.webp" width="300" height="320" alt="" />
         <h1>Contact</h1>
         <p class="meta">Questions, corrections, ideas — all welcome.</p>
       </div>
@@ -99,9 +100,38 @@
   <!-- ===================== Footer ===================== -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-bottom" style="border:0;margin:0;padding:0;">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="../" aria-label="KORE home">
+            <img src="../../assets/app-icon.png" alt="" width="34" height="34" />
+            <span>KORE</span>
+          </a>
+          <p>The worldwide toilet app, made together. Wherever you are, to the nearest restroom.</p>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="../#world">World map</a>
+            <a href="../#nearby">Nearby</a>
+            <a href="../#kore">Raise KORE</a>
+            <a href="../#download">Download</a>
+          </div>
+          <div class="footer-col">
+            <h4>Help</h4>
+            <a href="../support/">Support</a>
+            <a href="../privacy/">Privacy Policy</a>
+            <a href="../contact/">Contact</a>
+          </div>
+          <div class="footer-col">
+            <h4>Language</h4>
+            <a href="../../" lang="ko" hreflang="ko">한국어</a>
+            <a href="../">English</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
         <span>© 2026 KORE. All rights reserved.</span>
-        <span><a href="../privacy/">Privacy Policy</a> · findshim.com</span>
+        <span>findshim.com</span>
       </div>
     </div>
   </footer>

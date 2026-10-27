@@ -7,9 +7,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 The marketing/legal site for **KORE** (`findshim.com`) — a static HTML/CSS site
 introducing the KORE app and hosting the `/privacy` and `/support` pages that
 App Store and AdMob review require. The KORE app source itself lives in the
-sibling `../app` folder (an Expo React Native app — an all-in-one restroom app
-for Korea, not just a toilet map); read `../app/CLAUDE.md` and `../app/PRIVACY_POLICY.md` when site copy
-needs to stay in sync with the app.
+sibling `../kore` folder (an Expo React Native app — since 2.2.0 a worldwide
+toilet app: 230+ countries, 800K+ toilets, 5 languages, plus the KORE toilet
+mascot you raise); read `../kore/CLAUDE.md` and `../kore/scripts/changelog.json`
+when site copy needs to stay in sync with the app. The headline numbers
+(230+ · 80만+/800K+ · 5) are the owner-confirmed figures in
+`../data/pic,video/스토어 소개이미지_261023/업로드_가이드.txt`.
 
 ## No build step
 
@@ -44,10 +47,21 @@ python -m http.server 8000   # http://localhost:8000
   `assets/styles.css`, driven by CSS custom properties under `:root` (palette,
   type, layout tokens). The header/footer markup is duplicated across pages by
   hand (no includes) — change all pages together when editing shared chrome.
-- **Design language:** bold type, heavy whitespace, and the app's coral
-  `--brand: #ff385c` (the `:root` block also mirrors the app's map-pin palette
-  from `mapHtml.ts` as `--pin-*`). The phones on the landing pages are a CSS
-  bezel (`.device`) around a real screenshot (`.shot`), one per locale.
+- **Design language (2.2.0 renewal, 2026-10-27):** the app's launch screen and
+  icon — a sky-blue → violet gradient (`--grad`) with the white KORE mascot —
+  carries the hero and CTA; the KORE section (`.kore-section`) uses the warm
+  wood of the Grow workshop (`--wood-*`); the map's coral pin (`--pink`) is the
+  one accent for actions. Bold Pretendard (variable, dynamic subset), lots of
+  white. The phones are a CSS bezel (`.device`) around a real screenshot
+  (`.shot`, 780x1552), one set per locale. Mascot poses, toilet levels, coin
+  and crystal art in `assets/kore/` are copied from `../kore/assets/kore` and
+  `../kore/assets/kore-remote/v4` (resized webp).
+- **Flags:** Windows draws flag emoji as two letters, so `styles.css` loads the
+  `Twemoji Country Flags` font (country-flag-emoji-polyfill on jsDelivr) for the
+  regional-indicator range only — keep it first in `--font`.
+- **Copy the owner removed from the store stays off the landing pages:**
+  since 2026-10-24 nothing about "깨끗한 화장실" (clean toilets) is advertised —
+  the map filter (funnel) ended in 2.2.0. Support may still explain the button.
 - **One optional script.** `assets/site.js` is the only JS: a header hairline
   on scroll and an `IntersectionObserver` reveal for `[data-reveal]` elements.
   It is pure progressive enhancement — the `js` class that arms the reveal is
@@ -75,31 +89,43 @@ python -m http.server 8000   # http://localhost:8000
 
 ## Screenshots
 
-`assets/shots/{home,map,detail,game}-{ko,en}.png` are **real iPhone captures**
-of the app, taken from `../data/pic,video/` (the newest set is
-`KakaoTalk_20260822_*.png`, 1179x2556). Each one is resized to 780px wide and
-cropped to 780x1688 so it fits the `.shot` box (390x844 @2x); keep that size
-when replacing a shot. Pick the most recent capture of the same screen for each
-locale — Korean UI for `-ko`, English UI for `-en`.
+`assets/shots/{map,world,tokyo,nearby,detail,grow,room}-{ko,en}.webp` are
+**real iPhone captures** of app 2.2.0 from `../data/pic,video/261023/`
+(1179x2556), made by **`python tools/screenshots/crop.py`**: it cuts the AdMob
+*test* banner out (found by its blue OPEN button), blacks out the Dynamic
+Island (the capture tool's icon sits in it), and evens every shot to 780x1552.
+`abroad-{ko,en}.webp` and `ranking-en.webp` are sheet cut-outs floated next to
+a phone (`.ui-card`). Re-run the script after replacing a capture and look at
+the output — a new layout can need a different `fix` band.
 
-`tools/screenshots/build.js` is the older generator that rebuilt these screens
-as HTML from the `../app` checkout and shot them with headless Chrome. It is
-kept as a fallback, but it has not tracked the app's newer screens.
+`python tools/screenshots/og.py` rebuilds the social cards (`og-image.png`,
+`og-image-en.png`, 1200x630) from the world shot, the mascot and Pretendard
+Bold in `../kore/assets/fonts`.
+
+`tools/screenshots/build.js` is the older generator that rebuilt the 2.0 screens
+as HTML; it does not know the current app and is kept only for reference.
 
 ## Copy that must stay in sync
 
 - **Store links** live in `index.html` and `en/index.html` only, as two pairs
-  of `.store-btn` anchors (hero + CTA). Keep all four in sync per page if a
-  store URL changes.
-- **Privacy** — `privacy/index.html` (and its `/en/` twin) is the policy itself
-  (there is no separate source in `../app`). When the app adds something that
+  of `.store-btn` anchors (hero + CTA), plus the JSON-LD `downloadUrl` in each
+  page's head. The Korean page links the `kr` App Store; the English page the
+  storefront-neutral `apps.apple.com/app/id6774883751`.
+- **Privacy** — `privacy/index.html` (and its `/en/` twin) is the policy itself.
+  **It still describes the 2.0 app (game records, game tokens)** and does not
+  yet cover KORE coins/crystals and the retained payment records — the owner's
+  draft is `../kore/docs/legal/2026-10-23-privacy-terms-draft.md`. The policy is
+  the owner's to approve, so do not rewrite it unasked. When the app adds something that
   touches personal data (ads, subscriptions, push, crash reports, ...), update
   both pages and the effective date.
 - **Button and tab names** quoted in the copy are the app's own labels, from
-  `../app/src/i18n/locales/{ko,en}.json` — e.g. 도보 길 찾기 / "Walking
-  directions". The tabs are 홈 · 지도 · 게임 · 랭킹 · 전체 / Home · Map ·
-  Games · Rankings · All (리포트 and 설정 no longer exist as tabs). The app
-  supports **5 languages** (ko · en · ja · zh-CN · zh-TW). Check the locale file
-  before naming a control in prose.
+  `../kore/src/i18n/locales/{ko,en}.json` — e.g. 도보 길 찾기 / "Walking
+  directions", 정보가 틀렸나요? 수정·삭제 요청하기 / "Something wrong? Suggest an
+  edit or removal". Since 2.1.1 the tabs are **지도 · KORE · 전체 / Map · KORE ·
+  All** (one bottom sheet over an always-visible map; 홈 and 게임 are gone, and
+  the map's search bar is gone since 2.2.0). The app supports **5 languages**
+  (ko · en · ja · zh-CN · zh-TW). Check the locale file before naming a control
+  in prose. KORE Premium's benefits are `premiumBenefit*` / `benefitNotice2Line3`
+  there — do not list a benefit the app no longer gives.
 
 Contact email used across the site: `cyshim0715@gmail.com`.

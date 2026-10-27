@@ -14,12 +14,12 @@
   <meta property="og:description" content="KORE가 수집하는 정보와 그 사용·보관·삭제 방법." />
   <meta property="og:url" content="https://findshim.com/privacy/" />
   <meta property="og:image" content="https://findshim.com/assets/og-image.png" />
-  <meta name="theme-color" content="#FF385C" />
+  <meta name="theme-color" content="#3F8CFC" />
   <link rel="icon" type="image/png" href="../assets/favicon.png" />
   <link rel="apple-touch-icon" href="../assets/app-icon.png" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link rel="stylesheet" href="../assets/styles.css?v=2.2.0" />
   <script>document.documentElement.classList.add('js');</script>
   <script src="../assets/site.js" defer></script>
 </head>
@@ -28,13 +28,13 @@
   <header class="site-header">
     <div class="container">
       <a class="brand" href="../" aria-label="KORE 홈">
-        <img src="../assets/favicon.png" alt="" />
+        <img src="../assets/app-icon.png" alt="" width="34" height="34" />
         <span>KORE</span>
       </a>
       <nav class="nav" aria-label="주요 메뉴">
-        <a class="nav-link" href="../#map">지도</a>
-        <a class="nav-link" href="../support/">고객지원</a>
-        <a class="nav-link" href="../contact/">문의</a>
+        <a class="nav-link" href="../#world">전세계 지도</a>
+        <a class="nav-link" href="../#kore">KORE 키우기</a>
+        <a class="nav-link wide" href="../support/">고객지원</a>
         <div class="lang-switch" role="group" aria-label="언어 선택">
           <a class="ls-opt is-active" href="./" aria-current="true">한국어</a>
           <a class="ls-opt" href="../en/privacy/" lang="en" hreflang="en">EN</a>
@@ -47,6 +47,7 @@
   <main>
     <section class="page-hero">
       <div class="container">
+        <img class="page-mascot" src="../assets/kore/pose_saved.webp" width="300" height="320" alt="" />
         <h1>개인정보처리방침</h1>
         <p class="meta">시행일: 2026년 9월 25일 · 앱 "KORE - KoreaRestroom"</p>
       </div>
@@ -248,9 +249,38 @@
   <!-- ===================== Footer ===================== -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-bottom" style="border:0;margin:0;padding:0;">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="../" aria-label="KORE 홈">
+            <img src="../assets/app-icon.png" alt="" width="34" height="34" />
+            <span>KORE</span>
+          </a>
+          <p>함께 만들어가는 전세계 화장실 앱. 어디서든, 가장 가까운 화장실로.</p>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h4>제품</h4>
+            <a href="../#world">전세계 지도</a>
+            <a href="../#nearby">내 주변</a>
+            <a href="../#kore">KORE 키우기</a>
+            <a href="../#download">다운로드</a>
+          </div>
+          <div class="footer-col">
+            <h4>지원</h4>
+            <a href="../support/">고객지원</a>
+            <a href="../privacy/">개인정보처리방침</a>
+            <a href="../contact/">문의하기</a>
+          </div>
+          <div class="footer-col">
+            <h4>언어</h4>
+            <a href="../">한국어</a>
+            <a href="../en/" lang="en" hreflang="en">English</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
         <span>© 2026 KORE. All rights reserved.</span>
-        <span><a href="../support/">고객지원</a> · findshim.com</span>
+        <span>findshim.com</span>
       </div>
     </div>
   </footer>

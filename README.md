@@ -1,8 +1,8 @@
 # KORE — findshim.com
 
-Marketing site for **KORE**, the all-in-one restroom app for Korea —
-finding, rating, reviewing and adding toilets anywhere in the country, in
-the user's own language.
+Marketing site for **KORE**, the worldwide toilet app made together —
+800,000+ toilets in 230+ countries on one map, in five languages, plus KORE,
+the toilet mascot you raise.
 
 Static HTML/CSS — no build step. Deployed via **GitHub Pages**.
 
@@ -23,13 +23,14 @@ Korean is the default locale and lives at the root; English mirrors it under
 ├── assets/
 │   ├── styles.css        # Single shared stylesheet (design system)
 │   ├── site.js           # Only script: sticky-header hairline + scroll reveal
-│   ├── shots/            # App screenshots (홈 · 지도 · 상세 · 게임, ko + en)
-│   ├── favicon.png       # Browser favicon / brand mark
-│   ├── app-icon.png      # App icon (apple-touch-icon)
+│   ├── shots/            # App 2.2.0 screenshots (webp, ko + en) — tools/screenshots/crop.py
+│   ├── kore/             # Mascot poses, toilet levels, coin/crystal art (from ../kore/assets)
+│   ├── favicon.png       # Browser favicon (the app icon)
+│   ├── app-icon.png      # App icon (apple-touch-icon); app-icon-512.png for JSON-LD
 │   ├── logo-mark.png     # Transparent app mark (used inside the screenshots)
 │   ├── og-image.png      # Social card — Korean pages
 │   └── og-image-en.png   # Social card — English pages
-├── tools/screenshots/    # Older generator for assets/shots (fallback)
+├── tools/screenshots/    # crop.py (shots), og.py (social cards), build.js (old 2.0 generator)
 ├── CNAME                 # Custom domain: findshim.com
 ├── app-ads.txt           # AdMob verification
 ├── robots.txt
@@ -49,10 +50,10 @@ Korean is the default locale and lives at the root; English mirrors it under
 
 ## Screenshots
 
-The phones on the landing pages are real iPhone captures of the app, one set per
-locale, in `assets/shots/`. They come from `../data/pic,video/` (newest capture
-of each screen), resized and cropped to 780x1688 (390x844 @2x). The older HTML
-generator, `tools/screenshots/build.js`, is kept as a fallback.
+The phones on the landing pages are real iPhone captures of app 2.2.0, one set per
+locale, in `assets/shots/`. `python tools/screenshots/crop.py` makes them from
+`../data/pic,video/261023/` — test ad banner cut out, 780x1552 webp.
+`python tools/screenshots/og.py` rebuilds the social cards.
 
 ## Local preview
 
