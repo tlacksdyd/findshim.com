@@ -554,9 +554,11 @@ html[lang="en"] .hero h1 { font-size: clamp(36px, 5vw, 60px); }
 
 .proof-wrap { position: relative; z-index: 2; }
 
+/* Cells share the bar in proportion to their word (--w, in em) plus the room
+   the laurels take, so the four gold words come out the same size. */
 .proof {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   margin: 0 0 clamp(28px, 4vw, 48px);
   padding: 10px clamp(8px, 1.5vw, 18px);
   list-style: none;
@@ -571,6 +573,7 @@ html[lang="en"] .hero h1 { font-size: clamp(36px, 5vw, 60px); }
 .award {
   --lw: 42px;                     /* laurel width */
   --lg: 12px;                     /* clear space between laurel and text */
+  flex: calc(var(--w, 2.4) + 2.45) 1 0;
   position: relative;
   container-type: inline-size;
   display: flex;
@@ -646,8 +649,17 @@ html[lang="en"] .hero h1 { font-size: clamp(36px, 5vw, 60px); }
 }
 
 @media (max-width: 960px) {
-  .proof { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 6px; }
-  .award:nth-child(3)::after { display: none; }
+  .proof { row-gap: 6px; }
+  /* Two rows: the long word paired with the short one, the two mid-length
+     ones together; a zero-height full-width item (order 3) breaks the line,
+     so each row splits purely by word length. */
+  .award { flex-basis: 1px; min-width: 112px; }  /* not 0, or the line break fits on line 1; the floor keeps short cells' captions clear of their laurels */
+  .award:nth-child(1) { order: 1; }
+  .award:nth-child(4) { order: 2; }
+  .award:nth-child(2) { order: 4; }
+  .award:nth-child(3) { order: 5; }
+  .proof::after { content: ""; order: 3; flex-basis: 100%; height: 0; }
+  .award:nth-child(2)::after { display: none; }
 }
 
 @media (max-width: 520px) {
