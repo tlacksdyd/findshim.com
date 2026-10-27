@@ -78,8 +78,33 @@ def process(src, name, fix=None, pad=False):
     im = island(Image.open(SRC / src).convert('RGB'))
     bands = []
     for b0, b1 in open_buttons(im):
-        if b0 < 500:   # banner card over the map, under the status bar
-            bands.append((145, 355))
+        if b0 < 500:   # banner card over the map, under the status bar:
+            # the whole white card the ad sits in: walk out from the button
+            # while one of the next few rows is at least a third pure white (its
+            # 1px border rows are not, hence the look-ahead; the map is <10%)
+            def white(y):
+                px = [im.getpixel((x, y)) for x in range(60, 1120, 8)]
+                return sum(1 for p in px if sum(p) >= 750) / len(px)
+            top, end = b0, b1
+            while top > 120 and max(white(y) for y in range(top - 6, top)) >= 0.3:
+                top -= 1
+            while end < 520 and max(white(y) for y in range(end, end + 6)) >= 0.3:
+                end += 1
+            top, end = top - 2, end + 2
+            # The card is taller than the 210 rows every shot loses; make up
+            # the difference by stretching the status-bar strip above it a
+            # few percent, so the map below keeps its place.
+            extra = (end - top) - 210
+            if extra < 0:      # a shorter card: take the map strip above it too
+                top = end - 210
+            elif extra > 0:
+                strip = im.crop((0, 0, im.width, top)).resize((im.width, top + extra), Image.LANCZOS)
+                rest = im.crop((0, top, im.width, im.height))
+                im = Image.new('RGB', (im.width, im.height + extra))
+                im.paste(strip, (0, 0))
+                im.paste(rest, (0, top + extra))
+                top, end = top + extra, end + extra
+            bands.append((top, end))
         else:          # card inside a sheet: "광고 없애기" header + banner + gap
             bands.append((b0 - 152, b1 + 80))
     bands += fix or []
@@ -101,7 +126,7 @@ def process(src, name, fix=None, pad=False):
 GROW_FIX = [(1590, 1680), (2436, 2556)]
 ROOM_FIX = [(1850, 1929), (2425, 2556)]
 process('KO/KakaoTalk_20261023_194852089_09.png', 'map-ko')
-process('KakaoTalk_20261023_222722048_03.png', 'world-ko')
+process('KakaoTalk_20261023_222722048_01.png', 'world-ko')
 process('KakaoTalk_20261024_023004801_03.png', 'tokyo-ko')
 process('KO/KakaoTalk_20261023_194852089_15.png', 'nearby-ko', pad=True)
 process('KO/KakaoTalk_20261023_194852089_13.png', 'detail-ko', pad=True)
@@ -109,7 +134,7 @@ process('KO/KakaoTalk_20261023_194852089_16.png', 'grow-ko', GROW_FIX)
 process('KO/KakaoTalk_20261023_194852089_17.png', 'room-ko', ROOM_FIX)
 
 process('EN/KakaoTalk_20261023_194852089.png', 'map-en')
-process('KakaoTalk_20261023_222722048_06.png', 'world-en')
+process('KakaoTalk_20261023_222722048_08.png', 'world-en')
 process('KakaoTalk_20261024_023004801_04.png', 'tokyo-en')
 process('EN/KakaoTalk_20261023_194852089_07.png', 'nearby-en', pad=True)
 process('EN/KakaoTalk_20261023_194852089_04.png', 'detail-en', pad=True)
