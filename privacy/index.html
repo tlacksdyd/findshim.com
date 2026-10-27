@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../assets/app-icon.png" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
-  <link rel="stylesheet" href="../assets/styles.css?v=2.2.6" />
+  <link rel="stylesheet" href="../assets/styles.css?v=2.2.7" />
   <script>try{var q=/[?&]lang=(en|ko)\b/.exec(location.search);if(q)localStorage.setItem('kore.lang',q[1]);}catch(e){}try{var l=(q&&q[1])||localStorage.getItem('kore.lang');if(!l&&/^ko\b/i.test((navigator.languages&&navigator.languages[0])||navigator.language||''))location.replace('../ko/privacy/'+location.hash)}catch(e){}</script>
   <script>document.documentElement.classList.add('js');</script>
   <script src="../assets/site.js?v=2.2.6" defer></script>
@@ -75,7 +75,7 @@
       <h2>1. Information we collect</h2>
       <h3>a. Information you give us</h3>
       <ul>
-        <li><strong>Account details</strong> — only if you choose to sign up: your email address and password. Passwords are handled by Google Firebase Authentication and are never visible to us. Signing up links your email to the anonymous identifier described below.</li>
+        <li><strong>Account details</strong> — only if you choose to sign up: your email address and password. Passwords are handled by Google's authentication service and are never visible to us. Signing up links your email to the anonymous identifier described below.</li>
         <li><strong>Profile</strong> — a nickname and country chosen when you sign up (required) and an optional profile photo, shown <em>publicly</em> on rankings, reviews and profile cards. Without an account you appear as "Anonymous". If you haven't chosen a country yourself, one inferred from the app's language (e.g. Korean → South Korea, Japanese → Japan) may be stored on your profile and shown as a flag.</li>
         <li><strong>Submissions, edit suggestions and removal requests</strong> — a restroom's location (coordinates), name, address, description, opening hours and photos, and for a removal request the reason you picked and any note you wrote (up to 500 characters). If you're signed in, your account email is stored with them. You can send these for restrooms outside Korea too.</li>
         <li><strong>Reviews and ratings</strong> — star ratings, review text (up to 1,000 characters), the language it was written in, and answers such as "Is it open?" and "Is it clean?".</li>
@@ -90,16 +90,16 @@
       <ul>
         <li><strong>Anonymous identifier</strong> — even without signing in, each device gets an anonymous account (UID). It links what you send (submissions, feedback, reviews, KORE records) to you so replies can reach you. While you are not signed in it is not tied to your name, email or any other identity; signing up links your email to it.</li>
         <li><strong>Location</strong> — if you grant permission, your device's current location while you are using the app. It is <strong>never collected in the background</strong>, and it is not stored on a server or kept as a history. On the device it is also used to notice when you've reached (within about 70 m) a restroom you set off for, so the app can ask for a rating.</li>
-        <li><strong>Map data for restrooms abroad</strong> — from version 2.2.0, when you look at the map outside Korea or are outside Korea, the app downloads that area's restroom list files from our web server (kore.findshim.com, Google Firebase Hosting). These requests carry your IP address and the requested file name, which identifies a rough area (larger than a city); your precise coordinates are not sent. We do not keep our own record of these requests; any server logs needed to run the service follow Google's policies. Viewing the Korean map from inside Korea makes no such request.</li>
-        <li><strong>Translation of restroom information abroad</strong> — from version 2.2.0, to show restrooms abroad in your language, their names, addresses and descriptions are sent through our server (Cloud Functions) to Google Cloud Translation. Only text about the restroom is sent; to prevent abuse, the number of characters translated per anonymous identifier (UID) per day is counted. Translations are stored in a shared cache, with no user information, so the same text is not translated twice.</li>
+        <li><strong>Map data for restrooms abroad</strong> — from version 2.2.0, when you look at the map outside Korea or are outside Korea, the app downloads that area's restroom list files from our web server. These requests carry your IP address and the requested file name, which identifies a rough area (larger than a city); your precise coordinates are not sent. We do not keep our own record of these requests; any server logs needed to run the service follow Google's policies. Viewing the Korean map from inside Korea makes no such request.</li>
+        <li><strong>Translation of restroom information abroad</strong> — from version 2.2.0, to show restrooms abroad in your language, their names, addresses and descriptions are sent through our server to Google's translation service. Only text about the restroom is sent; to prevent abuse, the number of characters translated per anonymous identifier (UID) per day is counted. Translations are stored in a shared cache, with no user information, so the same text is not translated twice.</li>
         <li><strong>Notification token</strong> — if you allow notifications, your device's push token plus device platform, app language and app version. It is used for submission decisions, feedback replies, replies to your reviews, app updates, and KORE notifications when your poop is full or you haven't visited for a while (KORE notifications can be turned off under All).</li>
         <li><strong>Advertising data</strong> — to show ads in the app, Google AdMob may process device information and the advertising identifier (IDFA/AAID). On iOS the identifier is used only if you allow it in the App Tracking Transparency prompt; in the EEA and UK it is processed according to your consent choice.</li>
         <li><strong>Purchase records</strong> — if you buy coin or crystal packs, the store transaction number (for Google Play, a value derived from the purchase token), product, platform, quantity, purchase time and refund status, so the purchase can be verified and delivered. To confirm a purchase belongs to your account, a non-reversible value derived from your account identifier is attached to the store purchase. A purchase made without signing in (as a guest) is linked to that device's anonymous account; signing up keeps it on the same account, and logging in to an existing account moves it there. If the app is deleted without signing up, the anonymous account cannot be recovered and the remaining coins and crystals cannot be carried over.</li>
         <li><strong>Subscription status</strong> — if you subscribe to KORE Premium or the ad-free subscription, the purchase information needed to confirm it (product and subscription period). A KORE Premium subscriber marker (with how long it is valid) is stored on your profile. Payment is handled by the App Store / Google Play; the app never receives card numbers or other payment details. If you received the promotional free traveller period, the nationality you declared, your country and the period are kept with it.</li>
-        <li><strong>Crash reports</strong> — on Android, if the app crashes, a crash log and diagnostic information (Firebase Crashlytics) used to find the cause. Not linked to your identity.</li>
-        <li><strong>Usage analytics</strong> — to improve the service, Google Analytics for Firebase collects app usage information (screens viewed, features used, search terms, purchase attempt outcomes and similar), a device identifier, and approximate region, device and app version. Your email, nickname and precise location are never sent, and this is not used to identify you.</li>
-        <li><strong>Device integrity</strong> — app attestation (App Check) via Apple DeviceCheck / Google Play Integrity, used to block requests from tampered apps. It does not identify you.</li>
-        <li><strong>Update checks</strong> — when the app starts it checks Expo's servers (EAS Update) for a new update and downloads it. This passes your IP address, device platform and app version.</li>
+        <li><strong>Crash reports</strong> — on Android, if the app crashes, a crash log and diagnostic information used to find the cause. Not linked to your identity.</li>
+        <li><strong>Usage analytics</strong> — to improve the service, Google Analytics collects app usage information (screens viewed, features used, search terms, purchase attempt outcomes and similar), a device identifier, and approximate region, device and app version. Your email, nickname and precise location are never sent, and this is not used to identify you.</li>
+        <li><strong>Device integrity</strong> — app attestation through Apple and Google device checks, used to block requests from tampered apps. It does not identify you.</li>
+        <li><strong>Update checks</strong> — when the app starts it checks our update provider's servers for a new update and downloads it. This passes your IP address, device platform and app version.</li>
       </ul>
 
       <h3>c. What we do not collect</h3>
@@ -151,19 +151,18 @@
       <h2>4. Third-party services</h2>
       <p>The app uses the services below, each governed by its own privacy policy.</p>
       <ul>
-        <li><strong>Google Firebase</strong> (Authentication, Cloud Firestore, Storage, Cloud Functions, Hosting, App Check, Cloud Messaging, Crashlytics, Google Analytics) — storing and processing accounts, submissions, reviews, feedback, photos, KORE records and purchase records; sending notifications; crash reports; usage analytics; serving map data for restrooms abroad.</li>
+        <li><strong>Google</strong> — storing and processing accounts, submissions, reviews, feedback, photos, KORE records and purchase records; sending notifications; crash reports; usage analytics (Google Analytics); serving map data for restrooms abroad.</li>
         <li><strong>Google AdMob</strong> — showing ads and managing ad consent.</li>
-        <li><strong>Apple App Store · Google Play</strong> — payment and refunds for the KORE Premium subscription and for coin and crystal packs. Our server queries the Google Play Developer API to verify purchases and receives refund notifications from the App Store.</li>
-        <li><strong>Google Maps Platform</strong> — map display, and turning coordinates into an address when you add a restroom.</li>
-        <li><strong>Google Cloud Translation</strong> — automatic translation of submissions, reviews and restroom information abroad.</li>
-        <li><strong>TMAP (SK Telecom)</strong> and <strong>Apple Maps Server API</strong> — walking-route calculation. Only when you request a route, the start and destination coordinates and names ("Current location" and the restroom's name) are sent; no account information is sent.</li>
+        <li><strong>Apple App Store · Google Play</strong> — payment and refunds for the KORE Premium subscription and for coin and crystal packs. Our server checks purchases with Google Play and receives refund notifications from the App Store.</li>
+        <li><strong>Google Maps</strong> — map display, and turning coordinates into an address when you add a restroom.</li>
+        <li><strong>Google translation</strong> — automatic translation of submissions, reviews and restroom information abroad.</li>
+        <li><strong>TMAP (SK Telecom)</strong> and <strong>Apple</strong> — walking-route calculation. Only when you request a route, the start and destination coordinates and names ("Current location" and the restroom's name) are sent; no account information is sent.</li>
         <li><strong>The TMAP, KakaoMap and Naver Map apps</strong> — tapping a directions button passes the destination's coordinates and name to that app, and KakaoMap and Naver Map also receive your current location as the start point. That app's own policy then applies.</li>
         <li><strong>The Google Maps and Apple Maps apps</strong> — tapping a directions button on a restroom abroad passes the destination's coordinates and name to that app. That app's own policy then applies.</li>
-        <li><strong>Sources of restroom information</strong> — information on restrooms abroad comes from open data such as OpenStreetMap and from public web pages collected by the operator. No user information is used for this.</li>
-        <li><strong>Expo (EAS Update)</strong> — checking for and delivering app updates.</li>
+        <li><strong>650 Industries, Inc.</strong> — checking for and delivering app updates.</li>
       </ul>
       <p>
-        Data is stored and processed primarily in Google Cloud's Seoul region (asia-northeast3); by the
+        Data is stored and processed primarily in data centres in South Korea; by the
         nature of these services some processing may take place outside Korea. We do not sell your
         personal information.
       </p>
@@ -179,9 +178,9 @@
           <tr><th>Recipient · country</th><th>What · when and how</th><th>Purpose · retention</th></tr>
         </thead>
         <tbody>
-          <tr><td>Google LLC (Firebase, Cloud, AdMob, Analytics, Crashlytics) · the US and other countries with Google data centres (primary storage in the Seoul region)</td><td>The information in section 1 · sent over the network as you use the app</td><td>The purposes in section 2 · the periods in section 5 or each service's policy</td></tr>
+          <tr><td>Google LLC · the US and other countries with Google data centres (primary storage in South Korea)</td><td>The information in section 1 · sent over the network as you use the app</td><td>The purposes in section 2 · the periods in section 5 or each service's policy</td></tr>
           <tr><td>Apple Inc. · US</td><td>Start and destination coordinates and names when you request a route; purchase verification data · sent on request or purchase</td><td>Walking routes, purchase verification · Apple's policy</td></tr>
-          <tr><td>650 Industries, Inc. (Expo) · US</td><td>IP address, device platform, app version · sent when the app starts</td><td>Delivering app updates · Expo's policy</td></tr>
+          <tr><td>650 Industries, Inc. · US</td><td>IP address, device platform, app version · sent when the app starts</td><td>Delivering app updates · that company's policy</td></tr>
         </tbody>
       </table>
       <p>Questions about these transfers go to the privacy officer in section 10.</p>
@@ -196,7 +195,7 @@
         <li>You can delete your reviews, review replies, favorites and history in the app at any time, and change your star ratings and open-status answers (email us to have those deleted).</li>
         <li>Records of the free traveller period are kept to confirm its dates and are deleted on request.</li>
         <li>Notification tokens stop being used when you sign out or turn notifications off, and are deleted with your account.</li>
-        <li>Crash reports are deleted automatically after the retention period set by Firebase Crashlytics.</li>
+        <li>Crash reports are deleted automatically after the retention period of the crash-reporting service.</li>
         <li>Usage analytics are deleted automatically after at most 14 months, per the Google Analytics data-retention setting.</li>
         <li><strong>How we destroy data</strong> — information whose retention period has ended, or whose deletion you asked for, is erased from the server so it cannot be recovered (deleting the database documents and stored files). Information kept by law, such as purchase records, is kept separately from other information and erased the same way when its period ends.</li>
       </ul>
@@ -231,9 +230,9 @@
 
       <h2>7. Security</h2>
       <p>
-        All traffic is encrypted with HTTPS, and passwords are stored hashed by Google Firebase
-        Authentication. The database is protected by per-document access rules, so only you can edit or
-        delete what you wrote. Requests to our servers are verified with App Check.
+        All traffic is encrypted with HTTPS, and passwords are stored hashed by Google's
+        authentication service. The database is protected by per-document access rules, so only you can edit or
+        delete what you wrote. Requests to our servers are verified with app attestation.
       </p>
 
       <h2>8. Children</h2>
@@ -281,11 +280,11 @@
       <details class="lang-block">
         <summary>日本語 — プライバシーポリシー（要約）</summary>
         <div class="lang-body">
-          <p><strong>収集する情報：</strong>ログインを選択した場合のメールアドレスとパスワード、登録時に決めるニックネームと国・任意のプロフィール写真（ランキング・レビュー・返信に公開。国を選んでいない場合はアプリの言語から推定した国旗が表示されることがあります）、投稿されたトイレ情報・写真・レビュー・レビューへの返信・いいね・評価・フィードバック、お気に入りと利用履歴、KORE（キャラクター育成）の記録（コイン・クリスタルの残高と増減履歴、購入・装備したアイテム、育成の進行、出席・ミッション、受け取った報酬）、コイン・クリスタル購入時の決済記録（ストアの取引番号、商品、数量、購入日時、返金の有無。ゲストで購入した場合は端末の匿名IDに紐づき、登録すると同じアカウントに引き継がれます）、端末ごとの匿名ID、位置情報（許可した場合、アプリ使用中のみ）、通知を許可した場合のプッシュトークン、広告表示のための端末情報と広告ID（許可・同意した場合のみ）、サブスクリプションの購入状態、Android のクラッシュログ。2.2.0 以降、海外のトイレを表示するときはその地域のトイレ一覧ファイルを運営者のウェブサーバー（Google Firebase Hosting）から取得し（IP アドレスと大まかな地域を表すファイル名が送られます。正確な位置は送りません）、海外トイレの名称・住所・説明を設定言語に翻訳するため Google Cloud Translation に送ります（トイレに関する文章のみ）。2.1.0 以降、ミニゲームの記録は新たに収集せず、保存済みの記録は KORE を初めて開いたときに一度だけコインに換算されます。ログイン中に送った投稿・フィードバックにはアカウントのメールアドレスが付き、運営者のみが確認します。</p>
+          <p><strong>収集する情報：</strong>ログインを選択した場合のメールアドレスとパスワード、登録時に決めるニックネームと国・任意のプロフィール写真（ランキング・レビュー・返信に公開。国を選んでいない場合はアプリの言語から推定した国旗が表示されることがあります）、投稿されたトイレ情報・写真・レビュー・レビューへの返信・いいね・評価・フィードバック、お気に入りと利用履歴、KORE（キャラクター育成）の記録（コイン・クリスタルの残高と増減履歴、購入・装備したアイテム、育成の進行、出席・ミッション、受け取った報酬）、コイン・クリスタル購入時の決済記録（ストアの取引番号、商品、数量、購入日時、返金の有無。ゲストで購入した場合は端末の匿名IDに紐づき、登録すると同じアカウントに引き継がれます）、端末ごとの匿名ID、位置情報（許可した場合、アプリ使用中のみ）、通知を許可した場合のプッシュトークン、広告表示のための端末情報と広告ID（許可・同意した場合のみ）、サブスクリプションの購入状態、Android のクラッシュログ。2.2.0 以降、海外のトイレを表示するときはその地域のトイレ一覧ファイルを運営者のウェブサーバーから取得し（IP アドレスと大まかな地域を表すファイル名が送られます。正確な位置は送りません）、海外トイレの名称・住所・説明を設定言語に翻訳するため Google の翻訳サービスに送ります（トイレに関する文章のみ）。2.1.0 以降、ミニゲームの記録は新たに収集せず、保存済みの記録は KORE を初めて開いたときに一度だけコインに換算されます。ログイン中に送った投稿・フィードバックにはアカウントのメールアドレスが付き、運営者のみが確認します。</p>
           <p><strong>利用目的：</strong>現在地周辺のトイレ表示と距離計算、徒歩ルート案内、投稿の審査と地図への反映、レビューと返信の5言語翻訳、フィードバックへの返信、ランキング表示、通知の送信（返信・KORE の通知を含む）、KORE のコイン・報酬の付与と進行の保存、決済の確認・返金対応、広告の表示、KORE プレミアムの利用権確認、アプリの不具合修正。</p>
-          <p><strong>第三者：</strong>Google Firebase（Crashlytics・Cloud Messaging を含む）、Google Analytics for Firebase（アプリ利用統計：画面・機能の利用、検索語、端末識別子。個人の特定には使用しません）、Google AdMob、App Store / Google Play（決済・返金。購入の確認のため Google Play Developer API に照会し、App Store から返金通知を受け取ります）、Google Maps Platform、Google Cloud Translation、徒歩ルート計算のための TMAP／Apple Maps Server API（経路要求時に出発地・目的地の座標と名称を送信）、アプリ更新のための Expo（EAS Update）。案内ボタンを押すと、TMAP には目的地が、KakaoMap・NAVER Map には目的地と現在地が渡されます。個人情報を販売することはありません。</p>
+          <p><strong>第三者：</strong>Google（クラウド・通知・クラッシュログ）、Google Analytics（アプリ利用統計：画面・機能の利用、検索語、端末識別子。個人の特定には使用しません）、Google AdMob、App Store / Google Play（決済・返金。購入の確認のため Google Play に照会し、App Store から返金通知を受け取ります）、Google（地図・翻訳）、徒歩ルート計算のための TMAP／Apple（経路要求時に出発地・目的地の座標と名称を送信）、アプリ更新のための 650 Industries, Inc.。案内ボタンを押すと、TMAP には目的地が、KakaoMap・NAVER Map には目的地と現在地が渡されます。個人情報を販売することはありません。</p>
           <p><strong>削除：</strong>アプリの「すべて」タブ →「アカウントを削除」で、アカウント・プロフィール・投稿・非公開マーカー・フィードバック・お気に入り・利用履歴・通知情報が即時削除され、アカウント削除後に KORE の記録・育成ランキング・いいねも自動で削除されます。決済記録は韓国の電子商取引法に基づき決済日から5年間保管し、その後削除します。レビューと返信（投稿時のニックネーム付き）・評価・以前のゲーム記録は退会だけでは削除されないため、削除を希望される場合は退会前に登録メールアドレスからご連絡ください。地図に公開済みのトイレ情報は残ります。パーソナライズド広告は端末の設定からいつでもオフにできます。</p>
-          <p><strong>国外移転：</strong>サービス提供のため、上記の情報は Google LLC（米国等。主な保存先はソウルリージョン）、Apple Inc.（米国）、650 Industries, Inc.（Expo・米国）で処理されます。苦情・相談は韓国の個人情報侵害申告センター（118）・個人情報紛争調停委員会（1833-6972）にも申し立てられます。</p>
+          <p><strong>国外移転：</strong>サービス提供のため、上記の情報は Google LLC（米国等。主な保存先は韓国）、Apple Inc.（米国）、650 Industries, Inc.（米国）で処理されます。苦情・相談は韓国の個人情報侵害申告センター（118）・個人情報紛争調停委員会（1833-6972）にも申し立てられます。</p>
           <p><strong>個人情報保護責任者・お問い合わせ：</strong>運営者 · findshim@gmail.com</p>
         </div>
       </details>
@@ -293,11 +292,11 @@
       <details class="lang-block">
         <summary>简体中文 — 隐私政策（摘要）</summary>
         <div class="lang-body">
-          <p><strong>收集的信息：</strong>仅在您选择注册时收集的邮箱和密码；注册时设定的昵称和国家，以及可选的头像（会在排行榜、评价和回复中公开；未选择国家时，可能显示根据应用语言推定的国旗）；您提交的厕所信息、照片、评价、评价回复、点赞、评分和反馈；收藏与使用记录；KORE（角色养成）记录（金币与水晶余额及增减记录、购买和装备的道具、养成进度、签到与任务、获得的奖励）；购买金币或水晶时的支付记录（商店交易编号、商品、数量、购买时间、是否退款；以访客身份购买时与设备的匿名标识关联，注册后会延续到同一账号）；每台设备的匿名标识；在您授权后、仅在使用应用期间的位置信息；允许通知时的推送令牌；用于展示广告的设备信息和广告标识符（仅在您允许或同意时）；订阅购买状态；Android 崩溃日志。自 2.2.0 起，查看海外厕所时会从运营者的网站服务器（Google Firebase Hosting）下载该地区的厕所列表文件（会发送 IP 地址和表示大致地区的文件名，不发送精确位置），并为把海外厕所的名称、地址和说明翻译成所设语言而发送给 Google Cloud Translation（仅限厕所相关文字）。自 2.1.0 起不再收集小游戏记录，已保存的记录会在您首次打开 KORE 时一次性换算为金币。登录状态下提交的投稿和反馈会附带账号邮箱，仅运营者可见。</p>
+          <p><strong>收集的信息：</strong>仅在您选择注册时收集的邮箱和密码；注册时设定的昵称和国家，以及可选的头像（会在排行榜、评价和回复中公开；未选择国家时，可能显示根据应用语言推定的国旗）；您提交的厕所信息、照片、评价、评价回复、点赞、评分和反馈；收藏与使用记录；KORE（角色养成）记录（金币与水晶余额及增减记录、购买和装备的道具、养成进度、签到与任务、获得的奖励）；购买金币或水晶时的支付记录（商店交易编号、商品、数量、购买时间、是否退款；以访客身份购买时与设备的匿名标识关联，注册后会延续到同一账号）；每台设备的匿名标识；在您授权后、仅在使用应用期间的位置信息；允许通知时的推送令牌；用于展示广告的设备信息和广告标识符（仅在您允许或同意时）；订阅购买状态；Android 崩溃日志。自 2.2.0 起，查看海外厕所时会从运营者的网站服务器下载该地区的厕所列表文件（会发送 IP 地址和表示大致地区的文件名，不发送精确位置），并为把海外厕所的名称、地址和说明翻译成所设语言而发送给 Google 翻译服务（仅限厕所相关文字）。自 2.1.0 起不再收集小游戏记录，已保存的记录会在您首次打开 KORE 时一次性换算为金币。登录状态下提交的投稿和反馈会附带账号邮箱，仅运营者可见。</p>
           <p><strong>使用目的：</strong>显示附近厕所并计算距离、步行路线导航、审核并发布您的投稿、将评价和回复翻译成五种语言、回复您的反馈、显示排行榜、发送通知（含回复与 KORE 通知）、发放 KORE 金币与奖励并保存进度、确认支付与处理退款、展示广告、确认 KORE 高级版权益、修复应用问题。</p>
-          <p><strong>第三方：</strong>Google Firebase（含 Crashlytics、Cloud Messaging）、Google Analytics for Firebase（应用使用统计：页面与功能使用、搜索词、设备标识符，不用于识别个人）、Google AdMob、App Store / Google Play（支付与退款；为确认购买会查询 Google Play Developer API，并接收 App Store 的退款通知）、Google Maps Platform、Google Cloud Translation，用于步行路线的 TMAP / Apple Maps Server API（请求路线时发送起点与终点的坐标和名称），以及用于应用更新的 Expo（EAS Update）。点击导航按钮时，TMAP 会收到目的地，KakaoMap 和 NAVER Map 会收到目的地和您的当前位置。我们不出售您的个人信息。</p>
+          <p><strong>第三方：</strong>Google（云服务、推送、崩溃日志）、Google Analytics（应用使用统计：页面与功能使用、搜索词、设备标识符，不用于识别个人）、Google AdMob、App Store / Google Play（支付与退款；为确认购买会查询 Google Play，并接收 App Store 的退款通知）、Google（地图、翻译），用于步行路线的 TMAP / Apple（请求路线时发送起点与终点的坐标和名称），以及用于应用更新的 650 Industries, Inc.。点击导航按钮时，TMAP 会收到目的地，KakaoMap 和 NAVER Map 会收到目的地和您的当前位置。我们不出售您的个人信息。</p>
           <p><strong>删除：</strong>在应用「全部」标签中点击「删除账号」，账号、个人资料、投稿、私人标记、反馈、收藏、使用记录和通知信息将立即删除，账号删除后 KORE 记录、养成排行榜和点赞也会自动删除。支付记录依据韩国《电子商务消费者保护法》自支付日起保存 5 年后删除。评价与回复（保留发布时的昵称）、评分和以前的游戏记录不会随注销删除，如需删除，请在注销前用注册邮箱联系我们。已公开在地图上的厕所信息会保留。个性化广告可随时在设备设置中关闭。</p>
-          <p><strong>境外传输：</strong>为提供服务，上述信息会在 Google LLC（美国等；主要存储于首尔区域）、Apple Inc.（美国）、650 Industries, Inc.（Expo，美国）处理。投诉与咨询也可向韩国个人信息侵害举报中心（118）、个人信息纠纷调解委员会（1833-6972）提出。</p>
+          <p><strong>境外传输：</strong>为提供服务，上述信息会在 Google LLC（美国等；主要存储于韩国）、Apple Inc.（美国）、650 Industries, Inc.（美国）处理。投诉与咨询也可向韩国个人信息侵害举报中心（118）、个人信息纠纷调解委员会（1833-6972）提出。</p>
           <p><strong>个人信息保护负责人 · 联系方式：</strong>运营者 · findshim@gmail.com</p>
         </div>
       </details>
@@ -305,11 +304,11 @@
       <details class="lang-block">
         <summary>繁體中文 — 隱私權政策（摘要）</summary>
         <div class="lang-body">
-          <p><strong>蒐集的資訊：</strong>僅在您選擇註冊時蒐集的電子郵件與密碼；註冊時設定的暱稱與國家，以及選填的大頭貼（會在排行榜、評論與回覆中公開；未選擇國家時，可能顯示依應用程式語言推定的國旗）；您提交的廁所資訊、照片、評論、評論回覆、按讚、評分與意見回饋；收藏與使用紀錄；KORE（角色養成）紀錄（金幣與水晶餘額及增減紀錄、購買與裝備的道具、養成進度、簽到與任務、獲得的獎勵）；購買金幣或水晶時的付款紀錄（商店交易編號、商品、數量、購買時間、是否退款；以訪客身分購買時與裝置的匿名識別碼關聯，註冊後會延續到同一帳號）；每台裝置的匿名識別碼；在您授權後、僅於使用應用程式期間的位置資訊；允許通知時的推播權杖；用於顯示廣告的裝置資訊與廣告識別碼（僅在您允許或同意時）；訂閱購買狀態；Android 當機紀錄。自 2.2.0 起，查看海外廁所時會從營運者的網站伺服器（Google Firebase Hosting）下載該地區的廁所清單檔案（會傳送 IP 位址與表示大致地區的檔名，不傳送精確位置），並為將海外廁所的名稱、地址與說明翻譯成所設語言而傳送至 Google Cloud Translation（僅限廁所相關文字）。自 2.1.0 起不再蒐集小遊戲紀錄，已儲存的紀錄會在您首次開啟 KORE 時一次性換算為金幣。登入狀態下送出的投稿與意見回饋會附上帳號電子郵件，僅營運者可見。</p>
+          <p><strong>蒐集的資訊：</strong>僅在您選擇註冊時蒐集的電子郵件與密碼；註冊時設定的暱稱與國家，以及選填的大頭貼（會在排行榜、評論與回覆中公開；未選擇國家時，可能顯示依應用程式語言推定的國旗）；您提交的廁所資訊、照片、評論、評論回覆、按讚、評分與意見回饋；收藏與使用紀錄；KORE（角色養成）紀錄（金幣與水晶餘額及增減紀錄、購買與裝備的道具、養成進度、簽到與任務、獲得的獎勵）；購買金幣或水晶時的付款紀錄（商店交易編號、商品、數量、購買時間、是否退款；以訪客身分購買時與裝置的匿名識別碼關聯，註冊後會延續到同一帳號）；每台裝置的匿名識別碼；在您授權後、僅於使用應用程式期間的位置資訊；允許通知時的推播權杖；用於顯示廣告的裝置資訊與廣告識別碼（僅在您允許或同意時）；訂閱購買狀態；Android 當機紀錄。自 2.2.0 起，查看海外廁所時會從營運者的網站伺服器下載該地區的廁所清單檔案（會傳送 IP 位址與表示大致地區的檔名，不傳送精確位置），並為將海外廁所的名稱、地址與說明翻譯成所設語言而傳送至 Google 翻譯服務（僅限廁所相關文字）。自 2.1.0 起不再蒐集小遊戲紀錄，已儲存的紀錄會在您首次開啟 KORE 時一次性換算為金幣。登入狀態下送出的投稿與意見回饋會附上帳號電子郵件，僅營運者可見。</p>
           <p><strong>使用目的：</strong>顯示附近廁所並計算距離、步行路線導引、審核並發佈您的投稿、將評論與回覆翻譯成五種語言、回覆您的意見回饋、顯示排行榜、傳送通知（含回覆與 KORE 通知）、發放 KORE 金幣與獎勵並儲存進度、確認付款與處理退款、顯示廣告、確認 KORE 進階版權益、修正應用程式問題。</p>
-          <p><strong>第三方：</strong>Google Firebase（含 Crashlytics、Cloud Messaging）、Google Analytics for Firebase（應用程式使用統計：頁面與功能使用、搜尋詞、裝置識別碼，不用於識別個人）、Google AdMob、App Store / Google Play（付款與退款；為確認購買會查詢 Google Play Developer API，並接收 App Store 的退款通知）、Google Maps Platform、Google Cloud Translation，用於步行路線的 TMAP / Apple Maps Server API（請求路線時傳送起點與終點的座標與名稱），以及用於應用程式更新的 Expo（EAS Update）。點選導航按鈕時，TMAP 會收到目的地，KakaoMap 與 NAVER Map 會收到目的地與您的目前位置。我們不會出售您的個人資料。</p>
+          <p><strong>第三方：</strong>Google（雲端服務、推播、當機紀錄）、Google Analytics（應用程式使用統計：頁面與功能使用、搜尋詞、裝置識別碼，不用於識別個人）、Google AdMob、App Store / Google Play（付款與退款；為確認購買會查詢 Google Play，並接收 App Store 的退款通知）、Google（地圖、翻譯），用於步行路線的 TMAP / Apple（請求路線時傳送起點與終點的座標與名稱），以及用於應用程式更新的 650 Industries, Inc.。點選導航按鈕時，TMAP 會收到目的地，KakaoMap 與 NAVER Map 會收到目的地與您的目前位置。我們不會出售您的個人資料。</p>
           <p><strong>刪除：</strong>在應用程式「全部」分頁點選「刪除帳號」，帳號、個人檔案、投稿、私人標記、意見回饋、收藏、使用紀錄與通知資訊將立即刪除，帳號刪除後 KORE 紀錄、養成排行榜與按讚也會自動刪除。付款紀錄依韓國《電子商務消費者保護法》自付款日起保存 5 年後刪除。評論與回覆（保留發佈時的暱稱）、評分與以前的遊戲紀錄不會隨註銷刪除，如需刪除，請於註銷前以註冊電子郵件與我們聯絡。已公開於地圖上的廁所資訊會保留。個人化廣告可隨時在裝置設定中關閉。</p>
-          <p><strong>境外傳輸：</strong>為提供服務，上述資訊會在 Google LLC（美國等；主要儲存於首爾區域）、Apple Inc.（美國）、650 Industries, Inc.（Expo，美國）處理。申訴與諮詢亦可向韓國個人資料侵害申報中心（118）、個人資料紛爭調解委員會（1833-6972）提出。</p>
+          <p><strong>境外傳輸：</strong>為提供服務，上述資訊會在 Google LLC（美國等；主要儲存於韓國）、Apple Inc.（美國）、650 Industries, Inc.（美國）處理。申訴與諮詢亦可向韓國個人資料侵害申報中心（118）、個人資料紛爭調解委員會（1833-6972）提出。</p>
           <p><strong>個人資料保護負責人 · 聯絡方式：</strong>營運者 · findshim@gmail.com</p>
         </div>
       </details>

@@ -21,7 +21,7 @@
 }
 
 :root {
-  /* Brand — assets/launch/gradient.png and the app icon in ../kore */
+  /* Brand — the app icon and launch screen gradient */
   --sky: #21a6fc;
   --blue: #3f80fc;
   --violet: #7260fc;
@@ -38,7 +38,7 @@
   --brand-soft: var(--pink-soft);
   --ink-deep: var(--ink);
 
-  /* Map pin palette (../kore/src/map/mapHtml.ts) */
+  /* Map pin palette (the app's own pin colours) */
   --pin-public: #ff385c;
   --pin-near: #ffc400;
   --pin-fav: #12a150;
@@ -680,8 +680,7 @@ html[lang="en"] .hero h1 { font-size: clamp(36px, 5vw, 60px); }
 
 /* --------------------------------------------------------------------------
    Phone frames — real screenshots of the app in a CSS bezel.
-   assets/shots/*.webp are real iPhone captures, cut by
-   tools/screenshots/crop.py to 780x1552 (the AdMob test banner removed).
+   assets/shots/*.webp are real iPhone captures of the app, 780x1552.
    -------------------------------------------------------------------------- */
 
 .device {

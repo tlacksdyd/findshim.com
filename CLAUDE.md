@@ -130,6 +130,14 @@ as HTML; it does not know the current app and is kept only for reference.
   adds something that touches personal data (ads, subscriptions, push, crash
   reports, ...), update both locales and the effective date. The support page's
   deletion section is kept word-for-word in step with privacy section 5.
+- **No internal information on the public site (the owner, 2026-10-27).**
+  No data sources (OpenStreetMap, government datasets, crawled/collected web
+  pages, the LLM pipeline), no internal software, infrastructure or file names
+  (Firebase product names, Cloud Functions, regions, hostnames, EAS, App Check,
+  repo paths) — in page text, HTML comments or the public CSS/JS comments.
+  The privacy policy keeps only what law and Google's terms require: the
+  receiving companies and countries (Google LLC, Apple Inc., 650 Industries,
+  TMAP/SK텔레콤) and the names Google Analytics and Google AdMob.
 - **No 모두의 게임 (modoogame).** The owner dropped it on 2026-10-27; its pages,
   icon and sitemap entries are gone. Don't bring any of it back.
 - **Button and tab names** quoted in the copy are the app's own labels, from
