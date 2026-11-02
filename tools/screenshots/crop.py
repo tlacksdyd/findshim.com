@@ -7,7 +7,9 @@ assets/shots/<name>-<locale>.webp at 780x1552 — the size the .device bezel in
 assets/styles.css is drawn for. What it does to each capture:
 
   * cuts the AdMob *test* banner out (dev builds show "Test mode" cards; real
-    users see a real ad there, which a marketing shot should not carry),
+    users see a real ad there, which a marketing shot should not carry); over
+    the map, the strip left above it becomes a frosted status bar, so the map
+    does not jump where the card was,
   * paints the Dynamic Island solid black (the capture tool's icon sits in it),
   * evens every shot to the same height (2346 rows at full size) so phones
     side by side match — by removing a strip of plain floor art, or by adding
@@ -18,12 +20,18 @@ wherever the layout put it. Re-run after replacing a capture, then look at the
 output: a new layout can need a different `fix` entry below.
 """
 from pathlib import Path
-from PIL import Image, ImageDraw
+from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageOps
 
 WEB = Path(__file__).resolve().parents[2]
 SRC = WEB.parent / 'data' / 'pic,video' / '261023'
 OUT = WEB / 'assets' / 'shots'
 H = 2346  # target height at 1179 wide (780x1552 after resize)
+# Per locale, a capture whose status bar sits on plain white (the nearby
+# list): frost() lifts the clock and icons from it.
+STATUS = {
+    'ko': 'KO/KakaoTalk_20261023_194852089_15.png',
+    'en': 'EN/KakaoTalk_20261023_194852089_07.png',
+}
 
 
 def open_buttons(im):
@@ -74,41 +82,59 @@ def island(im):
     return im
 
 
+def frost(im, seam, locale, fade=56):
+    """Redraw rows [0, seam) as a frosted status bar over the map below.
+
+    The glass is the map just under the seam, mirrored upward, blurred and
+    whitened, so its colours run on into the map; it fades out over `fade`
+    rows. The clock and icons come from a capture of the same phone whose
+    status bar sits on plain white (multiplied in, so they keep their
+    anti-aliasing)."""
+    w = im.width
+    below = im.crop((0, seam, w, 2 * seam + fade))
+    src = Image.new('RGB', (w, below.height + seam))
+    src.paste(ImageOps.flip(below.crop((0, 0, w, seam))), (0, 0))
+    src.paste(below, (0, seam))
+    glass = Image.blend(src.filter(ImageFilter.GaussianBlur(28)),
+                        Image.new('RGB', src.size, 'white'), 0.72)
+    status = Image.open(SRC / STATUS[locale]).convert('RGB').crop((0, 0, w, seam))
+    im.paste(ImageChops.multiply(glass.crop((0, 0, w, seam)), status), (0, 0))
+    ramp = Image.linear_gradient('L').resize((w, fade)).point(lambda v: 255 - v)
+    under = im.crop((0, seam, w, seam + fade))
+    im.paste(Image.composite(glass.crop((0, seam, w, seam + fade)), under, ramp), (0, seam))
+    return island(im)
+
+
 def process(src, name, fix=None, pad=False):
     im = island(Image.open(SRC / src).convert('RGB'))
-    bands = []
+    bands, seam = [], None
     for b0, b1 in open_buttons(im):
         if b0 < 500:   # banner card over the map, under the status bar:
-            # the whole white card the ad sits in: walk out from the button
-            # while one of the next few rows is at least a third pure white (its
-            # 1px border rows are not, hence the look-ahead; the map is <10%)
+            # the bottom of the white card the ad sits in: walk down from the
+            # button while one of the next few rows is at least a third pure
+            # white (its 1px border rows are not, hence the look-ahead; the
+            # map is <10%)
             def white(y):
                 px = [im.getpixel((x, y)) for x in range(60, 1120, 8)]
                 return sum(1 for p in px if sum(p) >= 750) / len(px)
-            top, end = b0, b1
-            while top > 120 and max(white(y) for y in range(top - 6, top)) >= 0.3:
-                top -= 1
+            end = b1
             while end < 520 and max(white(y) for y in range(end, end + 6)) >= 0.3:
                 end += 1
-            top, end = top - 2, end + 2
-            # The card is taller than the 210 rows every shot loses; make up
-            # the difference by stretching the status-bar strip above it a
-            # few percent, so the map below keeps its place.
-            extra = (end - top) - 210
-            if extra < 0:      # a shorter card: take the map strip above it too
-                top = end - 210
-            elif extra > 0:
-                strip = im.crop((0, 0, im.width, top)).resize((im.width, top + extra), Image.LANCZOS)
-                rest = im.crop((0, top, im.width, im.height))
-                im = Image.new('RGB', (im.width, im.height + extra))
-                im.paste(strip, (0, 0))
-                im.paste(rest, (0, top + extra))
-                top, end = top + extra, end + extra
-            bands.append((top, end))
+            end += 2
+            # Every shot loses 210 rows here. Whatever is left above them (the
+            # status bar over a strip of map, plus the top of a taller card)
+            # is redrawn as a frosted bar after the cut — spliced as it is
+            # onto the map below the card, it reads as a tear in the screen.
+            seam = end - 210
+            if seam > 215:     # the white status bar in STATUS ends there
+                raise SystemExit(f'{name}: banner ends at {end}, too low for frost()')
+            bands.append((seam, end))
         else:          # card inside a sheet: "광고 없애기" header + banner + gap
             bands.append((b0 - 152, b1 + 80))
     bands += fix or []
     im = cut(im, bands)
+    if seam is not None:
+        im = frost(im, seam, name.rsplit('-', 1)[1])
     if im.height < H:
         if not pad:
             raise SystemExit(f'{name}: {im.height} rows after cuts, needs pad=True')
