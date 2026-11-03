@@ -157,4 +157,4 @@ as HTML; it does not know the current app and is kept only for reference.
   in prose. KORE Premium's benefits are `premiumBenefit*` / `benefitNotice2Line3`
   there — do not list a benefit the app no longer gives.
 
-Contact email used across the site: `findshim@gmail.com`.
+Contact email used across the site: `iguana.kor@gmail.com`.
